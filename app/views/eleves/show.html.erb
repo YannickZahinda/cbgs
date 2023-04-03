@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @elefe %>
+
+<div>
+  <%= link_to "Edit this eleve", edit_elefe_path(@elefe) %> |
+  <%= link_to "Back to eleves", eleves_path %>
+
+  <%= button_to "Destroy this eleve", @elefe, method: :delete %>
+</div>

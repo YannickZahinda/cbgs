@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Eleves</h1>
+
+<div id="eleves">
+  <% @eleves.each do |elefe| %>
+    <%= render elefe %>
+    <p>
+      <%= link_to "Show this eleve", elefe %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New eleve", new_elefe_path %>
