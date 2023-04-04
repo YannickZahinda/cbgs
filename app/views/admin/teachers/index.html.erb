@@ -1,7 +1,25 @@
-<div>
-<% @teachers.each do |t| %>
-  <h1><%= t.nom_complet %></h1>
-  <p><%= t.addresse %></p>
-  <p>Teacher from admin panel</p>
-<% end %>
+<p style="color: green"><%= notice %></p>
+
+<h1>Teachers</h1>
+
+<div id="teachers" class="teachers">
+  <% @teachers.each do |teacher| %>
+  <div class="teacher">
+    <%= render teacher %>
+    <h1><%= teacher.nom_complet %></h1>
+     <p><%= teacher.addresse %></p>
+    <p>
+      <%= link_to "Show this teacher", admin_teacher_path(teacher) %>
+    </p>
+     <p>
+      <%= link_to "Destroy this teacher", admin_teacher_path(teacher), method: :delete, data:{confirm: 'Etes-vous sur ?'} %>
+    </p>
+    <p>
+      <%= link_to "Edit this teacher", edit_admin_teacher_path(teacher)%>
+    </p>
+  </div>
+  <% end %>
+
 </div>
+
+<%= link_to "New teacher", new_admin_teacher_path %>

@@ -2,7 +2,7 @@
 
 <h1>Teachers</h1>
 
-<div id="teachers">
+<div id="teachers" class="teacher">
   <% @teachers.each do |teacher| %>
     <%= render teacher %>
     <h1><%= teacher.nom_complet %></h1>
@@ -12,5 +12,3 @@
     </p>
   <% end %>
 </div>
-
-<%= link_to "New teacher", new_teacher_path %>
