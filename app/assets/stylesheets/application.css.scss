@@ -1,0 +1,174 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.teacher {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.teachers {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.uppernav{
+  display: flex;
+  background-color: #184C72;
+  color: #fff;
+  gap: 30px;
+  list-style-type: none;
+  padding: 15px;
+}
+
+.phoneic{
+  color: white;
+}
+
+.nav {
+  display: flex;
+  padding: 15px;
+  justify-content: space-between;
+}
+
+.navlinks{
+  display: flex;
+  list-style-type: none;
+}
+
+.menu{
+  display: none;
+}
+
+.menuline{
+  margin: 3px;
+  width: 30px;
+  height: 5px;
+  background-color: #000;
+  border-radius: 4px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+// Forms =============
+
+.authentication {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // margin: 30px auto;
+  // align-items: center;
+  // justify-content: center;
+  padding: 5px;
+}
+
+.signup {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginpic{
+  object-fit: cover;
+}
+
+.loginimg{
+  object-fit: cover;
+}
+
+.field{
+  font-size: 15px;
+}
+
+.input {
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #E5E7EB;
+  width: 100%;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.label{
+  text-align: left;
+}
+
+.actions{
+  width: 100%;
+}
+
+.button {
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #E5E7EB;
+  background-color: #184C72;
+  color: #fff;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.loginline{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.loginlink{
+  text-decoration: none;
+  vertical-align: middle;
+  color: #184C72;
+  font-weight: 700;
+}
+
+
+
+
+@media only screen and (max-width: 992px) {
+  .navlinks {
+    flex-direction: column;
+    display: none;
+    text-align: center;
+    background-color: #184C72;
+  }
+
+  .link {
+    padding:10px;
+    color: #fff;
+    text-align: left;
+    border-radius: 4px;
+  }
+
+  .body{
+    position: relative;
+  }
+
+  .is-active{
+    display: block;
+  }
+  .menu{
+    display: block;
+  }
+
+  .signup {
+    font-size: 10px;
+    flex-basis: 200px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+}
+
+
+@import "font-awesome";

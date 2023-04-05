@@ -1,0 +1,43 @@
+<div>
+  <ul class='uppernav'>
+    <li><i class="fa-solid fa-phone-arrow-down-left"></i>Contact</li>
+    <li>email</li>
+    <li>Social icons</li>
+  </ul>
+</div>
+<div class="nav">
+  <div class="logo">
+    <%= image_tag("logos/CBGClogo.png", width: '30%') %>
+  </div>
+  <div class="menu" id="menu">
+    <div class="menuline"></div>
+    <div class="menuline"></div>
+    <div class="menuline"></div>
+  </div>
+</div>
+<ul class="navlinks" id="links">
+  <li class="link"><a href="#" class="link">A propos</a></li>
+  <li class="link"><a href="#" class="link">Communique</a></li>
+  <li class="link"><a href="#" class="link">Contactez-nous</a></li>
+  <% if user_signed_in?%>
+   <% if current_user.is_admin? %>
+    <li class="link"><%= link_to "Dashboard admin", admin_teachers_path, :class => "link" %></li>
+  <% end %>
+    <li class="link">
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "link" %>
+    </li>
+  <% else %>
+    <li class="link">
+      <%= link_to "S'enregistrer", new_user_registration_path, :class => "link" %>
+    </li>
+  <%end%>
+</ul>
+
+<% if user_signed_in? %>
+  <%= link_to "Home", root_path%>
+  <%= link_to "Enseignants de l'ecole", teachers_path%>
+  <p>Logged in as <%= current_user.email %></p>
+  <% if current_user.is_admin? %>
+    <%= link_to "Admin teachers", admin_teachers_path%>
+  <% end%>
+<%end%>

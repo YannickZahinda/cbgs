@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
@@ -13,15 +13,6 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <% if user_signed_in? %>
-      <%= link_to "Home", root_path%>
-      <%= link_to "Enseignants de l'ecole", teachers_path%>
-      <p>Logged in as <%= current_user.email %></p>
-     <% if current_user.is_admin? %>
-      <%= link_to "Admin teachers", admin_teachers_path%>
-    <% end%>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    <%end%>
     <%= yield %>
   </body>
 </html>
