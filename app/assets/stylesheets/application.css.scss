@@ -125,12 +125,26 @@
 }
 
 .loginlink{
-  text-decoration: none;
+  text-decoration: underline;
   vertical-align: middle;
   color: #184C72;
   font-weight: 700;
 }
 
+.confirmation {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 370px) {
+  .signup {
+    width: 100%;
+  }
+
+  .form {
+    width: 50%;
+  }
+}
 
 
 
