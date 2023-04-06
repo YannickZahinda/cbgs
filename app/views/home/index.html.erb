@@ -1,4 +1,65 @@
 <%= render "uppernav" %>
 <div>
- <div class='flex justify-between'>
+   <div class="slider">
+      <div>
+        <%= image_tag "logos/eleveimg1.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg2.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg3.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg4.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg5.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg6.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg7.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg8.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg9.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg10.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg11.jpeg", alt: "eleve photo" %>
+      </div>
+    </div><br/><br/>
+
+    <div style="white-space: nowrap; overflow: hidden; width: 100%; background-color: #c0c4c7; padding: 20px">
+      <span class="sliding-text" style="display: inline-block; animation: slidein 20s linear infinite; font-size: 25px; font-weight: bold; color: #fff">
+        NOTRE DEVISE : EXCELLENTE DISCPLINE ET QUALITE
+      </span>
+    </div>
+    <div class="section-equipe-dirigeante">
+      <h1 class="equipe-dir">Equipe dirigeante</h1>
+      <div class="equipe-dir-pics">
+        <div>
+          <%= image_tag "logos/promotrice.png", width: "100%", margin: "auto" %>
+          <div style="text-align: center"><strong>Promotrice Madame Sylvie Kafat </strong> </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-nos-valeurs">
+      <%= render "nosvaleurs"%>
+    </div>
+   
+    <% if user_signed_in? %>
+      <%= link_to "Home", root_path%>
+      <%= link_to "Enseignants de l'ecole", teachers_path%>
+      <p>Logged in as <%= current_user.email %></p>
+      <% if current_user.is_admin? %>
+        <%= link_to "Admin teachers", admin_teachers_path%>
+      <% end%>
+    <%end%>
 </div>

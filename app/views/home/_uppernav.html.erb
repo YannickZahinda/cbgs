@@ -7,13 +7,13 @@
 </div>
 <div class="nav">
   <div class="logo">
-    <%= image_tag("logos/CBGClogo.png", width: '30%') %>
+    <%= image_tag("logos/CBGClogo.png", width: '100%') %>
   </div>
-  <div class="menu" id="menu">
+  <%# <div class="menu" id="menu">
     <div class="menuline"></div>
     <div class="menuline"></div>
     <div class="menuline"></div>
-  </div>
+  </div> %>
 </div>
 <ul class="navlinks" id="links">
   <li class="link"><a href="#" class="link">A propos</a></li>
@@ -32,12 +32,3 @@
     </li>
   <%end%>
 </ul>
-
-<% if user_signed_in? %>
-  <%= link_to "Home", root_path%>
-  <%= link_to "Enseignants de l'ecole", teachers_path%>
-  <p>Logged in as <%= current_user.email %></p>
-  <% if current_user.is_admin? %>
-    <%= link_to "Admin teachers", admin_teachers_path%>
-  <% end%>
-<%end%>

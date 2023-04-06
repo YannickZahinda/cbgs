@@ -27,31 +27,17 @@
   padding: 15px;
 }
 
-.phoneic{
-  color: white;
-}
-
 .nav {
   display: flex;
-  padding: 15px;
-  justify-content: space-between;
+}
+
+.logo {
+ width: 40%;
 }
 
 .navlinks{
   display: flex;
   list-style-type: none;
-}
-
-.menu{
-  display: none;
-}
-
-.menuline{
-  margin: 3px;
-  width: 30px;
-  height: 5px;
-  background-color: #000;
-  border-radius: 4px;
 }
 
 .link {
@@ -63,9 +49,6 @@
 .authentication {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  // margin: 30px auto;
-  // align-items: center;
-  // justify-content: center;
   padding: 5px;
 }
 
@@ -136,6 +119,121 @@
   justify-content: center;
 }
 
+
+// Slider ***************************
+
+.slider {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+
+
+
+
+.slider {
+  position: relative;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  background: #184d7259;
+  border-radius: 50%;
+  font-size: 25px;
+  color: #fff;
+  padding: 10px;
+  font-weight: bolder;
+  border: none;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slider-dots {
+  display: flex;
+}
+.dot.active {
+  background-color: #555;
+}
+
+.equipe-dir {
+  color: #202020;
+  padding: 10px;
+}
+
+.equipe-dir-pics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-nos-valeurs {
+  padding: 10px;
+}
+
+// Slide animation ********************
+
+@keyframes slidein {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+// Nos valeurs style ********************
+
+.valeurs-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+.card {
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+}
+
+.card,
+ header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+
+
+
+
+
+
+
 @media only screen and (min-width: 370px) {
   .signup {
     width: 100%;
@@ -144,34 +242,58 @@
   .form {
     width: 50%;
   }
+
+  .sliding-text {
+    letter-spacing: 1rem;
+    font-size: 50px;
+  }
 }
 
 
 
 @media only screen and (max-width: 992px) {
-  .navlinks {
-    flex-direction: column;
-    display: none;
-    text-align: center;
-    background-color: #184C72;
+
+  .nav {
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
   }
+
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .logo {
+    width: 40%;
+  }
+
 
   .link {
     padding:10px;
-    color: #fff;
     text-align: left;
     border-radius: 4px;
+    width: max-content;
   }
 
-  .body{
-    position: relative;
+  .link a {
+    background-color: #c0c4c7;
+    border-radius: 30px;
+    color: #184C72;
+    margin: 8px;
   }
 
-  .is-active{
-    display: block;
-  }
-  .menu{
-    display: block;
+
+  .navlinks {
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: 10px;
+  //  width: 100%;
   }
 
   .signup {
@@ -181,6 +303,10 @@
 
   .label {
     font-size: 12px;
+  }
+
+  .valeurs-cards {
+    grid-template-columns:1fr;
   }
 }
 
