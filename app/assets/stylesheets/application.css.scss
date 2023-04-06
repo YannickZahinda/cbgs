@@ -220,19 +220,59 @@
   border-radius: 10px;
 }
 
-.card,
+.card >
  header {
   display: flex;
   justify-content: space-between;
   gap: 10px;
 }
 
+.card > p {
+  color: #555;
+  padding: 10px;
+}
+
+.philosophie {
+  width: 100%;
+  object-fit: cover;
+}
 
 
+// Sections organisee popup ********************
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  text-align: center;
+}
 
 
+.section-organisees {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
 
-
+.section-card {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+}
 
 @media only screen and (min-width: 370px) {
   .signup {
@@ -307,6 +347,10 @@
 
   .valeurs-cards {
     grid-template-columns:1fr;
+  }
+
+  .section-organisees{
+    grid-template-columns: 1fr;
   }
 }
 

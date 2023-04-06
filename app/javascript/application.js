@@ -18,4 +18,17 @@ $(document).ready(function() {
 });
 
 
+$(document).ready(function() {
+  $('.popup-btn').click(function() {
+    $(this).siblings('.popup').fadeIn();
+  });
+
+  $('.popup').click(function(e) {
+    if (e.target == this) {
+      $(this).fadeOut();
+    }
+  });
+});
+
+
     

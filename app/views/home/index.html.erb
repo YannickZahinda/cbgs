@@ -53,6 +53,56 @@
     <div class="section-nos-valeurs">
       <%= render "nosvaleurs"%>
     </div>
+    <div class="section-organisees">
+      <div class="section-card secton-maternelle">
+         <h3>SECTION MATERNELLE</h3>
+         
+         <button class="popup-btn">Detail sur la section</button>
+         <%= render 'shared/popup' do %>
+            <p>
+               <h3>Section Maternelle</h3><br/>
+               CBG-SCHOOL offre aux enfants de la maternelle la formation et l'encadrement 
+               visant la production d'expression orale du Français et de l'Anglais, les notions 
+               essentielles de la numérique, d'hygiène, de l'environnement et des relations humaines. 
+               Les classes ont 
+               les niveaux 1,2 et 3 dont la capacité est prévue de 20 à 30 élèves (3 salles).
+           </p>
+         <% end %>
+      </div>
+      <div class="section-card secton-primaire">
+         <h3>SECTION PRIMAIRE</h3>
+         <button class="popup-btn">Detail sur la section</button>
+         <%= render 'shared/popup' do %>
+            <p>
+              <h3>SECTION PRIMAIRE</h3> <br/>
+              Notre école est résolue à donner aux enfants une formation intégrale d'excellence 
+              en lecture, écriture, arithmétique. La formation vise la bonne compréhension de la 
+              matière dispensée, l'aisance dans l'expression en langue française et anglaise. 
+              Les classes de la 1ère ,2ième, 3ième ,4 ème , 5ième et 6ième avec classe parallèle 1A 
+              et 1B dont la capacité d'accueil est 30 à 35 élèves (12 Salles).
+            </p>
+         <% end %>
+      </div>
+      <div class="section-card secton-secondaire">
+         <h3>SECTION SECONDAIRE </h3>
+         
+         <button class="popup-btn">Detail sur la section</button>
+         <%= render 'shared/popup' do %>
+            <p>
+              <h3>SECTION SECONDAIRE</h3><br/>
+              Notre école s'assure qu'a l'issue de l'enseignement secondaire l'élève acquière 
+              la connaissance générale et spécifique du monde quI L'entoure. La formation d'être un bon 
+              citoyen responsable pour contribuer au développement 
+              de sa communauté et du pays. Elle veille à la formation à la citoyenneté 
+              responsable afin de contribuer au développement de la communauté et du pays. 
+              Les classes de la 7ième et 8 ième ont la capacité de 30-35 élèves 
+              avec classe parallèle A &B (4 salles). 
+              Les classes supérieures du secondaire sont en progression. (4 Salles)
+           </p>
+          <% end %>
+      </div>
+
+    </div>
    
     <% if user_signed_in? %>
       <%= link_to "Home", root_path%>
