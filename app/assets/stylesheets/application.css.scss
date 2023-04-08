@@ -44,7 +44,7 @@
   text-decoration: none;
 }
 
-// Forms =============
+/* //Forms ============= */
 
 .authentication {
   display: grid;
@@ -120,7 +120,7 @@
 }
 
 
-// Slider ***************************
+/* // Slider *************************** */
 
 .slider {
   width: 100%;
@@ -198,14 +198,14 @@
   padding: 10px;
 }
 
-// Slide animation ********************
+/* // Slide animation ******************** */
 
 @keyframes slidein {
   from { transform: translateX(100%); }
   to { transform: translateX(-100%); }
 }
 
-// Nos valeurs style ********************
+/* // Nos valeurs style ******************** */
 
 .valeurs-cards {
   display: grid;
@@ -238,7 +238,7 @@
 }
 
 
-// Sections organisee popup ********************
+/* // Sections organisee popup ******************** */
 
 .popup {
   display: none;
@@ -260,19 +260,19 @@
   text-align: center;
 }
 
-
-.section-organisees {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding: 20px;
-}
-
-.section-card {
-  border: 1px solid black;
+.popup-btn {
   padding: 10px;
   border-radius: 10px;
+  cursor: pointer;
+  width: max-content;
+  margin: 25px;
+  float: calc(100%);
+  border: none;
+  background-color: #d13c3f;
+  color: #fff;
+  font-size: 18px;
 }
+
 
 @media only screen and (min-width: 370px) {
   .signup {
@@ -287,6 +287,68 @@
     letter-spacing: 1rem;
     font-size: 50px;
   }
+}
+
+/* Sections organisees style **************  */
+
+
+.section-organisees {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+
+.section-card {
+  border: 1px solid black;
+  /* padding: 10px; */
+  border-radius: 10px;
+}
+
+.section-organisees {
+  background-color: #fff4DF;
+}
+
+.section-maternelle {
+  background-image: url('logos/maternelle.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-primaire {
+  background-image: url('logos/primaire.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-secondaire {
+  background-image: url('logos/secondaire.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-maternelle > h3 {
+  background-color: #184d72ba;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 10px;
+  color: #fff;
+}
+
+.section-primaire > h3 {
+  background-color: #aadbb9d8;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 10px;
+  color: #fff;
+}
+
+.section-secondaire > h3 {
+  background-color: #96c2d8e1;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 10px;
+  color: #fff;
 }
 
 
@@ -333,7 +395,7 @@
    flex-direction: row;
    flex-wrap: wrap;
    gap: 10px;
-  //  width: 100%;
+  /* //  width: 100%; */
   }
 
   .signup {
