@@ -293,20 +293,26 @@
 
 
 .section-organisees {
+  background-color: #fff4DF;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
   gap: 10px;
   padding: 20px;
 }
 
 .section-card {
-  border: 1px solid black;
-  /* padding: 10px; */
   border-radius: 10px;
 }
 
-.section-organisees {
+.section-organisees-container {
   background-color: #fff4DF;
+  text-align: center;
+  padding: 15px;
+}
+
+.section-organisees-container > h3 {
+  color: #1b0761;
 }
 
 .section-maternelle {
@@ -349,6 +355,14 @@
   border-top-left-radius: 10px;
   padding: 10px;
   color: #fff;
+}
+
+/* promot speech --------------------*/
+
+.promot-speech {
+  width: 100%;
+  text-align: center;
+  padding: 30px;
 }
 
 

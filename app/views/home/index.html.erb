@@ -53,6 +53,8 @@
     <div class="section-nos-valeurs">
       <%= render "nosvaleurs"%>
     </div>
+    <div class="section-organisees-container">
+    <h3>Section organisées</h3>
     <div class="section-organisees">
       <div class="section-card section-maternelle">
          <h3>SECTION MATERNELLE</h3>
@@ -101,7 +103,12 @@
            </p>
           <% end %>
       </div>
+    </div>
+    </div>
 
+    <div class="promot-speech">
+    <h3>Mot de La Promotrice </h3> <br/>
+      <%= image_tag("logos/promots.svg", width: "60%", margin: '0 auto')%>
     </div>
    
     <% if user_signed_in? %>
