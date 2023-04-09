@@ -107,8 +107,34 @@
     </div>
 
     <div class="promot-speech">
-    <h3>Mot de La Promotrice </h3> <br/>
+      <h3>Mot de La Promotrice </h3> <br/>
       <%= image_tag("logos/promots.svg", width: "60%", margin: '0 auto')%>
+    </div>
+    <div class="youtube-container">
+      <%# <div class="youtube"></div> %>
+      <div class="formations">
+        <div class="compte">
+          <%= image_tag "logos/accountancy.png", class: "formapic"%>
+        </div>
+        <h4>Comptabilité</h4>
+      </div>
+      <div class="informatique">
+        <div class="compte">
+          <%= image_tag "logos/itformation.png", class: "infopic"%>
+        </div>
+        <h4>Informatique de gestion</h4>
+      </div>
+    </div>
+    <div class="nos-partenaires">
+      <h3>Nos Partneraires</h3>
+      <div class="partenaire-container" >
+        <%= image_tag "logos/lualabaflagpic.png", class: "partnerpic"%>
+        <%= image_tag "logos/epsp.png", class: "partnerpic"%>
+        <%= image_tag "logos/gouv.png", class: "partnerpic"%>
+      </div>
+    </div>
+    <div class="contact-form">
+      <%= render "form"%>
     </div>
    
     <% if user_signed_in? %>

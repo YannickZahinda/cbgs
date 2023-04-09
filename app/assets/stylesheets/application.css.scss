@@ -31,17 +31,28 @@
   display: flex;
 }
 
-.logo {
- width: 40%;
+/* .logo {
+ width: 30%;
+} */
+
+.my-logo {
+  width: 40%;
 }
 
 .navlinks{
   display: flex;
   list-style-type: none;
+  margin: 30px;
+  gap: 30px;
 }
 
 .link {
   text-decoration: none;
+  color: #333;
+}
+
+.link:hover {
+  color: #184C72;
 }
 
 /* //Forms ============= */
@@ -287,6 +298,14 @@
     letter-spacing: 1rem;
     font-size: 50px;
   }
+
+  .logo {
+    width: 40%;
+  }
+
+  .links > a {
+    margin: 10px;
+  }
 }
 
 /* Sections organisees style **************  */
@@ -365,6 +384,49 @@
   padding: 30px;
 }
 
+/* Youtube container style ------------*/
+
+.youtube-container {
+  text-align: center;
+  width: 100%;
+  background: url('logos/youtube.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  gap: 20px;
+}
+
+
+.youtube {
+  width: 50%;
+  height: 200px;
+  border-radius: 10px;
+  background-color: #202020;
+  margin: 0 auto;
+}
+
+.formapic,
+.infopic {
+  width: 40%;
+}
+
+.nos-partenaires {
+  text-align: center;
+  padding: 30px;
+}
+
+.partenaire-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 30px;
+  padding: 15px;
+}
+
+.partnerpic {
+  width: 100%;
+}
+
 
 
 @media only screen and (max-width: 992px) {
@@ -374,6 +436,8 @@
     padding: 15px;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .prev,
@@ -386,7 +450,12 @@
   }
 
   .logo {
-    width: 40%;
+    /* flex-basis: 40%; */
+    padding: 10px;
+  }
+
+  .my-logo {
+    width: 100%;
   }
 
 
