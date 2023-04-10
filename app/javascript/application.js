@@ -4,6 +4,7 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 //= require jquery
+//= require jquery_ujs
 //= require slick
 
 
@@ -45,6 +46,18 @@ function initialize() {
 
 document.addEventListener("turbo:load", function() {
   initialize();
+  
+  document.getElementById("dropbtn").addEventListener('click', () => {
+
+    var dropdownContent = document.getElementById("dropdown-content");
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  })
+ 
+
 });
 
 // $(document).on('turbolinks:load', function () {

@@ -446,26 +446,77 @@
   }
 
 
-  .link {
-    padding: 10px;
-    text-align: left;
-    width: 100%;
+  // .link {
+  //   padding: 10px;
+  //   text-align: left;
+  //   width: 100%;
+  //   background-color: #184C72;
+  //   border-radius: 30px;
+  // }
+
+  // .link a {
+  //   color: #f9fcfd;
+  //   margin: 8px;
+  // }
+
+
+  // .navlinks {
+  //  flex-direction: column;
+  //  flex-wrap: wrap;
+  //  gap: 10px;
+  //  width: 100%;
+  // }
+
+  // drop down menu =================
+
+  /* Style the button that opens the dropdown */
+  .dropbtn {
     background-color: #184C72;
-    border-radius: 30px;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
   }
 
-  .link a {
-    color: #f9fcfd;
-    margin: 8px;
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0%;
+    z-index: 1;
+    background-color: #fff;
+    padding: 14px;
+    width: max-content;
+    margin: auto;
   }
 
+/* Links inside the dropdown */
+.dropdown-content a {
+  // color: black;
+  padding: 12px 16px;
+  margin: auto;
+  color: #000;
+  display: block;
+  font-weight: 400;
+}
 
-  .navlinks {
-   flex-direction: column;
-   flex-wrap: wrap;
-   gap: 10px;
-   width: 100%;
-  }
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  border-bottom: 1px solid black;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 
   .signup {
     font-size: 10px;
