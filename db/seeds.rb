@@ -16,3 +16,7 @@ User.create!(
 10.times do |i|
   Teacher.create!(nom_complet: 'Rails Auto', addresse: "New Car #{i}", niveau_etude: "200#{i}", classe_enseignee: "5 eme", phone: "teacher@test.com")
 end
+
+3.times do |i|
+  Communique.create!(titre: 'Inscriptions', description: "Cher parent numero 1#{i} sachez que les inscription vont s'arreter bientot et les places sont limitees")
+end
