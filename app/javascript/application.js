@@ -3,6 +3,8 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
+//= require font-awesome
+
 //= require jquery
 //= require jquery_ujs
 //= require slick
