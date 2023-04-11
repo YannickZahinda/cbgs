@@ -13,10 +13,10 @@
          <p style="color: green"><%= notice %></p>
          <h1>Communiques</h1>
          <% @communiques.each do |communique| %>
-           <div>
-             <h3><%= communique.titre %></h3>
-             <p><%= communique.description %></p>
-             <%= link_to "Show this communique", communique %>
+           <div class="news">
+               <h3 style="text-decoration: underline;"><%= communique.titre %></h3> <br/>
+               <p><%= communique.description %></p>
+               <%= link_to "Voir", communique %>
            </div>
          <% end %>
          <% else %>

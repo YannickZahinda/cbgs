@@ -1,7 +1,9 @@
 
 <div class="adminlogo-container">
      <%= link_to(root_path) do%> <%= image_tag"logos/CBGClogo.png", class: 'adminlogo' %> <% end %>
-  </div>
+     <h1>Bienvenu au tableau de bord administrateur!</h1>
+     <h4><%= current_user.email %></h4>
+</div>
 <ul class="adminlinks">
   <li class="adminlink"> 
     <%= link_to(admin_home_index_path) do %>

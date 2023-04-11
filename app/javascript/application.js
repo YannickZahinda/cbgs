@@ -3,18 +3,15 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-//= require font-awesome
-
-//= require jquery
-//= require jquery_ujs
-//= require slick
-
-
-import "@hotwired/turbo-rails"
-import "controllers"
 
 //= require jquery
 //= require slick
+
+//= require @fullcalendar/core/main
+//= require @fullcalendar/daygrid/main
+//= require @fullcalendar/timegrid/main
+//= require @fullcalendar/list/main
+
 
 
 function initializeSlider() {
@@ -72,6 +69,18 @@ document.addEventListener("turbo:load", function() {
       dropdownContent.style.display = "block";
     }
   })
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+  
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      events: '/events.json'
+    });
+  
+    calendar.render();
+  });
+  
 
 });
 

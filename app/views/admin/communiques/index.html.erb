@@ -1,14 +1,13 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Communiques</h1>
-
-<div id="communiques">
+<div class="dashboard dashboardcommuniques">
+  <p style="color: green"><%= notice %></p>
+  
+  <h1 style="margin: auto; width: 30%">Communiques</h1><br/>
   <% @communiques.each do |communique| %>
     <div class="communique">
-      <h2><%= communique.titre %></h2>
+      <h2><%= communique.titre %></h2><br/>
       <p><%= communique.description %></p>
       <p>
-        <%= link_to "Show this communique", communique %>
+        <%= link_to "Voir", communique %>
       </p>
     </div>
   <% end %>

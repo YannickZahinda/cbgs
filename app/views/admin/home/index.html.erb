@@ -1,10 +1,25 @@
-<!-- app/views/admin/index.html.erb -->
-
-<% if current_user.is_admin? %>
-  <div class="dashboard">
-    <div class="main-content">
-      <h1>Admin Dashboard</h1>
-      <p>Welcome <%= current_user.email %>!</p>
+<div class="dashboard">
+  <div class="main-content">
+    <div class="dashboard-content">
+      <div class="plans-week">
+        <div class="plan-head">
+          <h4>Plans de l'annees</h4>
+          <button class="plan-btn"> + ajouter </button>
+        </div>
+      </div>
+      <div class="plans-week">
+        <div class="plan-head">
+          <h4>Meilleurs eleves</h4>
+          <button class="plan-btn"> + ajouter </button>
+        </div>
+      </div>
+      <div class="plans-week messages">
+        <div class="plan-head">
+          <h4>Messages</h4>
+          <button class="plan-btn"> Tout supprimer</button>
+        </div>
+      </div>
     </div>
   </div>
-<% end %>
+</div>
+
