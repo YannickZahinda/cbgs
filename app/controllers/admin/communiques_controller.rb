@@ -1,5 +1,7 @@
 class Admin::CommuniquesController < ApplicationController
+  before_action :set_communique, only: %i[show edit update destroy ]
   before_action :authenticate_user!
+  before_action :check_if_admin
 
   def index 
     @communiques = Communique.all
@@ -7,6 +9,7 @@ class Admin::CommuniquesController < ApplicationController
 
   # GET /communiques/1 or /communiques/1.json
   def show
+    @Communique = Communique.find(params[:id])
   end
 
   # GET /communiques/new
@@ -57,13 +60,18 @@ class Admin::CommuniquesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
+    def check_if_admin
+      redirect_to root_path unless current_user.is_admin?
+    end
+
     def set_communique
       @communique = Communique.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def communique_params
-      params.fetch(:communique, {})
+      params.require(:communique).permit(:titre, :description)
     end
+
 end

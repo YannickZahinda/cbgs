@@ -4,7 +4,7 @@ class Admin::HomeController < ApplicationController
   before_action :check_admin
 
   def index
-    # logic to retrieve data for admin dashboard
+    @communiques = Communique.all
   end
 
   private

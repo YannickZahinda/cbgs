@@ -1,6 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @communique %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @communique.titre %>
+</p>
+
+<p>
+  <strong>description:</strong>
+  <%= @communique.description %>
+</p>
+
 
 <div>
   <%= link_to "Back to communiques", communiques_path %>

@@ -238,7 +238,7 @@
 
 /* // Sections organisee popup ******************** */
 
-.popup {
+.popup{
   display: none;
   position: fixed;
   z-index: 9999;
@@ -249,13 +249,27 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.popup-content {
+.communiquepopup  {
+ display: block;
+ border: 1px solid black;
+ width: max-content;
+ margin: auto;
+}
+
+.popup-content{
   background-color: #fff;
   margin: 10% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
   text-align: center;
+}
+
+.communiquepopup-content {
+  background-color: #184C72;
+  color: #fff;
+  width: 100%;
+  padding: 20px;
 }
 
 .popup-btn {
@@ -269,6 +283,13 @@
   background-color: #d13c3f;
   color: #fff;
   font-size: 18px;
+}
+
+.communiquebtnpopup {
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  color: #000;
 }
 
 
@@ -643,6 +664,19 @@
 
 .adminlogo {
   width: 150px;
+}
+
+.fa-home {
+  color: #131212;
+  padding: 5px;
+  width: max-content;
+  border-radius: 50%;
+}
+
+.adminicon{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
 .adminlogo-container {

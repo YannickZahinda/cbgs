@@ -1,16 +1,23 @@
-<%= form_with(model: communique) do |form| %>
-  <% if communique.errors.any? %>
+<%= form_with(model: [:admin, Communique.new], local: true) do |form| %>
+  <% if @communique.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(communique.errors.count, "error") %> prohibited this communique from being saved:</h2>
+      <h2><%= pluralize(@communique.errors.count, "error") %> prohibited this communique from being saved:</h2>
 
       <ul>
-        <% communique.errors.each do |error| %>
+        <% @communique.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-
+  <div>
+    <%= form.label :titre %>
+    <%= form.text_field :titre %>
+  </div>
+  <div>
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
   <div>
     <%= form.submit %>
   </div>

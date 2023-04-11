@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :teachers
     resources :parents
     resources :home
+    resources :communiques
   end 
   
   resources :eleves, only: [:index, :show]

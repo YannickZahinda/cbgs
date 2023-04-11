@@ -4,11 +4,15 @@
 
 <div id="communiques">
   <% @communiques.each do |communique| %>
-    <%= render communique %>
-    <p>
-      <%= link_to "Show this communique", communique %>
-    </p>
+    <div class="communique">
+      <h2><%= communique.titre %></h2>
+      <p><%= communique.description %></p>
+      <p>
+        <%= link_to "Show this communique", communique %>
+      </p>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New communique", new_communique_path %>
+<%= link_to "New communique", new_admin_communique_path %>
+

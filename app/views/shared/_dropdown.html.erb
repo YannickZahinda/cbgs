@@ -11,7 +11,22 @@
   <button class="dropbtn" id="dropbtn"> Menu ⇣⇣</button>
   <ul class="navlinks dropdown-content" id="dropdown-content">
     <li class="link"><a href="#" class="link">A propos</a></li>
-    <li class="link"><a href="#" class="link">Communique</a></li>
+    <li class="link">
+     <button class="popup-btn communiquebtnpopup">Communiques</button>       
+     <%= render "shared/communiquepopup" do%>
+       <% @communiques.each do |communique| %>
+       <p style="color: green"><%= notice %></p>
+        <h1>Communiques</h1> <br/>
+        <div>
+           <h3><%= communique.titre%></h3><br/>
+           <p><%= communique.description%></p>
+           <p>
+             <%= link_to "Show this communique", communique %>
+           </p>
+        </div> 
+       <% end %>
+     <%end%>
+    </li>
     <li class="link"><a href="#" class="link">Contactez-nous</a></li>
     <% if user_signed_in?%>
      <% if current_user.is_admin? %>

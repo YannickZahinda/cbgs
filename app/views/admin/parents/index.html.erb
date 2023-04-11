@@ -1,0 +1,17 @@
+<h1>Parents</h1>
+
+<div id="parents">
+  <% @parents.each do |parent| %>
+    <div class="parent">
+      <h2><%= parent.nom_complet %></h2>
+      <p><%= parent.addresse %></p>
+      <p><%= parent.phone %></p>
+      <p><%= parent.email %></p>
+      <p>
+        <%= link_to "Show this parent", parent %>
+      </p>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "New parent", new_admin_parent_path %>
