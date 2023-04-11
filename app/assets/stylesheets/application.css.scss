@@ -31,10 +31,6 @@
   display: flex;
 }
 
-/* .logo {
- width: 30%;
-} */
-
 .my-logo {
   width: 40%;
 }
@@ -533,6 +529,15 @@
   border-radius: 50%;
 }
 
+.communique-popup-icon {
+  width: 100%;
+  text-align: center;
+}
+
+.my-logo-popup-icon {
+  width: 100px;
+  height: 100px;
+}
 
 
 @media only screen and (max-width: 992px) {
