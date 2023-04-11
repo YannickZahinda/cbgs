@@ -18,13 +18,20 @@
   </head>
 
   <body>
-     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>  
 
-    <%# <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> %>
+    <% if current_page?(admin_home_index_path) || current_page?(admin_teachers_path) %>
+      <%= render "admin/home/navbar"%>
+    <% end %>
+
+     <%= yield %>  
+
+
+
+
+
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <%# <script type="text/javascript" src="slick/slick.min.js"></script> %>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </body>
 

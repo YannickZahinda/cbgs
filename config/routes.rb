@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :teachers
     resources :parents
+    resources :home
   end 
   
   resources :eleves, only: [:index, :show]

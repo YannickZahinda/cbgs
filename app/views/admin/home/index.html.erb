@@ -1,0 +1,10 @@
+<!-- app/views/admin/index.html.erb -->
+
+<% if current_user.is_admin? %>
+  <div class="dashboard">
+    <div class="main-content">
+      <h1>Admin Dashboard</h1>
+      <p>Welcome <%= current_user.email %>!</p>
+    </div>
+  </div>
+<% end %>

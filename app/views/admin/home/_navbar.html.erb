@@ -1,0 +1,11 @@
+
+<div class="adminlogo-container">
+      <%= image_tag"logos/CBGClogo.png", class: 'adminlogo' %>
+  </div>
+<ul class="adminlinks">
+  <li class="adminlink">  <i class="fas fa-home"><%= link_to "Home", admin_home_index_path %></i> </li>
+  <li class="adminlink">Enseignants</li>
+  <li class="adminlink">Communiques</li>
+  <li class="adminlink"> <%= link_to "Enseignants", admin_teachers_path%></li>
+  <li class="adminlink">Parents</li>
+</ul>

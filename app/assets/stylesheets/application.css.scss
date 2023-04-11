@@ -555,27 +555,7 @@
   }
 
 
-  // .link {
-  //   padding: 10px;
-  //   text-align: left;
-  //   width: 100%;
-  //   background-color: #184C72;
-  //   border-radius: 30px;
-  // }
-
-  // .link a {
-  //   color: #f9fcfd;
-  //   margin: 8px;
-  // }
-
-
-  // .navlinks {
-  //  flex-direction: column;
-  //  flex-wrap: wrap;
-  //  gap: 10px;
-  //  width: 100%;
-  // }
-
+  
   // drop down menu =================
 
   /* Style the button that opens the dropdown */
@@ -657,4 +637,51 @@
     display: flex;
     gap: 7px;
   }
+}
+
+// admin logo ************
+
+.adminlogo {
+  width: 150px;
+}
+
+.adminlogo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.main-content {
+  border: 1px solid blue;
+  padding: 10px;
+}
+
+.dashboard {
+  display: flex;
+  gap: 20px;
+}
+
+.adminlinks {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  list-style-type: none;
+  padding: 30px;
+}
+
+.adminlink {
+  background-color: #184C72;
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.adminlink a {
+  color: #fff;
+  text-decoration: none;
 }
