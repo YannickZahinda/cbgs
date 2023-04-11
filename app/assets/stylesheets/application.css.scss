@@ -475,6 +475,37 @@
   color: #3d7419;
 }
 
+.uppernav .fas {
+  padding: 0;
+  color: #fff;
+}
+
+.uppernav li {
+  display: flex;
+  gap: 7px;
+}
+
+.uppernav li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.uppernav li a:hover {
+  cursor: pointer;
+  color: #ffffff9a;
+}
+
+.uppernav li:hover {
+  cursor: pointer;
+  color: #ffffff9a;
+}
+
+.uppernav li a .tiktok {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
 
 
 @media only screen and (max-width: 992px) {
@@ -599,5 +630,14 @@
   .footer {
     grid-template-columns: 1fr;
     gap: 15px;
+  }
+
+  .uppernav {
+    font-size: 10px;
+  }
+  
+  .uppernav li {
+    display: flex;
+    gap: 7px;
   }
 }
