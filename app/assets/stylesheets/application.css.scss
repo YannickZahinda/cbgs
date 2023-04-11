@@ -500,7 +500,7 @@
   color: #ffffff9a;
 }
 
-.uppernav li a .tiktok {
+.uppernav li a .icon {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -509,6 +509,12 @@
 
 
 @media only screen and (max-width: 992px) {
+
+  .uppernav, li {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
 
   .nav {
     display: flex;
