@@ -1,7 +1,9 @@
 <div class="dashboard dashboardcommuniques">
   <p style="color: green"><%= notice %></p>
   
-  <h1 style="margin: auto; width: 30%">Communiques</h1><br/>
+  <h1 style="margin: auto; width: 30%">Communiques</h1>
+  <%= link_to "+ Ajouter un communique", new_admin_communique_path, class: "plan-btn new-communique" %>
+  <br/><br/>
   <% @communiques.each do |communique| %>
     <div class="communique">
       <h2><%= communique.titre %></h2><br/>
@@ -13,5 +15,4 @@
   <% end %>
 </div>
 
-<%= link_to "New communique", new_admin_communique_path %>
 
