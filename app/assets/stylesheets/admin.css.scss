@@ -165,6 +165,60 @@ td:last-child {
 }
 
 
+//============= Communiques styles =================//
+
+.news-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.news-page h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.news-page hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.article {
+  margin-bottom: 30px;
+}
+
+.article h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.article .date {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.article .summary {
+  margin-bottom: 10px;
+}
+
+.article .read-more {
+  text-align: right;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background-color: #0069d9;
+}
 
 
 

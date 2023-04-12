@@ -1,20 +1,20 @@
-<div class="dashboard dashboardcommuniques">
-  <p style="color: green"><%= notice %></p>
+<div class="news-page">
+  <h1>Communiques recents</h1>
+  <hr>
   
-  <h1 style="margin: auto; width: 30%">Communiques</h1>
-  <%= link_to "+ Ajouter un communique", new_admin_communique_path, class: "plan-btn new-communique" %>
-  <br/><br/>
   <% @communiques.each do |communique| %>
-    <div class="communique">
-      <h2><%= communique.titre %></h2><br/>
-      <p><%= communique.description %></p>
-      <p>
+    <div class="article">
+      <h2><%= communique.titre %></h2>
+      <p class="date"><%= communique.created_at.strftime("%B %d, %Y") %></p>
+      <p class="summary"><%= communique.description %></p>
+      <p class="read-more">
         <%= link_to "Voir", communique %>
-        <%= link_to 'Modifier', edit_admin_communique_path(communique) %>
-        <%= link_to 'Effacer', admin_communique_path(communique), method: :delete, data: { confirm: 'Etes-vous sure?' } %>
       </p>
     </div>
+    <hr>
   <% end %>
+  
+  <%= link_to "Voir tous les communiques crees", admin_communiques_path, class: "btn" %>
 </div>
 
 

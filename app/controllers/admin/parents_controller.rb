@@ -19,17 +19,17 @@ class Admin::ParentsController < ApplicationController
   def create
     @parent = Parent.new(parent_params)
 
-    # respond_to do |format|
+    respond_to do |format|
       if @parent.save
-        # format.html { redirect_to @parent, notice: "parent was successfully created." }
-        # format.json { render :show, status: :created, location: @parent }
-        redirect_to admin_parent_path(@parent)
+        format.html { redirect_to admin_parent_path(@parent), notice: "parent cree avec success" }
+        format.json { render :show, status: :created, location: @parent }
+        # redirect_to admin_parent_path(@parent)
       else
-        # format.html { render :new, status: :unprocessable_entity }
-        # format.json { render json: @parent.errors, status: :unprocessable_entity }
-        render :new
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @parent.errors, status: :unprocessable_entity }
+        # render :new
       end
-    # end
+    end
   end
 
   # PATCH/PUT /parents/1 or /parents/1.json
