@@ -711,7 +711,7 @@
 }
 
 .main-content {
-  padding: 10px;
+  padding: 30px;
 }
 
 .dashboard {
@@ -726,6 +726,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   grid-template-rows: 1fr;
+  width: 100%;
 }
 
 .dashboardcommuniques {
@@ -786,4 +787,14 @@
   text-decoration: none;
   font-weight: 700;
   margin: 30px;
+}
+
+.admin-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  scroll-behavior: smooth;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
