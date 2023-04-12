@@ -79,6 +79,92 @@ td:last-child {
   background-color: #ddd;
 }
 
+//------ Teachers styles awesome styles -------------//
+
+.teacher-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.teacher-card__header {
+  margin-bottom: 20px;
+}
+
+.teacher-card__title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.teacher-card__details {
+  margin-bottom: 20px;
+}
+
+.teacher-card__detail {
+  margin-bottom: 10px;
+}
+
+.teacher-card__detail strong {
+  margin-right: 10px;
+}
+
+.teacher-card__actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #ddd;
+}
+
+.button--primary {
+  background-color: #184C72;
+  color: #fff;
+}
+
+.button--primary:hover {
+  background-color: #184C72;
+}
+
+.button--secondary {
+  background-color: #fff;
+  color: #184C72;
+  border: 1px solid #184C72;
+}
+
+.button--secondary:hover {
+  background-color: #f7f7f7;
+  border-color: #184C72;
+}
+
+.button--danger {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+}
+
+.button--danger:hover {
+  background-color: #c82333;
+}
+
+
 
 
 

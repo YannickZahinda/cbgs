@@ -1,33 +1,34 @@
-<div id="<%= dom_id teacher %>">
-    <div>
-        <strong>Nom complet:</strong>
-        <%= teacher.nom_complet %>
-    </div>
-    <div>
+<div id="<%= dom_id teacher %>" class="teacher-card">
+  <div class="teacher-card__header">
+    <h2 class="teacher-card__title"><%= teacher.nom_complet %></h2>
+  </div>
+  <div class="teacher-card__content">
+    <div class="teacher-card__details">
+      <div class="teacher-card__detail">
         <strong>Addresse:</strong>
         <%= teacher.addresse %>
-    </div>
-    <div>
-        <strong>Phone:</strong>
-        <%= teacher.niveau_etude, %>
-    </div>
-    <div>
-        <strong>Email:</strong>
-        <%= teacher.class_enseignee %>
-    </div>
-    <div>
-        <strong>Email:</strong>
-        <%= teacher.phone %>
-    </div>
-    <div>
+      </div>
+      <div class="teacher-card__detail">
+        <strong>Niveau d'étude:</strong>
+        <%= teacher.niveau_etude %>
+      </div>
+      <div class="teacher-card__detail">
         <strong>Email:</strong>
         <%= teacher.email %>
-    </div>
-    <div>
-        <strong>Created at:</strong>
+      </div>
+      <div class="teacher-card__detail">
+        <strong>Téléphone:</strong>
+        <%= teacher.phone %>
+      </div>
+      <div class="teacher-card__detail">
+        <strong>Date de création:</strong>
         <%= teacher.created_at %>
+      </div>
     </div>
-    <p><%= link_to "Edit this teacher", edit_admin_teacher_path(teacher) %></p>
-    <p><%= link_to "Back to teachers", admin_teachers_path %></p>
-    <p><%= button_to "Destroy this teacher", admin_teacher_path(teacher), method: :delete, data: { confirm: "Are you sure?" } %></p>
+    <div class="teacher-card__actions">
+      <p><%= link_to "Modifier", edit_admin_teacher_path(teacher), class: "button button--primary" %></p>
+      <p><%= link_to "Retour aux enseignants", admin_teachers_path, class: "button button--secondary" %></p>
+      <p><%= button_to "Effacer", admin_teacher_path(teacher), method: :delete, data: { confirm: "Êtes-vous sûr?" }, class: "button button--danger" %></p>
+    </div>
+  </div>
 </div>
