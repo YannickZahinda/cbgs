@@ -1,3 +1,5 @@
+<div class="signup">
+
 <%= form_with(model: [:admin, teacher], local: true) do |form| %>
   <% if teacher.errors.any? %>
     <div style="color: red">
@@ -11,32 +13,33 @@
     </div>
   <% end %>
   <div>
-    <%= form.label :nom_complet%>
-    <%= form.text_field :nom_complet %>
+    <%= form.label :nom_complet, class: 'label'%>
+    <%= form.text_field :nom_complet, class: 'input' %>
   </div>
   <div>
-  <%= form.label :addresse%>
-    <%= form.text_field :addresse %>
+  <%= form.label :addresse, class: 'label'%>
+    <%= form.text_field :addresse, class: 'input' %>
   </div>
   <div>
-    <%= form.label :niveau_etude%> 
-    <%= form.text_field :niveau_etude %>
+    <%= form.label :niveau_etude, class: 'label'%> 
+    <%= form.text_field :niveau_etude, class: 'input' %>
   </div>
   <div>
-    <%= form.label :class_enseignee%>
-    <%= form.text_field :class_enseignee %>
+    <%= form.label :class_enseignee, class: 'label'%>
+    <%= form.text_field :class_enseignee, class: 'input' %>
   </div>
   <div>
-    <%= form.label :phone%>
-    <%= form.text_field :phone %>
+    <%= form.label :phone, class: 'label'%>
+    <%= form.text_field :phone, class: 'input' %>
   </div>
   <div>
-      <%= form.label :adresse_email%>
-    <%= form.text_field :email %>
+      <%= form.label :adresse_email, class: 'label'%>
+    <%= form.text_field :email, class: 'input' %>
   </div>
  
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "button"%>
   </div>
 <% end %>
+</div>

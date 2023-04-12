@@ -1,3 +1,5 @@
+<div class="signup">
+
 <%= form_with(model: eleve) do |form| %>
   <% if eleve.errors.any? %>
     <div style="color: red">
@@ -15,3 +17,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>
