@@ -50,9 +50,10 @@ class Admin::ParentsController < ApplicationController
     @parent.destroy
 
     respond_to do |format|
-      format.html { redirect_to parents_url, notice: "parent was successfully destroyed." }
+      format.html { redirect_to admin_parents_path, notice: "parent was successfully destroyed." }
       format.json { head :no_content }
     end
+
   end
 
   private
