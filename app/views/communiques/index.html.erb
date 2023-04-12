@@ -1,16 +1,23 @@
-<p style="color: green"><%= notice %></p>
+<div style="display:flex; justify-content:center;">
+  
+  <p style="color: green"><%= notice %></p>
+ 
+<div id="communiques" style="margin-top: 3rem; text-align:center ">
+   <%= link_to(root_path) do%> <%= image_tag"logos/CBGClogo.png", class: 'my-logo-popup-icon' %> <% end %>
 
-<h1>Communiques</h1>
+  
+  <h1>Communiques</h1> <br />
 
-<div id="communiques">
   <% @communiques.each do |communique| %>
-   <div>
-    <h3><%= communique.titre%></h3>
-    <p><%= communique.description%></p>
-    <p>
-      <%= link_to "Show this communique", communique %>
+   <div style="border-radius: 20px; border-bottom: 1px solid black; padding: 15px">
+    <h3><%= communique.titre%></h3> <br/>
+    <p><%= communique.description%></p> <br/>
+    <p style="padding: 7px; border-radius: 8px; width: max-content; margin-bottom: 7px; background-color: black ">
+      <%= link_to "voir", communique, style: "text-decoration: none; color: white" %>
     </p>
    </div> 
   <% end %>
 </div>
 
+
+</div>

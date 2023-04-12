@@ -1,19 +1,13 @@
 <p style="color: green"><%= notice %></p>
+<div style="text-align: center; margin-top: 4rem">
+   <%= image_tag"logos/CBGClogo.png", class: 'my-logo-popup-icon' %> <br/>
+   <p>
+     <h1><%= @communique.titre %></h1> <br/>
+   </p>   
 
-
-<p>
-  <strong>Title:</strong>
-  <%= @communique.titre %>
-</p>
-
-<p>
-  <strong>description:</strong>
-  <%= @communique.description %>
-</p>
-
-
-<div>
-  <%= link_to "Back to communiques", communiques_path %>
-
-  <%= button_to "Destroy this communique", @communique, method: :delete %>
+   <p><%= @communique.description %></p>
+   <div style="margin: 25px;">
+     <%= link_to "Retour aux communiques", communiques_path, style: "text-decoration: none; background-color: black; color: white; padding: 7px; border-radius: 7px; " %>
+   </div>
 </div>
+
