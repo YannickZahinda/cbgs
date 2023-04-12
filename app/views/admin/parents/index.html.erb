@@ -1,17 +1,28 @@
 <h1>Parents</h1>
 
-<div id="parents">
-  <% @parents.each do |parent| %>
-    <div class="parent">
-      <h2><%= parent.nom_complet %></h2>
-      <p><%= parent.addresse %></p>
-      <p><%= parent.phone %></p>
-      <p><%= parent.email %></p>
-      <p>
-        <%= link_to "Show this parent", parent %>
-      </p>
-    </div>
-  <% end %>
-</div>
+<table id="parents">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom Complet</th>
+      <th>Adresse</th>
+      <th>Téléphone</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @parents.each do |parent| %>
+      <tr>
+        <td><%= parent.id %></td>
+        <td><%= parent.nom_complet %></td>
+        <td><%= parent.addresse %></td>
+        <td><%= parent.phone %></td>
+        <td><%= parent.email %></td>
+        <td><%= link_to "Voir les détails", parent %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<%= link_to "New parent", new_admin_parent_path %>
+<%= link_to " + Ajouter un parent", new_admin_parent_path %>

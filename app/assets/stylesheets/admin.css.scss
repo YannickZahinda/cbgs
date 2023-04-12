@@ -54,6 +54,34 @@ td:last-child {
   text-decoration: none;
 }
 
+
+// parents style ------==============
+
+#parents {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#parents th, #parents td {
+  text-align: left;
+  padding: 8px;
+}
+
+#parents th {
+  background-color: #f2f2f2;
+}
+
+#parents tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#parents tr:hover {
+  background-color: #ddd;
+}
+
+
+
+
 @media (max-width: 992px) {
   .tab {
     display: block;

@@ -6,6 +6,10 @@ class Admin::ParentsController < ApplicationController
     @parents = Parent.all
   end
 
+  def show
+    @parent = Parent.find(params[:id])
+  end
+
   # GET /parents/new
   def new
     @parent = Parent.new
