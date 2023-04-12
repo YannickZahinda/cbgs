@@ -52,6 +52,7 @@ class Admin::TeachersController < ApplicationController
   private
 
   def check_if_admin
+    # puts "current_user: #{current_user.inspect}"
     redirect_to root_path unless current_user.is_admin?
   end
     # Use callbacks to share common setup or constraints between actions.

@@ -1,0 +1,85 @@
+.table-container {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  color: #666;
+  text-transform: uppercase;
+}
+
+td:last-child {
+  text-align: center;
+}
+
+.btn-show, .btn-edit {
+  background-color: #184C72;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.btn-destroy {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.btn-new-teacher {
+  background-color: #28a745;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+@media (max-width: 992px) {
+  .tab {
+    display: block;
+    width: 100%;
+  }
+
+  .tab-header {
+    border-bottom: none;
+  }
+
+  .tab-header li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .tab-header li a {
+    display: block;
+    padding: 10px;
+  }
+
+  .tab-content {
+    display: none;
+    padding: 10px;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+}

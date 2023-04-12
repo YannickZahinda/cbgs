@@ -14,7 +14,7 @@ User.create!(
 )
 
 10.times do |i|
-  Teacher.create!(nom_complet: 'Rails Auto', addresse: "New Car #{i}", niveau_etude: "200#{i}", classe_enseignee: "5 eme", phone: "teacher@test.com")
+  Teacher.create!(nom_complet: 'Arsene Jiro', addresse: "Kibati N0 #{i}", niveau_etude: "#{i}e de licence", classe_enseignee: "#{i} eme", phone: "090#{i}898#{i}#{i}82")
 end
 
 3.times do |i|
