@@ -10,6 +10,8 @@
       <p><%= communique.description %></p>
       <p>
         <%= link_to "Voir", communique %>
+        <%= link_to 'Modifier', edit_admin_communique_path(communique) %>
+        <%= link_to 'Effacer', admin_communique_path(communique), method: :delete, data: { confirm: 'Etes-vous sure?' } %>
       </p>
     </div>
   <% end %>

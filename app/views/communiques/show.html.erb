@@ -7,7 +7,10 @@
 
    <p><%= @communique.description %></p>
    <div style="margin: 25px;">
-     <%= link_to "Retour aux communiques", communiques_path, style: "text-decoration: none; background-color: black; color: white; padding: 7px; border-radius: 7px; " %>
+   <%= link_to "Retour aux communiques", communiques_path, style: "text-decoration: none; background-color: black; color: white; padding: 7px; border-radius: 7px; " %>
+     <% if current_user.is_admin?%>
+       <%= link_to "Retour aux communiques administrateur", admin_communiques_path, style: "text-decoration: none; background-color: black; color: white; padding: 7px; border-radius: 7px; " %>
+     <% end %> 
    </div>
 </div>
 
