@@ -8,6 +8,7 @@
       <th>Adresse</th>
       <th>Téléphone</th>
       <th>Email</th>
+      <th><%= link_to " + Ajouter un parent", new_admin_parent_path, style: "text-decoration: none; color: #fff; background-color: red; padding: 4px; border-radius: 5px" %></th>
       <th></th>
     </tr>
   </thead>
@@ -20,9 +21,8 @@
         <td><%= parent.phone %></td>
         <td><%= parent.email %></td>
         <td><%= link_to "Voir les détails", admin_parent_path(parent) %></td>
+        <td><a href="tel:<%= parent.phone %>"><i style='font-size:24px' class='fas'>&#xf1e4;</i></a></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<%= link_to " + Ajouter un parent", new_admin_parent_path %>

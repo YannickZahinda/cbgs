@@ -25,9 +25,9 @@
           <td><%= teacher.classe_enseignee %></td>
           <td><%= teacher.phone %></td>
           <td>
-            <%= link_to "Show", admin_teacher_path(teacher), class: "btn-show" %>
-            <%= link_to "Edit", edit_admin_teacher_path(teacher), class: "btn-edit" %>
-            <%= link_to "Destroy", admin_teacher_path(teacher), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-destroy" %>
+            <%= link_to "Voir", admin_teacher_path(teacher), class: "btn-show" %>
+            <%= link_to "Modifier", edit_admin_teacher_path(teacher), class: "btn-edit" %>
+            <%= link_to "Effacer", admin_teacher_path(teacher), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-destroy" %>
           </td>
         </tr>
       <% end %>
