@@ -44,7 +44,7 @@ class Admin::TeachersController < ApplicationController
     @teacher.destroy
 
     respond_to do |format|
-      format.html { redirect_to teachers_url, notice: "Teacher was successfully destroyed." }
+      format.html { redirect_to admin_teachers_path, notice: "Teacher was successfully destroyed." }
       format.json { head :no_content }
     end
   end

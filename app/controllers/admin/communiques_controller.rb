@@ -54,7 +54,7 @@ class Admin::CommuniquesController < ApplicationController
     @communique.destroy
 
     respond_to do |format|
-      format.html { redirect_to communiques_url, notice: "Communique was successfully destroyed." }
+      format.html { redirect_to admin_communiques_path, notice: "Communique efface avec succes." }
       format.json { head :no_content }
     end
   end
