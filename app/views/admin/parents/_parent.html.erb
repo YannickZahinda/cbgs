@@ -1,2 +1,25 @@
 <div id="<%= dom_id parent %>">
+    <div>
+        <strong>Nom complet:</strong>
+        <%= parent.nom_complet %>
+    </div>
+    <div>
+        <strong>Addresse:</strong>
+        <%= parent.addresse %>
+    </div>
+    <div>
+        <strong>Phone:</strong>
+        <%= parent.phone %>
+    </div>
+    <div>
+        <strong>Email:</strong>
+        <%= parent.email %>
+    </div>
+    <div>
+        <strong>Created at:</strong>
+        <%= parent.created_at %>
+    </div>
+    <p><%= link_to "Edit this parent", edit_admin_parent_path(parent) %></p>
+    <p><%= link_to "Back to parents", admin_parents_path %></p>
+    <p><%= button_to "Destroy this parent", admin_parent_path(parent), method: :delete, data: { confirm: "Are you sure?" } %></p>
 </div>
