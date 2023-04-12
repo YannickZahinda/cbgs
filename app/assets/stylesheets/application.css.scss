@@ -237,6 +237,8 @@
 .popup{
   display: none;
   position: fixed;
+  max-height: fit-content;
+  overflow-y: scroll;
   z-index: 9999;
   left: 0;
   top: 0;

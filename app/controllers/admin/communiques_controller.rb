@@ -27,7 +27,7 @@ class Admin::CommuniquesController < ApplicationController
 
     respond_to do |format|
       if @communique.save
-        format.html { redirect_to communique_url(@communique), notice: "Communique was successfully created." }
+        format.html { redirect_to communique_url(@communique), notice: "Communique ajoute avec success" }
         format.json { render :show, status: :created, location: @communique }
       else
         format.html { render :new, status: :unprocessable_entity }
