@@ -34,7 +34,7 @@ class Admin::ElevesController < ApplicationController
   def update
     respond_to do |format|
       if @eleve.update(eleve_params)
-        format.html { redirect_to admin_eleve_path(@eleve), notice: "Enseignant modifie avec success." }
+        format.html { redirect_to admin_elefe_path(@eleve), notice: "Enseignant modifie avec success." }
         format.json { render :show, status: :ok, location: @eleve }
       else
         format.html { render :edit, status: :unprocessable_entity }
