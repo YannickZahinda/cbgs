@@ -300,29 +300,53 @@ td:last-child {
   background-color: #c0392b;
 }
 
-.message-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px;
-}
 
 .message {
   display: flex;
-  flex-direction: row;
-  background-color: #f0f0f0;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5f5f5;
   padding: 10px;
   border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
 .sender {
   font-weight: bold;
   margin: 0;
-  margin-right: 10px;
 }
 
 .text {
   margin: 0;
+  padding-left: 10px;
+  flex: 1;
+}
+
+.btn-show {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-show:hover {
+  background-color: #2980b9;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: 500px;
+  overflow-y: scroll;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
 
