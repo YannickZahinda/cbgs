@@ -1,5 +1,5 @@
 class Admin::ElevesController < ApplicationController
-  before_action :set_eleve, only: %i[ show edit update destroy ]
+  before_action :set_eleve, only: %i[ show edit update destroy]
   before_action :check_if_admin
 
   def index 
@@ -10,6 +10,13 @@ class Admin::ElevesController < ApplicationController
   def new
     @eleve = Eleve.new
   end
+
+  def search
+    @query = params[:query]
+    @eleves = Eleve.where("eleves.nom_complet LIKE ?", ["%#{@query}%"])
+    render "index"
+  end
+
 
   def show
     @eleve = Eleve.find(params[:id])
@@ -53,6 +60,7 @@ class Admin::ElevesController < ApplicationController
     end
   end
 
+ 
   private
 
   def check_if_admin

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :home
     resources :communiques
     resources :eleves, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+    get 'eleves/search', to: 'admin/eleves#search'
   end 
   
   resources :eleves, only: [:index, :show]
