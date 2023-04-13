@@ -13,6 +13,7 @@ class Admin::ElevesController < ApplicationController
 
   def search
     @query = params[:query]
+    return false if @query.empty?
     @eleves = Eleve.where("eleves.nom_complet LIKE ?", ["%#{@query}%"])
     render "index"
   end
