@@ -9,7 +9,7 @@ class Admin::CommuniquesController < ApplicationController
 
   # GET /communiques/1 or /communiques/1.json
   def show
-    @Communique = Communique.find(params[:id])
+    @communique = Communique.find(params[:id])
   end
 
   # GET /communiques/new

@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class ElevesTest < ApplicationSystemTestCase
   setup do
-    @elefe = eleves(:one)
+    @eleve = eleves(:one)
   end
 
   test "visiting the index" do
@@ -21,7 +21,7 @@ class ElevesTest < ApplicationSystemTestCase
   end
 
   test "should update Eleve" do
-    visit elefe_url(@elefe)
+    visit eleve_url(@eleve)
     click_on "Edit this eleve", match: :first
 
     click_on "Update Eleve"
@@ -31,7 +31,7 @@ class ElevesTest < ApplicationSystemTestCase
   end
 
   test "should destroy Eleve" do
-    visit elefe_url(@elefe)
+    visit eleve_url(@eleve)
     click_on "Destroy this eleve", match: :first
 
     assert_text "Eleve was successfully destroyed"

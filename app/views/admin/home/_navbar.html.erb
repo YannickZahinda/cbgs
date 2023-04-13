@@ -11,6 +11,12 @@
       <% concat "Home"%>
     <%end%>
   </li>
+  <li class="adminlink"> 
+    <%= link_to(admin_eleves_path) do %>
+       <%= image_tag("https://previews.123rf.com/images/tuktukdesign/tuktukdesign1606/tuktukdesign160600135/59070711-ic%C3%B4ne-de-l-%C3%A9l%C3%A8ve-homme-graduation-academic-education-licence-toque-ic%C3%B4ne-dans-glyphe-vecteur.jpg", class: "adminicon") %>
+      <% concat "Eleve"%>
+    <%end%>
+  </li>
   <li class="adminlink">
     <%= link_to(admin_communiques_path) do %>
       <%= image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1e-Nk9zaGIk6zCCsi1c2mbbJlfNa0MDdb52x0dp9jxcq0ZFLQ_RhJNYtB0garC1aEBf8&usqp=CAU", class: "adminicon") %>

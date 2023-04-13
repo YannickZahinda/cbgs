@@ -1,2 +1,38 @@
-<div id="<%= dom_id eleve %>">
+<div id="<%= dom_id eleve %>" class="teacher-card">
+  <div class="teacher-card__header">
+    <h2 class="teacher-card__title"><%= eleve.nom_complet %></h2>
+  </div>
+  <div class="teacher-card__content">
+    <div class="teacher-card__details">
+      <div class="teacher-card__detail">
+        <strong>Addresse:</strong>
+        <%= eleve.addresse %>
+      </div>
+      <div class="teacher-card__detail">
+        <strong>No du parent:</strong>
+        <%= eleve.tel_du_parent %>
+      </div>
+      <div class="teacher-card__detail">
+        <strong>section:</strong>
+        <%= eleve.niveau_etude %>
+      </div>
+      <div class="teacher-card__detail">
+        <strong>Classe:</strong>
+        <%= eleve.classe %>
+      </div>
+      <div class="teacher-card__detail">
+        <strong>ID du parent:</strong>
+        <%= eleve.parent_id %>
+      </div>
+      <div class="teacher-card__detail">
+        <strong>Date de création:</strong>
+        <%= eleve.created_at %>
+      </div>
+    </div>
+    <div class="teacher-card__actions">
+      <p><%= link_to "Modifier", edit_admin_elefe_path(eleve), class: "button button--primary" %></p>
+      <p><%= link_to "Retour aux eleves", admin_eleves_path, class: "button button--secondary" %></p>
+      <p><%= button_to "Effacer", admin_elefe_path(eleve), method: :delete, data: { confirm: "Êtes-vous sûr?" }, class: "button button--danger" %></p>
+    </div>
+  </div>
 </div>

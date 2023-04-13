@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :parents, only: [:index, :show, :new, :create, :edit, :update, :destroy]
     resources :home
     resources :communiques
+    resources :eleves, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   end 
   
   resources :eleves, only: [:index, :show]

@@ -1,20 +1,43 @@
 <div class="signup">
 
-<%= form_with(model: eleve) do |form| %>
-  <% if eleve.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(eleve.errors.count, "error") %> prohibited this eleve from being saved:</h2>
-
-      <ul>
-        <% eleve.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+   <%= form_with(model: [:admin, eleve], local: true, data: { turbo: :false } ) do |form| %>
+     <% if eleve.errors.any? %>
+       <div style="color: red">
+         <h2><%= pluralize(eleve.errors.count, "error") %> prohibited this eleve from being saved:</h2>
+   
+         <ul>
+           <% eleve.errors.each do |error| %>
+             <li><%= error.full_message %></li>
+           <% end %>
+         </ul>
+       </div>
+     <% end %>
+     <div>
+          <%= form.label :nom_complet , class: 'label'%>
+          <%= form.text_field :nom_complet, class: 'input' %>
+     </div>
+     <div>
+       <%= form.label :addresse , class: 'label'%>
+       <%= form.text_field :addresse, class: 'input' %>
+     </div>
+     <div>
+       <%= form.label :niveau_etude, class: 'label' %>
+       <%= form.text_field :niveau_etude, class: 'input' %>
+     </div>
+     <div>
+       <%= form.label :classe, class: 'label' %>
+       <%= form.text_field :classe, class: 'input' %>
+     </div>
+     <div>
+       <%= form.label :tel_du_parent, class: 'label' %>
+       <%= form.text_field :tel_du_parent, class: 'input' %>
+     </div>
+     <div>
+       <%= form.label :parent_id %>
+       <%= form.text_field :parent_id, class: 'input' %>
+     </div>
+     <div>
+       <%= form.submit class: 'button' %>
+     </div>
+   <% end %>
 </div>
