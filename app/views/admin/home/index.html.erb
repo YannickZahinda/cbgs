@@ -3,7 +3,7 @@
     <div class="dashboard-content">
     <div>
       <a href="#events" style="text-decoration: none; color: #184C72; margin: 10px">Événements</a>
-      <a href="#messages" style="text-decoration: none; color: #184C72; margin: 10px">Messages</a>
+      <a href="#messages" style="text-decoration: none; color: #184C72; margin: 10px;">Messages</a>
     </div>
 
       <div class="plans-week">
@@ -31,6 +31,9 @@
                </div>
                <div style="margin: 15px">
                  <%= link_to "Voir", admin_event_path(event), class: "btn-show" %>
+               </div>
+               <div style="margin: 12px">
+                 <%= button_to 'Effacer', admin_event_path(event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-show', style: 'border: none; background-color: red' %>
                </div>
              </li>
            <% end %>
