@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
+  get 'dashboard/new'
+  get 'dashboard/create'
+  get 'dashboard/edit'
+  get 'dashboard/update'
+  get 'dashboard/destroy'
   
   namespace :admin do
     resources :events, only: [:index, :show, :new, :create, :edit, :update, :destroy]
