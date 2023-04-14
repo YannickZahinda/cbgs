@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :eleves, only: [:index, :show, :new, :create, :edit, :update, :destroy]
     get '/search', to: 'eleves#search'
     # get '/search', to: 'parents#search'
+
   end 
   
   resources :eleves, only: [:index, :show]
