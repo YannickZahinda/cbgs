@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'dashboard/index'
-  get 'dashboard/new'
-  get 'dashboard/create'
-  get 'dashboard/edit'
-  get 'dashboard/update'
-  get 'dashboard/destroy'
+  get 'dashboard/index', to: 'dashboard#index'
+  get 'dashboard/new', to: 'dashboard#new'
+  get 'dashboard/create', to: 'dashboard#create'
+  get 'dashboard/edit', to: 'dashboard#edit'
+  get 'dashboard/update', to: 'dashboard#index'
+  get 'dashboard/destroy', to: 'dashboard#destroy'
   
   namespace :admin do
     resources :events, only: [:index, :show, :new, :create, :edit, :update, :destroy]
@@ -32,6 +32,9 @@ Rails.application.routes.draw do
   resources :communiques, only: [:index, :show]
   resources :home, only: [:index]
   resources :messages, only: [:show, :update, :destroy, :new, :create, :edit]
+  # resources :dashboard, only: [:index, :update, :create, :new, :edit, :destroy]
+  
+  # get 'home/dashboard', to: 'dashboard#index'
 
  
   # devise_for :users
