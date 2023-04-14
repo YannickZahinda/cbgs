@@ -1,0 +1,38 @@
+
+<div class="adminlogo-container">
+     <%= link_to(root_path) do%> <%= image_tag"logos/CBGClogo.png", class: 'adminlogo' %> <% end %>
+     <h1>Bienvenu au tableau de bord administrateur!</h1>
+     <h4><%= current_user.email %></h4>
+</div>
+<ul class="adminlinks">
+  <li class="adminlink"> 
+    <%= link_to(admin_home_index_path) do %>
+       <%= image_tag("data:image/png;base64,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", class: "adminicon") %>
+      <% concat "Home"%>
+    <%end%>
+  </li>
+  <li class="adminlink"> 
+    <%= link_to(admin_eleves_path) do %>
+       <%= image_tag("https://previews.123rf.com/images/tuktukdesign/tuktukdesign1606/tuktukdesign160600135/59070711-ic%C3%B4ne-de-l-%C3%A9l%C3%A8ve-homme-graduation-academic-education-licence-toque-ic%C3%B4ne-dans-glyphe-vecteur.jpg", class: "adminicon") %>
+      <% concat "Eleve"%>
+    <%end%>
+  </li>
+  <li class="adminlink">
+    <%= link_to(admin_communiques_path) do %>
+      <%= image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1e-Nk9zaGIk6zCCsi1c2mbbJlfNa0MDdb52x0dp9jxcq0ZFLQ_RhJNYtB0garC1aEBf8&usqp=CAU", class: "adminicon") %>
+      <% concat "Communiques" %>
+    <% end %>
+  </li>
+  <li class="adminlink">
+    <%= link_to(admin_teachers_path) do %>
+      <%= image_tag("https://thumbs.dreamstime.com/b/teacher-icon-vector-male-person-profile-avatar-book-teaching-school-college-university-education-glyph-113754458.jpg", class: "adminicon") %>
+      <% concat "Enseignants" %>
+    <% end %>
+  </li>
+  <li class="adminlink">
+    <%= link_to(admin_parents_path) do%>
+      <%= image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1sPAC2_PjzO7A4mTAqgMA5Zhx_Y8HB92Kw4n9yalJ5A&s", class: "adminicon")%>
+      <% concat "Parents" %>
+    <% end %>
+  </li>
+</ul>

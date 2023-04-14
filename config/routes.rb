@@ -2,13 +2,16 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :teachers
-    resources :parents
+    resources :parents, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+    resources :home
+    resources :communiques
+    resources :eleves, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+    get '/search', to: 'eleves#search'
   end 
   
   resources :eleves, only: [:index, :show]
   resources :teachers, only: [:index, :show]
   resources :communiques, only: [:index, :show]
-  resources :parents, only: [:index, :show]
   resources :home, only: [:index]
  
   devise_for :users

@@ -1,10 +1,12 @@
-<h1>Editing teacher</h1>
-
-<%= render "form", teacher: @teacher %>
-
-<br>
-
-<div>
-  <%= link_to "Show this teacher", @teacher %> |
-  <%= link_to "Back to teachers", teachers_path %>
+<div style="text-align: center; margin-top: 3rem;">
+  <h1>Editing teacher</h1>
+  
+  <%= render "form", teacher: @teacher %>
+  
+  <br>
+  
+  <div>
+    <%= link_to "Details sur l'enseignant", @teacher %> |
+    <%= link_to "Revenir aux enseignants", admin_teachers_path %>
+  </div>
 </div>

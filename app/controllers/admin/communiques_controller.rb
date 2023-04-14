@@ -1,5 +1,7 @@
 class Admin::CommuniquesController < ApplicationController
+  before_action :set_communique, only: %i[show edit update destroy ]
   before_action :authenticate_user!
+  before_action :check_if_admin
 
   def index 
     @communiques = Communique.all
@@ -7,6 +9,7 @@ class Admin::CommuniquesController < ApplicationController
 
   # GET /communiques/1 or /communiques/1.json
   def show
+    @communique = Communique.find(params[:id])
   end
 
   # GET /communiques/new
@@ -24,7 +27,7 @@ class Admin::CommuniquesController < ApplicationController
 
     respond_to do |format|
       if @communique.save
-        format.html { redirect_to communique_url(@communique), notice: "Communique was successfully created." }
+        format.html { redirect_to communique_url(@communique), notice: "Communique ajoute avec success" }
         format.json { render :show, status: :created, location: @communique }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -51,19 +54,24 @@ class Admin::CommuniquesController < ApplicationController
     @communique.destroy
 
     respond_to do |format|
-      format.html { redirect_to communiques_url, notice: "Communique was successfully destroyed." }
+      format.html { redirect_to admin_communiques_path, notice: "Communique efface avec succes." }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
+    def check_if_admin
+      redirect_to root_path unless current_user.is_admin?
+    end
+
     def set_communique
       @communique = Communique.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def communique_params
-      params.fetch(:communique, {})
+      params.require(:communique).permit(:titre, :description)
     end
+
 end

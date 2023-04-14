@@ -2,7 +2,7 @@ require "test_helper"
 
 class ElevesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @elefe = eleves(:one)
+    @eleve = eleves(:one)
   end
 
   test "should get index" do
@@ -11,36 +11,36 @@ class ElevesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_elefe_url
+    get new_eleve_url
     assert_response :success
   end
 
-  test "should create elefe" do
+  test "should create eleve" do
     assert_difference("Eleve.count") do
-      post eleves_url, params: { elefe: {  } }
+      post eleves_url, params: { eleve: {  } }
     end
 
-    assert_redirected_to elefe_url(Eleve.last)
+    assert_redirected_to eleve_url(Eleve.last)
   end
 
-  test "should show elefe" do
-    get elefe_url(@elefe)
+  test "should show eleve" do
+    get eleve_url(@eleve)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_elefe_url(@elefe)
+    get edit_eleve_url(@eleve)
     assert_response :success
   end
 
-  test "should update elefe" do
-    patch elefe_url(@elefe), params: { elefe: {  } }
-    assert_redirected_to elefe_url(@elefe)
+  test "should update eleve" do
+    patch eleve_url(@eleve), params: { eleve: {  } }
+    assert_redirected_to eleve_url(@eleve)
   end
 
-  test "should destroy elefe" do
+  test "should destroy eleve" do
     assert_difference("Eleve.count", -1) do
-      delete elefe_url(@elefe)
+      delete eleve_url(@eleve)
     end
 
     assert_redirected_to eleves_url

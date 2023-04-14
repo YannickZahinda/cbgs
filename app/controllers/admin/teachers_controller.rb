@@ -30,7 +30,7 @@ class Admin::TeachersController < ApplicationController
   def update
     respond_to do |format|
       if @teacher.update(teacher_params)
-        format.html { redirect_to teacher_url(@teacher), notice: "Teacher was successfully updated." }
+        format.html { redirect_to admin_teacher_path(@teacher), notice: "Enseignant modifie avec success." }
         format.json { render :show, status: :ok, location: @teacher }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -44,7 +44,7 @@ class Admin::TeachersController < ApplicationController
     @teacher.destroy
 
     respond_to do |format|
-      format.html { redirect_to teachers_url, notice: "Teacher was successfully destroyed." }
+      format.html { redirect_to admin_teachers_path, notice: "Teacher was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -52,6 +52,7 @@ class Admin::TeachersController < ApplicationController
   private
 
   def check_if_admin
+    # puts "current_user: #{current_user.inspect}"
     redirect_to root_path unless current_user.is_admin?
   end
     # Use callbacks to share common setup or constraints between actions.

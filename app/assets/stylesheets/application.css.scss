@@ -31,10 +31,6 @@
   display: flex;
 }
 
-/* .logo {
- width: 30%;
-} */
-
 .my-logo {
   width: 40%;
 }
@@ -174,19 +170,6 @@
   right: 20px;
 }
 
-.dots {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 .slider-dots {
   display: flex;
 }
@@ -222,7 +205,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  padding: 10px;
+  padding: 20px;
 }
 
 .card {
@@ -251,9 +234,11 @@
 
 /* // Sections organisee popup ******************** */
 
-.popup {
+.popup{
   display: none;
   position: fixed;
+  max-height: fit-content;
+  overflow-y: scroll;
   z-index: 9999;
   left: 0;
   top: 0;
@@ -262,13 +247,27 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.popup-content {
+.communiquepopup  {
+ display: block;
+ border: 1px solid black;
+ width: max-content;
+ margin: auto;
+}
+
+.popup-content{
   background-color: #fff;
   margin: 10% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
   text-align: center;
+}
+
+.communiquepopup-content {
+  background-color: #184C72;
+  color: #fff;
+  width: 100%;
+  padding: 20px;
 }
 
 .popup-btn {
@@ -284,8 +283,21 @@
   font-size: 18px;
 }
 
+.communiquebtnpopup {
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  color: #000;
+}
+
 
 @media only screen and (min-width: 370px) {
+
+  .dropbtn {
+    display: none;
+  }
+
+
   .signup {
     width: 100%;
   }
@@ -316,7 +328,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
-  gap: 10px;
+  gap: 35px;
   padding: 20px;
 }
 
@@ -327,7 +339,7 @@
 .section-organisees-container {
   background-color: #fff4DF;
   text-align: center;
-  padding: 15px;
+  padding: 30px;
 }
 
 .section-organisees-container > h3 {
@@ -428,8 +440,124 @@
 }
 
 
+// footer style _************************
+
+.footer {
+  background-color: #184C72;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.logo-footer {
+  padding: 15px;
+  text-align: left;
+}
+
+.logo-footer p {
+  font-size: 13px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.contact-footer {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  font-size: 16px;
+}
+
+.contact-icon-container {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.contact-icon-container div {
+  background-color: #fff;
+  color: #333;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.contact-icon-container p {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+}
+
+.fas {
+  font-size: 21px;
+  padding: 10px;
+  color: #3d7419;
+}
+
+.uppernav .fas {
+  padding: 0;
+  color: #fff;
+}
+
+.uppernav li {
+  display: flex;
+  gap: 7px;
+}
+
+.uppernav li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.uppernav li a:hover {
+  cursor: pointer;
+  color: #ffffff9a;
+}
+
+.uppernav li:hover {
+  cursor: pointer;
+  color: #ffffff9a;
+}
+
+.uppernav li a .icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.communique-popup-icon {
+  width: 100%;
+  text-align: center;
+}
+
+.my-logo-popup-icon {
+  width: 100px;
+  height: 100px;
+}
+
 
 @media only screen and (max-width: 992px) {
+
+  .dashboard-content {
+    grid-template-columns: 1fr;
+  }
+
+  .dropbtn {
+    display: block;
+  }
+
+
+  .uppernav, li {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
 
   .nav {
     display: flex;
@@ -459,27 +587,57 @@
   }
 
 
-  .link {
-    padding:10px;
-    text-align: left;
-    border-radius: 4px;
+  
+  // drop down menu =================
+
+  /* Style the button that opens the dropdown */
+  .dropbtn {
+    background-color: #184C72;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0%;
+    z-index: 1;
+    background-color: #fff;
+    padding: 14px;
     width: max-content;
+    margin: auto;
   }
 
-  .link a {
-    background-color: #c0c4c7;
-    border-radius: 30px;
-    color: #184C72;
-    margin: 8px;
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    // color: black;
+    padding: 12px 16px;
+    margin: auto;
+    color: #000;
+    display: block;
+    font-weight: 400;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    border-bottom: 1px solid black;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
   }
 
-
-  .navlinks {
-   flex-direction: row;
-   flex-wrap: wrap;
-   gap: 10px;
-  /* //  width: 100%; */
-  }
 
   .signup {
     font-size: 10px;
@@ -497,7 +655,146 @@
   .section-organisees{
     grid-template-columns: 1fr;
   }
+
+  .footer {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .uppernav {
+    font-size: 10px;
+  }
+  
+  .uppernav li {
+    display: flex;
+    gap: 7px;
+  }
+
+  .adminlinks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+
+
 }
 
+// admin logo ************
 
-@import "font-awesome";
+.adminlogo {
+  width: 150px;
+}
+
+.fa-home {
+  color: #131212;
+  padding: 5px;
+  width: max-content;
+  border-radius: 50%;
+}
+
+.adminicon{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.adminlogo-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.sidebar {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.main-content {
+  padding: 30px;
+}
+
+.dashboard {
+  background-color: #C0C4C7;
+  border: 10px solid #184C72;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  grid-template-rows: 1fr;
+  width: 100%;
+}
+
+.dashboardcommuniques {
+  padding: 20px;
+}
+
+.plans-week {
+  background-color: #fff;
+  height: 200px;
+  color: #000;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 7px;
+}
+
+.plan-head {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.plan-btn {
+  background-color: #F3051C;
+  border: none;
+  border-radius: 10px;
+  color: #ffff;
+  padding: 7px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.adminlinks {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  list-style-type: none;
+  padding: 30px;
+}
+
+.adminlink {
+  background-color: #184C72;
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.adminlink a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.news {
+  text-align: left;
+}
+
+.new-communique {
+  text-decoration: none;
+  font-weight: 700;
+  margin: 30px;
+}
+
+.admin-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  scroll-behavior: smooth;
+  flex-direction: column;
+  flex-wrap: wrap;
+}

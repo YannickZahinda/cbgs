@@ -2,24 +2,37 @@
 
 <h1>Teachers</h1>
 
-<div id="teachers" class="teachers">
-  <% @teachers.each do |teacher| %>
-  <div class="teacher">
-    <%= render teacher %>
-    <h1><%= teacher.nom_complet %></h1>
-     <p><%= teacher.addresse %></p>
-    <p>
-      <%= link_to "Show this teacher", admin_teacher_path(teacher) %>
-    </p>
-     <p>
-      <%= link_to "Destroy this teacher", admin_teacher_path(teacher), method: :delete, data:{confirm: 'Etes-vous sur ?'} %>
-    </p>
-    <p>
-      <%= link_to "Edit this teacher", edit_admin_teacher_path(teacher)%>
-    </p>
-  </div>
-  <% end %>
-
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Educational Level</th>
+        <th>Classes Taught</th>
+        <th>Phone</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @teachers.each do |teacher| %>
+        <tr>
+          <td><%= teacher.id %></td>
+          <td><%= teacher.nom_complet %></td>
+          <td><%= teacher.addresse %></td>
+          <td><%= teacher.niveau_etude %></td>
+          <td><%= teacher.classe_enseignee %></td>
+          <td><%= teacher.phone %></td>
+          <td>
+            <%= link_to "Voir", admin_teacher_path(teacher), class: "btn-show" %>
+            <%= link_to "Modifier", edit_admin_teacher_path(teacher), class: "btn-edit" %>
+            <%= link_to "Effacer", admin_teacher_path(teacher), method: :destroy, data: { confirm: 'Are you sure?' }, class: "btn-destroy" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
-<%= link_to "New teacher", new_admin_teacher_path %>
+<%= link_to "New Teacher", new_admin_teacher_path, class: "btn-new-teacher" %>

@@ -1,0 +1,41 @@
+
+<div class="dropdown">
+  <button class="dropbtn" id="dropbtn"> Menu ⇣⇣</button>
+  <ul class="navlinks dropdown-content" id="dropdown-content">
+    <li class="link"><a href="#apropos" class="link">A propos</a></li>
+    <li class="link">
+     <button class="popup-btn communiquebtnpopup">Communiques</button>       
+     <%= render "shared/communiquepopup" do%>
+       <div class="communique-popup-icon">
+         <%= image_tag"logos/CBGClogo.png", class: 'my-logo-popup-icon' %>
+       </div>
+       <% if @communiques.any? %>
+         <p style="color: green"><%= notice %></p>
+         <h1>Communiques</h1>
+         <% @communiques.each do |communique| %>
+           <div class="news">
+               <h3 style="text-decoration: underline;"><%= communique.titre %></h3> <br/>
+               <p><%= communique.description %></p>
+               <%= link_to "Voir", communique %>
+           </div>
+         <% end %>
+         <% else %>
+           <p>Il n'y a pas de communique pour le moment</p>
+         <% end %>
+      <%end%>
+    </li>
+    <li class="link"><a href="#" class="link">Contactez-nous</a></li>
+    <% if user_signed_in?%>
+     <% if current_user.is_admin? %>
+      <li class="link"><%= link_to "Dashboard admin", admin_home_index_path, :class => "link" %></li>
+    <% end %>
+      <li class="link">
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "link" %>
+      </li>
+    <% else %>
+      <li class="link">
+        <%= link_to "S'enregistrer", new_user_registration_path, :class => "link" %>
+      </li>
+    <%end%>
+  </ul>
+</div>

@@ -3,8 +3,8 @@
 <%= render @communique %>
 
 <div>
-  <%= link_to "Edit this communique", edit_communique_path(@communique) %> |
-  <%= link_to "Back to communiques", communiques_path %>
+  <%= link_to "Modifier", edit_admin_communique_path(@communique) %> |
+  <%= link_to "Retourner aux communiques", admin_communiques_path %>
 
-  <%= button_to "Destroy this communique", @communique, method: :delete %>
+  <%= button_to "Effacer le communique", @communique, method: :delete %>
 </div>
