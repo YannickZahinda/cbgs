@@ -28,7 +28,10 @@ Rails.application.routes.draw do
   resources :messages, only: [:show, :update, :destroy, :new, :create, :edit]
 
  
-  devise_for :users
+  # devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
 
   root to: "home#index"
 
