@@ -11,14 +11,27 @@
         </div>
       </div>
       <div class="plans-week">
-        <div class="plan-head">
-          <h4 class="section-title">Événements</h4>
-          <button class="btn-add">+ Ajouter</button>
-        </div>
-        <div class="message">
-          Non disponible
-        </div>
+      <div class="plan-head">
+        <h4 class="section-title">Événements</h4>
+        <a href="<%= new_admin_event_path %>" class="btn-add">+ Ajouter</a>
       </div>
+       <% if @events.present? %>
+         <ul class="events">
+           <% @events.each do |event| %>
+             <li class="event">
+               <div class="event-date"><%= event.date %></div>
+               <div class="event-details">
+                 <div class="event-title"><%= event.title %></div>
+                 <div class="event-description"><%= event.description %></div>
+               </div>
+             </li>
+           <% end %>
+         </ul>
+         <% else %>
+           <div class="message">Aucun événement pour le moment.</div>
+         <% end %>
+      </div>
+
       <div class="plans-week messages">
         <div class="plan-head">
           <h4 class="section-title">Messages</h4>

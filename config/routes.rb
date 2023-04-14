@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   namespace :admin do
+    resources :events, only: [:index, :show, :new, :create, :edit, :update, :destroy]
     resources :messages, only: [:index, :show, :destroy]
     resources :teachers do
       collection do

@@ -6,6 +6,7 @@ class Admin::HomeController < ApplicationController
   def index
     @communiques = Communique.all
     @messages = Message.all
+    @events = Event.all
   end
 
   # def destroy

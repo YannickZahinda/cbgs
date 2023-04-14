@@ -24,3 +24,7 @@ end
 3.times do |i|
   Message.create!(name: 'Inscriptions', titre: "Eleve handicapes", message: "Pourrais je avoir des informations sur les eleves handicapes ?")
 end
+
+4.times do |e|
+  Event.create!(date: "2023-05-1#{e}-",title: "Proclammation", description: "Le dimanche, chaque eleve vient avec son parent" )
+end
