@@ -5,7 +5,7 @@
      <h1><%= @communique.titre %></h1> <br/>
    </p>   
 
-   <p><%= @communique.description %></p>
+   <p style="width: 65%; margin: auto"><%= @communique.description %></p>
    <div style="margin: 25px;">
    <%= link_to "Retour aux communiques", communiques_path, style: "text-decoration: none; background-color: black; color: white; padding: 7px; border-radius: 7px; " %>
      <% if current_user.is_admin?%>
