@@ -10,6 +10,15 @@ class Admin::ParentsController < ApplicationController
     # @parent = Parent.find(params[:id])
   end
 
+  def search
+    @query = params[:name]
+
+    return false if @query.empty?
+
+    @parents = Parent.where("parents.nom_complet LIKE ?", ["%#{@query}%"])
+    render "index"
+  end
+
   # GET /parents/new
   def new
     @parent = Parent.new
