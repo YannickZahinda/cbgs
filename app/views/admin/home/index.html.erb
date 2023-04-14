@@ -1,6 +1,11 @@
 <div class="dashboard">
   <div class="main-content">
     <div class="dashboard-content">
+    <div>
+      <a href="#events" style="text-decoration: none; color: #184C72; margin: 10px">Événements</a>
+      <a href="#messages" style="text-decoration: none; color: #184C72; margin: 10px">Messages</a>
+    </div>
+
       <div class="plans-week">
         <div class="plan-head">
           <h4 class="section-title">Paiements</h4>
@@ -12,7 +17,7 @@
       </div>
       <div class="plans-week">
       <div class="plan-head">
-        <h4 class="section-title">Événements</h4>
+        <h4 class="section-title" id="events">Événements</h4>
         <a href="<%= new_admin_event_path %>" class="btn-add">+ Ajouter</a>
       </div>
        <% if @events.present? %>
@@ -24,6 +29,9 @@
                  <div class="event-title"><%= event.title %></div>
                  <div class="event-description"><%= event.description %></div>
                </div>
+               <div style="margin: 15px">
+                 <%= link_to "Voir", admin_event_path(event), class: "btn-show" %>
+               </div>
              </li>
            <% end %>
          </ul>
@@ -34,8 +42,8 @@
 
       <div class="plans-week messages">
         <div class="plan-head">
-          <h4 class="section-title">Messages</h4>
-          <button class="btn-delete">Tout Supprimer</button>
+          <h4 class="section-title" id="messages">Messages</h4>
+          <%# <button class="btn-delete">Tout Supprimer</button> %>
         </div>
         <div class="message-container">
           <p style="color: green"><%= notice %></p>
@@ -45,9 +53,8 @@
               <div class="message">
                 <div class="sender"><%= message.name %>:</div>
                 <div class="text"><%= message.message %></div>
-                <div><%= link_to "Show", admin_message_path(message), class: "btn-show" %></div>
+                <div><%= link_to "Voir", admin_message_path(message), class: "btn-show" %></div>
                 <div><%= button_to "Effacer ce message", admin_message_path(message), method: :delete, data: { confirm: "Êtes-vous sûr?" }, class: "btn-show" %></div>
-                
               </div>
             <% end %>
           </div>
