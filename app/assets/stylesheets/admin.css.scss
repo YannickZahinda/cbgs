@@ -448,6 +448,87 @@ td:last-child {
 }
 
 
+// ========== Events styles ============//
+
+.events-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.events-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.events-header .button {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px 20px;
+}
+
+.events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.event {
+  display: flex;
+  margin-bottom: 30px;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.event-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+.event-date-month {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.event-date-day {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.event-details {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.event-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.event-description {
+  font-size: 16px;
+  margin: 0;
+}
+
+
+
 
 @media (max-width: 992px) {
   .message {
