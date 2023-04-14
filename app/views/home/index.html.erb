@@ -1,38 +1,148 @@
+<%= render "uppernav" %>
 <div>
- <div class='flex justify-between'>
-        <div class='pl-4'>
-          <img  alt='Logo' class='logoimage' />
-          landing page
-        </div>
-        <div class='pt-4 pb-6 '>
-          <div>
-            <ul class='flex gap-20 mr-4'>
-              <li class='cursor-pointer'> <a href="#apropos">A propos</a> </li>
-              <li class='cursor-pointer'> <a href="#" >Admission</a> </li>
-              <li class='cursor-pointer'> <a href="#">Activités</a> </li>
-              <li class='cursor-pointer'> <a href="#contact">Contactez-nous</a> </li>
-              <li class='cursor-pointer'> <a href="#"> Connexion</a></li>
-              <li class='cursor-pointer'> <a href="#">S'enregistrer</a></li>
-            </ul>
-          </div>
-          <div class='flex items-center justify-between pt-6'>
-            <div class='w-[62%]'>
-            </div>
-            <div>
-              <ul class='flex gap-20 mr-4'>
-                <li class='flex items-center justify-center cursor-pointer'>
-                  <i class='material-symbols-outlined'>language</i>
-                  Langue
-                  <i class='material-symbols-outlined'>arrow_drop_down</i>
-                </li>
-                <li class='flex items-center justify-center cursor-pointer'>
-                  <i class='material-symbols-outlined'>light_mode</i>
-                  Mode
-                  <i class='material-symbols-outlined'>arrow_drop_down</i>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+   <div class="slider">
+      <div>
+        <%= image_tag "logos/eleveimg1.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg2.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg3.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg4.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg5.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg6.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg7.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg8.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg9.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg10.jpeg", alt: "eleve photo" %>
+      </div>
+      <div>
+        <%= image_tag "logos/eleveimg11.jpeg", alt: "eleve photo" %>
+      </div>
+    </div><br/><br/>
 
+    <div style="white-space: nowrap; overflow: hidden; width: 100%; background-color: #c0c4c7; padding: 20px">
+      <span class="sliding-text" style="display: inline-block; animation: slidein 20s linear infinite; font-size: 25px; font-weight: bold; color: #fff">
+        NOTRE DEVISE : EXCELLENTE DISCPLINE ET QUALITE
+      </span>
+    </div>
+    <div class="section-equipe-dirigeante">
+      <h1 class="equipe-dir">Equipe dirigeante</h1>
+      <div class="equipe-dir-pics">
+        <div>
+          <%= image_tag "logos/promotrice.png", width: "100%", margin: "auto" %>
+          <div style="text-align: center"><strong>Promotrice Madame Sylvie Kafat </strong> </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-nos-valeurs">
+      <%= render "nosvaleurs"%>
+    </div>
+    <div class="section-organisees-container">
+    <h3>Section organisées</h3>
+    <div class="section-organisees">
+      <div class="section-card section-maternelle">
+         <h3>SECTION MATERNELLE</h3>
+         
+         <button class="popup-btn">Detail sur la section</button>
+         <%= render 'shared/popup' do %>
+            <p>
+               <h3>Section Maternelle</h3><br/>
+               CBG-SCHOOL offre aux enfants de la maternelle la formation et l'encadrement 
+               visant la production d'expression orale du Français et de l'Anglais, les notions 
+               essentielles de la numérique, d'hygiène, de l'environnement et des relations humaines. 
+               Les classes ont 
+               les niveaux 1,2 et 3 dont la capacité est prévue de 20 à 30 élèves (3 salles).
+           </p>
+         <% end %>
+      </div>
+      <div class="section-card section-primaire">
+         <h3>SECTION PRIMAIRE</h3>
+         <button class="popup-btn">Detail sur la section</button>
+         <%= render 'shared/popup' do %>
+            <p>
+              <h3>SECTION PRIMAIRE</h3> <br/>
+              Notre école est résolue à donner aux enfants une formation intégrale d'excellence 
+              en lecture, écriture, arithmétique. La formation vise la bonne compréhension de la 
+              matière dispensée, l'aisance dans l'expression en langue française et anglaise. 
+              Les classes de la 1ère ,2ième, 3ième ,4 ème , 5ième et 6ième avec classe parallèle 1A 
+              et 1B dont la capacité d'accueil est 30 à 35 élèves (12 Salles).
+            </p>
+         <% end %>
+      </div>
+      <div class="section-card section-secondaire">
+         <h3>SECTION SECONDAIRE </h3>
+         
+         <button class="popup-btn">Detail sur la section</button>
+         <%= render 'shared/popup' do %>
+            <p>
+              <h3>SECTION SECONDAIRE</h3><br/>
+              Notre école s'assure qu'a l'issue de l'enseignement secondaire l'élève acquière 
+              la connaissance générale et spécifique du monde quI L'entoure. La formation d'être un bon 
+              citoyen responsable pour contribuer au développement 
+              de sa communauté et du pays. Elle veille à la formation à la citoyenneté 
+              responsable afin de contribuer au développement de la communauté et du pays. 
+              Les classes de la 7ième et 8 ième ont la capacité de 30-35 élèves 
+              avec classe parallèle A &B (4 salles). 
+              Les classes supérieures du secondaire sont en progression. (4 Salles)
+           </p>
+          <% end %>
+      </div>
+    </div>
+    </div>
+
+    <div class="promot-speech">
+      <h3>Mot de La Promotrice </h3> <br/>
+      <%= image_tag("logos/promots.svg", width: "60%", margin: '0 auto')%>
+    </div>
+    <div class="youtube-container">
+      <%# <div class="youtube"></div> %>
+      <div class="formations">
+        <div class="compte">
+          <%= image_tag "logos/accountancy.png", class: "formapic"%>
+        </div>
+        <h4>Comptabilité</h4>
+      </div>
+      <div class="informatique">
+        <div class="compte">
+          <%= image_tag "logos/itformation.png", class: "infopic"%>
+        </div>
+        <h4>Informatique de gestion</h4>
+      </div>
+    </div>
+    <div class="nos-partenaires">
+      <h3>Nos Partneraires</h3>
+      <div class="partenaire-container" >
+        <%= image_tag "logos/lualabaflagpic.png", class: "partnerpic"%>
+        <%= image_tag "logos/epsp.png", class: "partnerpic"%>
+        <%= image_tag "logos/gouv.png", class: "partnerpic"%>
+      </div>
+    </div>
+    <div class="contact-form">
+      <%= render "form"%>
+    </div>
+   
+    <% if user_signed_in? %>
+      <%= link_to "Home", root_path%>
+      <%= link_to "Enseignants de l'ecole", teachers_path%>
+      <p>Logged in as <%= current_user.email %></p>
+      <% if current_user.is_admin? %>
+        <%= link_to "Admin teachers", admin_teachers_path%>
+      <% end%>
+    <%end%>
 </div>

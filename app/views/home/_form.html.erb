@@ -1,0 +1,17 @@
+<%= form_with  do |f| %>
+  <div style="background-color:#96C2D8;padding:20px;border-radius:5px;">
+    <div class="form-group">
+      <%= f.label :titre %>
+      <%= f.text_field :titre, class: 'form-control', style: 'border-radius:5px;', name: 'contact[titre]' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control', style: 'border-radius:5px;', name: 'contact[email]' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :message %>
+      <%= f.text_area :message, class: 'form-control', style: 'border-radius:5px;', name: 'contact[message]' %>
+    </div>
+    <%= f.submit 'Submit', class: 'btn btn-primary' %>
+  </div>
+<% end %>

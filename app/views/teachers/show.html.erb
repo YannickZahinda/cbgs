@@ -3,7 +3,6 @@
 <%= render @teacher %>
 
 <div>
-  <%= link_to "Edit this teacher", edit_teacher_path(@teacher) %> |
   <%= link_to "Back to teachers", teachers_path %>
 
   <%= button_to "Destroy this teacher", @teacher, method: :delete %>

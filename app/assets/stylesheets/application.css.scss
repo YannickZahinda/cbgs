@@ -1,0 +1,503 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.teacher {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.teachers {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.uppernav{
+  display: flex;
+  background-color: #184C72;
+  color: #fff;
+  gap: 30px;
+  list-style-type: none;
+  padding: 15px;
+}
+
+.nav {
+  display: flex;
+}
+
+/* .logo {
+ width: 30%;
+} */
+
+.my-logo {
+  width: 40%;
+}
+
+.navlinks{
+  display: flex;
+  list-style-type: none;
+  margin: 30px;
+  gap: 30px;
+}
+
+.link {
+  text-decoration: none;
+  color: #333;
+}
+
+.link:hover {
+  color: #184C72;
+}
+
+/* //Forms ============= */
+
+.authentication {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 5px;
+}
+
+.signup {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginpic{
+  object-fit: cover;
+}
+
+.loginimg{
+  object-fit: cover;
+}
+
+.field{
+  font-size: 15px;
+}
+
+.input {
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #E5E7EB;
+  width: 100%;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.label{
+  text-align: left;
+}
+
+.actions{
+  width: 100%;
+}
+
+.button {
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #E5E7EB;
+  background-color: #184C72;
+  color: #fff;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.loginline{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.loginlink{
+  text-decoration: underline;
+  vertical-align: middle;
+  color: #184C72;
+  font-weight: 700;
+}
+
+.confirmation {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* // Slider *************************** */
+
+.slider {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+
+
+
+
+.slider {
+  position: relative;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  background: #184d7259;
+  border-radius: 50%;
+  font-size: 25px;
+  color: #fff;
+  padding: 10px;
+  font-weight: bolder;
+  border: none;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slider-dots {
+  display: flex;
+}
+.dot.active {
+  background-color: #555;
+}
+
+.equipe-dir {
+  color: #202020;
+  padding: 10px;
+}
+
+.equipe-dir-pics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-nos-valeurs {
+  padding: 10px;
+}
+
+/* // Slide animation ******************** */
+
+@keyframes slidein {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+/* // Nos valeurs style ******************** */
+
+.valeurs-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+.card {
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+}
+
+.card >
+ header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card > p {
+  color: #555;
+  padding: 10px;
+}
+
+.philosophie {
+  width: 100%;
+  object-fit: cover;
+}
+
+
+/* // Sections organisee popup ******************** */
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  text-align: center;
+}
+
+.popup-btn {
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: max-content;
+  margin: 25px;
+  float: calc(100%);
+  border: none;
+  background-color: #d13c3f;
+  color: #fff;
+  font-size: 18px;
+}
+
+
+@media only screen and (min-width: 370px) {
+  .signup {
+    width: 100%;
+  }
+
+  .form {
+    width: 50%;
+  }
+
+  .sliding-text {
+    letter-spacing: 1rem;
+    font-size: 50px;
+  }
+
+  .logo {
+    width: 40%;
+  }
+
+  .links > a {
+    margin: 10px;
+  }
+}
+
+/* Sections organisees style **************  */
+
+
+.section-organisees {
+  background-color: #fff4DF;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 10px;
+  padding: 20px;
+}
+
+.section-card {
+  border-radius: 10px;
+}
+
+.section-organisees-container {
+  background-color: #fff4DF;
+  text-align: center;
+  padding: 15px;
+}
+
+.section-organisees-container > h3 {
+  color: #1b0761;
+}
+
+.section-maternelle {
+  background-image: url('logos/maternelle.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-primaire {
+  background-image: url('logos/primaire.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-secondaire {
+  background-image: url('logos/secondaire.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-maternelle > h3 {
+  background-color: #184d72ba;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 10px;
+  color: #fff;
+}
+
+.section-primaire > h3 {
+  background-color: #aadbb9d8;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 10px;
+  color: #fff;
+}
+
+.section-secondaire > h3 {
+  background-color: #96c2d8e1;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 10px;
+  color: #fff;
+}
+
+/* promot speech --------------------*/
+
+.promot-speech {
+  width: 100%;
+  text-align: center;
+  padding: 30px;
+}
+
+/* Youtube container style ------------*/
+
+.youtube-container {
+  text-align: center;
+  width: 100%;
+  background: url('logos/youtube.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  gap: 20px;
+}
+
+
+.youtube {
+  width: 50%;
+  height: 200px;
+  border-radius: 10px;
+  background-color: #202020;
+  margin: 0 auto;
+}
+
+.formapic,
+.infopic {
+  width: 40%;
+}
+
+.nos-partenaires {
+  text-align: center;
+  padding: 30px;
+}
+
+.partenaire-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 30px;
+  padding: 15px;
+}
+
+.partnerpic {
+  width: 100%;
+}
+
+
+
+@media only screen and (max-width: 992px) {
+
+  .nav {
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .logo {
+    /* flex-basis: 40%; */
+    padding: 10px;
+  }
+
+  .my-logo {
+    width: 100%;
+  }
+
+
+  .link {
+    padding:10px;
+    text-align: left;
+    border-radius: 4px;
+    width: max-content;
+  }
+
+  .link a {
+    background-color: #c0c4c7;
+    border-radius: 30px;
+    color: #184C72;
+    margin: 8px;
+  }
+
+
+  .navlinks {
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: 10px;
+  /* //  width: 100%; */
+  }
+
+  .signup {
+    font-size: 10px;
+    flex-basis: 200px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  .valeurs-cards {
+    grid-template-columns:1fr;
+  }
+
+  .section-organisees{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@import "font-awesome";

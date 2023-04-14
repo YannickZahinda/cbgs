@@ -1,5 +1,6 @@
 class Admin::TeachersController < ApplicationController
   before_action :set_teacher, only: %i[ show edit update destroy ]
+  before_action :check_if_admin
 
   def index 
     @teachers = Teacher.all
@@ -49,6 +50,10 @@ class Admin::TeachersController < ApplicationController
   end
 
   private
+
+  def check_if_admin
+    redirect_to root_path unless current_user.is_admin?
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_teacher
       @teacher = Teacher.find(params[:id])
@@ -56,6 +61,6 @@ class Admin::TeachersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def teacher_params
-      params.fetch(:teacher, {:nom_complet => " ", :addresse => " ", :niveau_etude => " ", :classe_enseignee => " ", :phone => " ", :email => " "})
+      params.require(:teacher).permit(:nom_complet, :addresse, :niveau_etude, :classe_enseignee, :phone, :email)
     end
 end

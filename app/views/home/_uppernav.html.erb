@@ -1,0 +1,30 @@
+<div>
+  <ul class='uppernav'>
+    <li><i class="fa-solid fa-phone-arrow-down-left"></i>Contact</li>
+    <li>email</li>
+    <li>Social icons</li>
+  </ul>
+</div>
+<div class="nav">
+  <div class="logo">
+    <%= image_tag"logos/CBGClogo.png", class: 'my-logo' %>
+  </div>
+  <ul class="navlinks">
+  <li class="link"><a href="#" class="link">A propos</a></li>
+  <li class="link"><a href="#" class="link">Communique</a></li>
+  <li class="link"><a href="#" class="link">Contactez-nous</a></li>
+  <% if user_signed_in?%>
+   <% if current_user.is_admin? %>
+    <li class="link"><%= link_to "Dashboard admin", admin_teachers_path, :class => "link" %></li>
+  <% end %>
+    <li class="link">
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "link" %>
+    </li>
+  <% else %>
+    <li class="link">
+      <%= link_to "S'enregistrer", new_user_registration_path, :class => "link" %>
+    </li>
+  <%end%>
+</ul>
+</div>
+
