@@ -1,0 +1,10 @@
+<div class="message-container" id="<%= dom_id message %>"> <br/>
+  <h2 class="message-titre"><%= message.name %></h2>
+  <p class="message-name">Sujet: <%= message.titre %></p>
+  <p class="message-text"><%= message.message %></p>
+  <div style="color: blue">
+    <%= link_to "Revenir aux messages", admin_home_index_path %>
+  </div>
+  <div><%= button_to "Effacer ce message ?", admin_message_path(message), method: :delete, data: { confirm: "Êtes-vous sûr?" }, class: "btn-show", style: "background-color: red" %></div>
+
+</div>

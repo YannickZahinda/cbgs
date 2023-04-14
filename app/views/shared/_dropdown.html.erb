@@ -24,7 +24,7 @@
          <% end %>
       <%end%>
     </li>
-    <li class="link"><a href="#" class="link">Contactez-nous</a></li>
+    <li class="link"><%= link_to "Ecrire un message", new_message_path, :class => "link" %></li>
     <% if user_signed_in?%>
      <% if current_user.is_admin? %>
       <li class="link"><%= link_to "Dashboard admin", admin_home_index_path, :class => "link" %></li>

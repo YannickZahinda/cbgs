@@ -36,7 +36,7 @@ class Admin::ParentsController < ApplicationController
   def update
     respond_to do |format|
       if @parent.update(parent_params)
-        format.html { redirect_to parent_url(@parent), notice: "parent was successfully updated." }
+        format.html { redirect_to admin_parent_path(@parent), notice: "parent was successfully updated." }
         format.json { render :show, status: :ok, location: @parent }
       else
         format.html { render :edit, status: :unprocessable_entity }

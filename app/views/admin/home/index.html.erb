@@ -19,20 +19,18 @@
           <button class="btn-delete">Tout Supprimer</button>
         </div>
         <div class="message-container">
-          <div class="message">
-            <p class="sender">Josh:</p>
-            <p class="text">Je veux des informations sur les inscriptions</p>
-            <button class="btn-show">Afficher</button>
-          </div>
-          <div class="message">
-            <p class="sender">Alice:</p>
-            <p class="text">Bonjour, pouvez-vous m'aider à réinitialiser mon mot de passe?</p>
-            <button class="btn-show">Afficher</button>
-          </div>
-          <div class="message">
-            <p class="sender">Bob:</p>
-            <p class="text">J'ai un problème avec mon compte, pouvez-vous m'aider?</p>
-            <button class="btn-show">Afficher</button>
+          <p style="color: green"><%= notice %></p>
+          <h1>Messages</h1>
+          <div id="messages">
+            <% @messages.each do |message| %>
+              <div class="message">
+                <div class="sender"><%= message.name %>:</div>
+                <div class="text"><%= message.message %></div>
+                <div><%= link_to "Show", admin_message_path(message), class: "btn-show" %></div>
+                <div><%= button_to "Effacer ce message", admin_message_path(message), method: :delete, data: { confirm: "Êtes-vous sûr?" }, class: "btn-show" %></div>
+                
+              </div>
+            <% end %>
           </div>
         </div>
       </div>

@@ -1,11 +1,12 @@
 <div class="news-page">
   <h1>Communiques recents</h1>
+  <%= link_to "+ Ajouter", new_admin_communique_path, class: "btn-new-teacher" %>
   <hr>
   
   <% @communiques.each do |communique| %>
     <div class="article">
       <h2><%= communique.titre %></h2>
-      <p class="date"><%= communique.created_at.strftime("%B %d, %Y") %></p>
+      <p class="date">Date d'ajout: <%= communique.created_at.strftime("%B %d, %Y") %></p>
       <p class="summary"><%= communique.description %></p>
       <p class="read-more">
         <%= link_to "Voir", communique %>

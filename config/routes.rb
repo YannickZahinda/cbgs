@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-
+  
   namespace :admin do
+    resources :messages, only: [:index, :show, :destroy]
     resources :teachers
     resources :parents, only: [:index, :show, :new, :create, :edit, :update, :destroy]
     resources :home
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
   resources :teachers, only: [:index, :show]
   resources :communiques, only: [:index, :show]
   resources :home, only: [:index]
+  resources :messages, only: [:show, :update, :destroy, :new, :create, :edit]
+
  
   devise_for :users
 

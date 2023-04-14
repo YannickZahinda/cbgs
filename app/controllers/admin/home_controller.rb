@@ -5,7 +5,19 @@ class Admin::HomeController < ApplicationController
 
   def index
     @communiques = Communique.all
+    @messages = Message.all
   end
+
+  # def destroy
+    # if @communique.destroy
+    #   redirect_to admin_home_index_path, notice: "communique efface avec success"
+    # end
+
+    # if @message.destroy
+    #   redirect_to admin_home_index_path, notice: "message efface avec success"
+    # end
+
+  # end 
 
   private
 

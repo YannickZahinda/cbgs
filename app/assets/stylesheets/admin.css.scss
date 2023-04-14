@@ -232,16 +232,17 @@ td:last-child {
 
 .dashboard {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #f5f5f5;
   padding: 20px;
+  width: 100%;
 }
 
 .main-content {
   width: 100%;
-  max-width: 800px;
+  // max-width: 800px;
 }
 
 .dashboard-content {
@@ -264,6 +265,7 @@ td:last-child {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .section-title {
@@ -303,12 +305,17 @@ td:last-child {
 
 .message {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   background-color: #f5f5f5;
-  padding: 10px;
+  gap: 25px;
+  padding: 30px;
   border-radius: 5px;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+  font-size: 13px;
+  width: 100%;
+  height: max-content;
 }
 
 .sender {
@@ -319,7 +326,8 @@ td:last-child {
 .text {
   margin: 0;
   padding-left: 10px;
-  flex: 1;
+  // flex: 1;
+  width: 100%;
 }
 
 .btn-show {
@@ -336,6 +344,58 @@ td:last-child {
   background-color: #2980b9;
 }
 
+
+//========= Awesome Messages style =====================//
+
+.message-form {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.message-errors {
+  color: red;
+}
+
+.message-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.message-field label {
+  font-weight: bold;
+}
+
+.message-field input, .message-field textarea {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.message-submit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.message-submit input[type="submit"] {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.message-submit input[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+
 .message-container {
   display: flex;
   flex-direction: column;
@@ -350,7 +410,52 @@ td:last-child {
 }
 
 
+.message-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  width: 100%;
+}
+
+.message-titre {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.message-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+#messages{
+  height: max-content;
+}
+
+.message-text {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.show-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+
 @media (max-width: 992px) {
+  .message {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
   .tab {
     display: block;
     width: 100%;
