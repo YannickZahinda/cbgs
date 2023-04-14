@@ -3,23 +3,43 @@
     <div class="dashboard-content">
       <div class="plans-week">
         <div class="plan-head">
-          <h4>Plans de l'annees</h4>
-          <button class="plan-btn"> + ajouter </button>
+          <h4 class="section-title">Paiements</h4>
+          <button class="btn-add">+ Ajouter</button>
+        </div>
+        <div class="message">
+          Non disponible
         </div>
       </div>
       <div class="plans-week">
         <div class="plan-head">
-          <h4>Meilleurs eleves</h4>
-          <button class="plan-btn"> + ajouter </button>
+          <h4 class="section-title">Meilleurs élèves</h4>
+          <button class="btn-add">+ Ajouter</button>
+        </div>
+        <div class="message">
+          Non disponible
         </div>
       </div>
       <div class="plans-week messages">
         <div class="plan-head">
-          <h4>Messages</h4>
-          <button class="plan-btn"> Tout supprimer</button>
+          <h4 class="section-title">Messages</h4>
+          <button class="btn-delete">Tout Supprimer</button>
+        </div>
+        <div class="message-container">
+          <p style="color: green"><%= notice %></p>
+          <h1>Messages</h1>
+          <div id="messages">
+            <% @messages.each do |message| %>
+              <div class="message">
+                <div class="sender"><%= message.name %>:</div>
+                <div class="text"><%= message.message %></div>
+                <div><%= link_to "Show", admin_message_path(message), class: "btn-show" %></div>
+                <div><%= button_to "Effacer ce message", admin_message_path(message), method: :delete, data: { confirm: "Êtes-vous sûr?" }, class: "btn-show" %></div>
+                
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-

@@ -20,3 +20,7 @@ end
 3.times do |i|
   Communique.create!(titre: 'Inscriptions', description: "Cher parent numero 1#{i} sachez que les inscription vont s'arreter bientot et les places sont limitees")
 end
+
+3.times do |i|
+  Message.create!(name: 'Inscriptions', titre: "Eleve handicapes", message: "Pourrais je avoir des informations sur les eleves handicapes ?")
+end

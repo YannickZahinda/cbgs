@@ -710,53 +710,10 @@
   padding: 10px;
 }
 
-.main-content {
-  padding: 30px;
-}
-
-.dashboard {
-  background-color: #C0C4C7;
-  border: 10px solid #184C72;
-  border-top-right-radius: 50px;
-  border-top-left-radius: 50px;
-}
-
-.dashboard-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  grid-template-rows: 1fr;
-  width: 100%;
-}
-
 .dashboardcommuniques {
   padding: 20px;
 }
 
-.plans-week {
-  background-color: #fff;
-  height: 200px;
-  color: #000;
-  border-radius: 25px;
-  padding: 10px;
-  margin: 7px;
-}
-
-.plan-head {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-}
-
-.plan-btn {
-  background-color: #F3051C;
-  border: none;
-  border-radius: 10px;
-  color: #ffff;
-  padding: 7px;
-  font-size: 15px;
-  font-weight: 600;
-}
 
 .adminlinks {
   display: flex;

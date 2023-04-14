@@ -11,13 +11,25 @@ class Admin::TeachersController < ApplicationController
     @teacher = Teacher.new
   end
 
+  # Search
+
+  def search
+    @query = params[:name]
+
+    # return false if @query.empty?
+    return false if @query.nil? || @query.empty?
+
+    @teachers = Teacher.where("teachers.nom_complet LIKE ?", ["%#{@query}%"])
+    render "index"
+  end
+
   # POST /teachers or /teachers.json
   def create
     @teacher = Teacher.new(teacher_params)
 
     respond_to do |format|
       if @teacher.save
-        format.html { redirect_to teacher_url(@teacher), notice: "Teacher was successfully created." }
+        format.html { redirect_to admin_teacher_path(@teacher), notice: "Teacher was successfully created." }
         format.json { render :show, status: :created, location: @teacher }
       else
         format.html { render :new, status: :unprocessable_entity }

@@ -1,18 +1,16 @@
 <div class="news-page">
   <h1>Communiques recents</h1>
+  <%= link_to "+ Ajouter", new_admin_communique_path, class: "btn-new-teacher" %>
   <hr>
   
   <% @communiques.each do |communique| %>
     <div class="article">
       <h2><%= communique.titre %></h2>
-      <p class="date"><%= communique.created_at.strftime("%B %d, %Y") %></p>
+      <p class="date">Date d'ajout: <%= communique.created_at.strftime("%B %d, %Y") %></p>
       <p class="summary"><%= communique.description %></p>
       <p class="read-more">
         <%= link_to "Voir", communique %>
-        <%= link_to "Effacer", admin_communique_path(communique), method: :delete, data: { confirm: "Êtes-vous sûr?" }%>
-        <%= link_to admin_communique_path(communique), method: :delete, data: { confirm: "Êtes-vous sûr?" } do %>
-          <%= image_tag("https://icons-for-free.com/download-icon-delete+remove+trash+trash+bin+trash+can+icon-1320073117929397588_512.png", style: "width: 20px; height: 20px; border-radius: 50%, border: 1px solid red;") %>
-        <% end %>
+        <%= button_to "Effacer", admin_communique_path(communique), method: :delete, data: { confirm: "Êtes-vous sûr?" }, class: "button", style: "width: 30%, margin: auto"%>
       </p>
     </div>
     <hr>

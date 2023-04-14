@@ -1,6 +1,11 @@
 <p style="color: green"><%= notice %></p>
-
-<h1>Teachers</h1>
+<div class="admin-eleve-header">
+  <h1>Enseignants</h1>
+  <form style="display: flex" method="GET" action="teachers/search">
+      <input class="input" type="search" placeholder="Trouver un enseignant" aria-label="Search" name="name">
+      <button type="submit" style="width: max-content; height: 100%; margin: 0;" class="button">chercher</button>
+  </form>
+</div>
 
 <div class="table-container">
   <table>
@@ -24,10 +29,10 @@
           <td><%= teacher.niveau_etude %></td>
           <td><%= teacher.classe_enseignee %></td>
           <td><%= teacher.phone %></td>
-          <td>
+          <td style="width: max-content; display: flex; gap: 7px">
             <%= link_to "Voir", admin_teacher_path(teacher), class: "btn-show" %>
             <%= link_to "Modifier", edit_admin_teacher_path(teacher), class: "btn-edit" %>
-            <%= link_to "Effacer", admin_teacher_path(teacher), method: :destroy, data: { confirm: 'Are you sure?' }, class: "btn-destroy" %>
+            <%= button_to "Effacer", admin_teacher_path(teacher), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-destroy", style: "border: none" %>
           </td>
         </tr>
       <% end %>

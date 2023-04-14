@@ -32,7 +32,7 @@
     <div class="teacher-card__actions">
       <p><%= link_to "Modifier", edit_admin_elefe_path(eleve), class: "button button--primary" %></p>
       <p><%= link_to "Retour aux eleves", admin_eleves_path, class: "button button--secondary" %></p>
-      <p><%= button_to "Effacer", admin_elefe_path(eleve), method: :delete, data: { confirm: "Êtes-vous sûr?" }, class: "button button--danger" %></p>
+      <p><%= button_to "Effacer", admin_elefe_path(@eleve), method: :delete, data: { confirm: "Êtes-vous sûr?" }, class: "button button--danger" %></p>
     </div>
   </div>
 </div>
