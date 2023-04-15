@@ -19,11 +19,16 @@ Rails.application.routes.draw do
         get '/search', to: 'parents#search'
       end
     end
-    resources :home
+    resources :home do
+      collection do
+        get '/logged_in_users', to: 'home#logged_in_users', as: 'logged_in_users'
+      end
+    end
     resources :communiques, only: [:index, :show, :destroy, :new, :create, :edit, :update]
     resources :eleves, only: [:index, :show, :new, :create, :edit, :update, :destroy]
     get '/search', to: 'eleves#search'
     # get '/search', to: 'parents#search'
+    # resources :logged_in_users, only: [:logged_in_users]
 
   end 
   

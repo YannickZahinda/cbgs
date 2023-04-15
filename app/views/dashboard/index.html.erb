@@ -2,7 +2,7 @@
 <div class="communique-popup-icon">
   <%= image_tag"logos/CBGClogo.png", class: 'my-logo-popup-icon' %>
   <h1>Tableau de bord utilisateur</h1>
-
+  <p>Bienvenue Monsieur/Madame : <%= current_user.first_name%></p>
 </div>
 <div style="margin: 30px auto; width: 60%">
 
@@ -14,8 +14,9 @@
     <%= link_to "Sign out", destroy_user_session_path, method: :delete, style: "background-color: #184C72; padding: 15px; border-radius: 10px; text-decoration: none; color: white"%>
   </div>
 </div>
-<p>Bienvenue Monsieur/Madame !</p>
-<h2>Vos Messages:</h2> <%= current_user.email %>
+
+<%= current_user.email %>
+<h2>Vos Messages:</h2> 
 <ul>
 
 </ul>
