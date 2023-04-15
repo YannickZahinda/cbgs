@@ -30,11 +30,11 @@
         <li class="link"><%= link_to "Tableau de bord administrateur", admin_home_index_path, :class => "link" %></li>
        <% else %>
          <li class="link">
-           <%= link_to 'Tableau de bord utilisateur', dashboard_index_path %>
+           <%= link_to 'Tableau de bord utilisateur', dashboard_index_path, :class => "link" %>
          </li>
        <% end %>
        <li class="link">
-         <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "link" %>
+         <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, :class => "link" %>
        </li>
     <% else %>
       <li class="link">
