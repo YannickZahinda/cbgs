@@ -1,0 +1,10 @@
+<div class="card" style="border: 1px solid #ccc; border-radius: 4px; margin: 4rem auto; width: 45%">
+  <div class="card-body">
+    <h3 class="card-title"><%= @letter.subject %></h3><br/>
+    <h5 class="card-subtitle mb-2 text-muted">Envoyé le : <%= @letter.created_at %></h5>
+    <h5 class="card-subtitle mb-2 text-muted">ID du destinataire  : <%= @letter.recipient_id%></h5><br/>
+    <p class="card-text"><%= @letter.body %></p>
+    <%= link_to "Retour aux lettres", admin_home_index_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+</div>

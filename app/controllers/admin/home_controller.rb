@@ -8,6 +8,7 @@ class Admin::HomeController < ApplicationController
     @communiques = Communique.all
     @messages = Message.all
     @events = Event.all
+    @letters = Letter.all
   end
 
   def logged_in_users

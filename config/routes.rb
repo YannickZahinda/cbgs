@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     end
     resources :communiques, only: [:index, :show, :destroy, :new, :create, :edit, :update]
     resources :eleves, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-    resources :letters, only: [:index, :create, :new]
+    resources :letters, only: [:index, :create, :new, :show]
 
     get '/search', to: 'eleves#search'
     

@@ -1,7 +1,15 @@
 class Admin::LettersController < ApplicationController
 
+  def index
+    @letters = Letter.all
+  end
+
   def new
     @letter = Letter.new
+  end
+
+  def show
+    @letter = Letter.find(params[:id])
   end
 
   def create
@@ -17,7 +25,7 @@ class Admin::LettersController < ApplicationController
   private
 
   def letter_params
-    params.require(:letter).permit(:sender_id, :recipient_id, :subject, :body)
+    params.require(:letter).permit(:sender_id, :recipient_id, :nom_du_parent_destinataire :subject, :body)
   end
 
 end

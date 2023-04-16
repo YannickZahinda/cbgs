@@ -15,13 +15,24 @@
   </div>
 </div>
 
-<%= current_user.email %>
-<h2>Vos Messages:</h2> 
-<% @letters.each do |letter| %>
-  <div>
-    <p>From: <%= letter.sender.first_name %></p>
-    <p>Subject: <%= letter.subject %></p>
-    <p>Message: <%= letter.body %></p>
-  </div>
-<% end %>
+<strong> Enregistré(e) sous email: </strong><%= current_user.email %>
+<div class="admin-letter-container">
+  <h2 class="admin-letter-heading">Vos Messages:</h2> 
+  <% @letters.each do |letter| %>
+    <div class="admin-letter">
+      <div class="admin-letter-header">
+        <div class="admin-letter-sender">
+          <span class="admin-letter-sender-icon"><i class="fas fa-user-circle"></i></span>
+          <span class="admin-letter-sender-name"><%= letter.sender.first_name %></span>
+        </div>
+        <div class="admin-letter-date">
+          <em><%= letter.created_at.strftime("%B %d, %Y") %></em>
+        </div>
+      </div>
+      <div class="admin-letter-body">
+        <div class="admin-letter-subject"><%= letter.subject %></div>
+        <div class="admin-letter-message"><%= letter.body %></div>
+      </div>
+    </div>
+  <% end %>
 </div>
