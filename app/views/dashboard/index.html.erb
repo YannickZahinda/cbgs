@@ -19,7 +19,7 @@
 <h2>Vos Messages:</h2> 
 <% @letters.each do |letter| %>
   <div>
-    <p>From: <%= letter.sender.name %></p>
+    <p>From: <%= letter.sender.first_name %></p>
     <p>Subject: <%= letter.subject %></p>
     <p>Message: <%= letter.body %></p>
   </div>

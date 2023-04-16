@@ -8,7 +8,7 @@ class Admin::LettersController < ApplicationController
     @letter = Letter.new(letter_params)
     if @letter.save
       flash[:success] = "Message envoye"
-      redirect_to letters_path
+      redirect_to admin_letters_path
     else
       render :new
     end

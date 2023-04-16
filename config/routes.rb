@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'dashboard/edit', to: 'dashboard#edit'
   get 'dashboard/update', to: 'dashboard#index'
   get 'dashboard/destroy', to: 'dashboard#destroy'
+
   
   namespace :admin do
     resources :events, only: [:index, :show, :new, :create, :edit, :update, :destroy]
@@ -26,11 +27,10 @@ Rails.application.routes.draw do
     end
     resources :communiques, only: [:index, :show, :destroy, :new, :create, :edit, :update]
     resources :eleves, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-    resources :letters, only: [:index]
-    get '/search', to: 'eleves#search'
-    # get '/search', to: 'parents#search'
-    # resources :logged_in_users, only: [:logged_in_users]
+    resources :letters, only: [:index, :create, :new]
 
+    get '/search', to: 'eleves#search'
+    
   end 
   
   resources :eleves, only: [:index, :show]
