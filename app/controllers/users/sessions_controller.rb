@@ -38,7 +38,7 @@ class Users::SessionsController < Devise::SessionsController
     if resource.is_admin?
       admin_home_index_path
     else
-      root_path
+      dashboard_index_path
     end
   end
 end

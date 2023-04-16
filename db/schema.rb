@@ -43,6 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_16_001244) do
   create_table "letters", force: :cascade do |t|
     t.integer "sender_id"
     t.integer "recipient_id"
+    t.string "nom_du_parent_destinataire"
     t.string "subject"
     t.text "body"
     t.boolean "read"

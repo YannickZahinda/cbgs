@@ -78,7 +78,8 @@
         <% if @letters.present?%>
           <% @letters.each do |letter| %>
            <div class="message">
-              <div class="sender">Au parent ID: <%= letter.id %></div>
+              <div class="sender">Au parent <%= letter.nom_du_parent_destinataire %></div>
+              <p style="color: #3498DB"><em> ID du parent: <%= letter.recipient_id %> </em> </p>
               <div class="text"><%= letter.subject %></div>
               <div><%= link_to "Voir", admin_letter_path(letter), class: "btn-show" %></div>
             </div>
