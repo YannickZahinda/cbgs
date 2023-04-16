@@ -17,7 +17,11 @@
 
 <%= current_user.email %>
 <h2>Vos Messages:</h2> 
-<ul>
-
-</ul>
+<% @letters.each do |letter| %>
+  <div>
+    <p>From: <%= letter.sender.name %></p>
+    <p>Subject: <%= letter.subject %></p>
+    <p>Message: <%= letter.body %></p>
+  </div>
+<% end %>
 </div>

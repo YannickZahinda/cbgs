@@ -1,9 +1,9 @@
 class DashboardController < ApplicationController
   before_action :authenticate_user!
   before_action :check_logged_in
+
   def index
-    # @user = current_user
-    # @messages = @user.messages
+    @letters = current_user.received_letters.order(created_at: :desc)  
   end
 
   def new
