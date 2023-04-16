@@ -1,0 +1,21 @@
+<h1>Les Utilisateurs </h1>
+<table>
+  <thead>
+    <tr>
+      <th>Post nom</th>
+      <th>Prénom</th>
+      <th>Email</th>
+      <th>Compte créé à</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @logged_in_users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.last_sign_in_at.strftime('%b %d, %Y %I:%M %p') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

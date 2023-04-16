@@ -3,6 +3,18 @@
       <div class="form">
        <h3>Log in</h3><br/>
        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+          <div class="field">
+            <%= f.label :first_name, :class => "label" %><br />
+            <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", :class => "input" %>
+          </div>
+          
+          <div class="field">
+            <%= f.label :last_name, :class => "label" %><br />
+            <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", :class => "input" %>
+          </div>
+
+
           <div class="field">
             <%= f.label :email, :class => "label"  %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "input" %>

@@ -4,8 +4,18 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :nom %><br />
+    <%= f.email_field :first_name, autofocus: true, autocomplete: "nom" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :post_nom %><br />
+    <%= f.email_field :last_name, autofocus: true, autocomplete: "post_nom" %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email"%> 
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

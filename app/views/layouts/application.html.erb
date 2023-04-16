@@ -23,7 +23,7 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>  
 
-    <% if current_page?(admin_home_index_path) || current_page?(admin_teachers_path) || current_page?(admin_parents_path) || current_page?(admin_communiques_path) || current_page?(admin_eleves_path) %>
+    <% if current_page?(admin_home_index_path) || current_page?(admin_teachers_path) || current_page?(admin_parents_path) || current_page?(admin_communiques_path) || current_page?(admin_eleves_path) || current_page?(logged_in_users_admin_home_index_path) %>
       <div class="admin-bar">
         <%= render "admin/home/navbar"%>
       </div>

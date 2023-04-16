@@ -26,12 +26,16 @@
     </li>
     <li class="link"><%= link_to "Ecrire un message", new_message_path, :class => "link" %></li>
     <% if user_signed_in?%>
-     <% if current_user.is_admin? %>
-      <li class="link"><%= link_to "Dashboard admin", admin_home_index_path, :class => "link" %></li>
-    <% end %>
-      <li class="link">
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "link" %>
-      </li>
+       <% if current_user.is_admin? %>
+        <li class="link"><%= link_to "Tableau de bord administrateur", admin_home_index_path, :class => "link" %></li>
+       <% else %>
+         <li class="link">
+           <%= link_to 'Tableau de bord utilisateur', dashboard_index_path, :class => "link" %>
+         </li>
+       <% end %>
+       <li class="link">
+         <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, :class => "link" %>
+       </li>
     <% else %>
       <li class="link">
         <%= link_to "S'enregistrer", new_user_registration_path, :class => "link" %>
