@@ -87,4 +87,4 @@ test:
     username: cbgs
     url: <%= ENV["CBGS_DATABASE_URL"] %>
     password: <%= ENV['CBGS_DATABASE_PASSWORD'] %>
-    host: <%= ENV['MYAPP_DATABASE_HOST'] %>
+    host: <%= ENV['CBGS_DATABASE_HOST'] %>
