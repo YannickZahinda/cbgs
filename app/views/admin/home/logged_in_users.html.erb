@@ -2,6 +2,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Post nom</th>
       <th>Prénom</th>
       <th>Email</th>
@@ -11,6 +12,7 @@
   <tbody>
     <% @logged_in_users.each do |user| %>
       <tr>
+        <td><%= user.id%></td>
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
         <td><%= user.email %></td>

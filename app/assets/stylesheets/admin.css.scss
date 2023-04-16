@@ -555,6 +555,123 @@ tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
+//===== admin sent letter =====//
+
+
+.admin-letter-container {
+  margin-top: 30px;
+}
+
+.admin-letter-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.admin-letter {
+  background-color: #f7f7f7;
+  border: 1px solid #e5e5e5;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.admin-letter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  gap: 8px;
+}
+
+.admin-letter-sender {
+  display: flex;
+  align-items: center;
+}
+
+.admin-letter-sender-icon {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.admin-letter-sender-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.admin-letter-date {
+  font-size: 14px;
+}
+
+.admin-letter-body {
+  font-size: 16px;
+}
+
+.admin-letter-subject {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.admin-letter-message {
+  white-space: pre-line;
+}
+
+.admin-letter-message p {
+  margin-bottom: 10px;
+}
+
+// add letter form style ======
+
+/* Form styles */
+.message-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+  .message-form {
+    max-width: 100%;
+  }
+}
+
 
 
 

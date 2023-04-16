@@ -4,6 +4,8 @@
     <div>
       <a href="#events" style="text-decoration: none; color: #184C72; margin: 10px">Événements</a>
       <a href="#messages" style="text-decoration: none; color: #184C72; margin: 10px;">Messages</a>
+      <%= link_to "Ecrire aux parents", new_admin_letter_path, :style => "text-decoration: none; color: #184C72; margin: 10px;" %>
+      <a href="#letters" style="text-decoration: none; color: #184C72; margin: 10px;">Lettres envoyées aux parents</a>
     </div>
 
       <div class="plans-week">
@@ -68,6 +70,25 @@
            <% end %>
           </div>
         </div>
+      </div>
+      <div class="plans-week">
+        <div class="plan-head" id="letters">
+          <h1>Lettres aux parents</h1>
+        </div>
+        <% if @letters.present?%>
+          <% @letters.each do |letter| %>
+           <div class="message">
+              <div class="sender">Au parent <%= letter.nom_du_parent_destinataire %></div>
+              <p style="color: #3498DB"><em> ID du parent: <%= letter.recipient_id %> </em> </p>
+              <div class="text"><%= letter.subject %></div>
+              <div><%= link_to "Voir", admin_letter_path(letter), class: "btn-show" %></div>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="message">
+            <div>Vous n'avez envoyé aucune lettre pour le moment</div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
