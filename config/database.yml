@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["MY_APP_DATABASE_URL"] %>
   database: cbgs_production
   username: cbgs
   password: <%= ENV["CBGS_DATABASE_PASSWORD"] %>
