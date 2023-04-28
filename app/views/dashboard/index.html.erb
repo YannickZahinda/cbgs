@@ -32,6 +32,11 @@
         </div>
         <div class="admin-letter-body">
           <div class="admin-letter-subject"><%= letter.subject %></div>
+          <div class="admin-document" style="padding: 15px 15px">
+            <% if letter.document.attached? %>
+              <%= link_to "Télécharger le fichier", url_for(letter.document)%>
+            <%end%>
+          </div>
           <div class="admin-letter-message"><%= letter.body %></div>
         </div>
       </div>

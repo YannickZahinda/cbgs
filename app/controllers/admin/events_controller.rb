@@ -38,7 +38,7 @@ class Admin::EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to event_url(@event), notice: "Event was successfully updated." }
+        format.html { redirect_to admin_events_path(@event), notice: "Événement modifié avec succès." }
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -66,6 +66,6 @@ class Admin::EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:date, :title, :description)
+      params.require(:event).permit(:date, :title, :description, :image)
     end
 end

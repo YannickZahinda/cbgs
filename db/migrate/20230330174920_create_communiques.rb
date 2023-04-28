@@ -3,6 +3,7 @@ class CreateCommuniques < ActiveRecord::Migration[7.0]
     create_table :communiques do |t|
       t.string :titre
       t.string :description
+      t.string :image
 
       t.timestamps
     end
