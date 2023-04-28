@@ -3,6 +3,12 @@
   <%= image_tag"logos/CBGClogo.png", class: 'my-logo-popup-icon' %>
   <h1>Tableau de bord utilisateur</h1>
   <p>Bienvenue Monsieur/Madame : <%= current_user.first_name%></p>
+  <div style="background-color: #f2f2f2; padding: 10px; border-radius: 25px; display: flex; align-items: center; width: 40%; margin: 15px auto">
+    <div >
+      <%= image_tag "logos/user-profile-icon.png", style: " width: 30px; height: 30px; background-color: #ccc; border-radius: 50%; margin-right: 10px;" %>
+    </div>
+    <h4 style="margin: 0; font-size: 14px; font-weight: bold; color: #333;"><%= current_user.email %></h4>
+  </div>
 </div>
 <div style="margin: 30px auto; width: 60%">
 
@@ -15,7 +21,7 @@
   </div>
 </div>
 
-<strong> Enregistré(e) sous email: </strong><%= current_user.email %>
+<div>Tous les messages de l'école ou les devoirs seront affichés ci-dessous. Veuillez avoir les soins de vérifier tous les jours</div>
 <div class="admin-letter-container">
   <h2 class="admin-letter-heading">Vos Messages:</h2> 
   <% if @letters.present? %>

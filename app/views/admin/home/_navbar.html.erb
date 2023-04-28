@@ -2,9 +2,11 @@
 <div class="adminlogo-container">
      <%= link_to(root_path) do%> <%= image_tag"logos/CBGClogo.png", class: 'adminlogo' %> <% end %>
      <h1>Bienvenu au tableau de bord administrateur!</h1>
-     <div class="logged-in-email">
-        <div class="user-icon"></div>
-        <h4><%= current_user.email %></h4>
+     <div style="background-color: #f2f2f2; padding: 10px; border-radius: 25px; margin-bottom: 10px; display: flex; align-items: center;">
+        <div >
+          <%= image_tag "logos/user-profile-icon.png", style: " width: 30px; height: 30px; background-color: #ccc; border-radius: 50%; margin-right: 10px;" %>
+        </div>
+        <h4 style="margin: 0; font-size: 14px; font-weight: bold; color: #333;"><%= current_user.email %></h4>
      </div>
 </div>
 <ul class="adminlinks">
