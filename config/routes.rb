@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   get 'dashboard/edit', to: 'dashboard#edit'
   get 'dashboard/update', to: 'dashboard#index'
   get 'dashboard/destroy', to: 'dashboard#destroy'
+  get 'dashboard/chats', to: 'dashboard#chats'
 
   
   namespace :admin do
     resources :events, only: [:index, :show, :new, :create, :edit, :update, :destroy]
     resources :messages, only: [:index, :show, :destroy]
+    resources :chats, only: [:index, :show, :new, :create]
     resources :teachers do
       collection do
         get '/search', to: 'teachers#search'
@@ -38,6 +40,7 @@ Rails.application.routes.draw do
   resources :communiques, only: [:index, :show]
   resources :home, only: [:index]
   resources :messages, only: [:show, :update, :destroy, :new, :create, :edit]
+  resources :chats, only: [:index]
   # resources :dashboard, only: [:index, :update, :create, :new, :edit, :destroy]
   
   # get 'home/dashboard', to: 'dashboard#index'

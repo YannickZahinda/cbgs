@@ -1,0 +1,20 @@
+<div class='signup'>
+
+<%= form_with model: @chat, url: admin_chats_path do |form| %>
+  <h1>New Message</h1>
+  <div class="field">
+    <%= form.label :recipient_ids, 'To', class: 'label' %>
+    <%= form.collection_select :recipient_ids, User.all, :id, :first_name, {}, { multiple: true, class: 'input' } %>
+  </div>
+ 
+  <div class="field">
+    <%= form.label :body, 'Message', class: 'label' %>
+    <%= form.text_area :body, class: 'input' %>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit 'Envoyer le chat', class: 'btn' %>
+  </div>
+<% end %>
+</div>
+

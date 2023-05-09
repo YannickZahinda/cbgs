@@ -27,9 +27,16 @@
       <div class="admin-bar">
         <%= render "admin/home/navbar"%>
       </div>
+      <%= yield %>  
+    <% elsif current_page?(dashboard_index_path) || current_page?(dashboard_chats_path)  %>
+      <div class="dashboardbard">
+        <%= render 'shared/dashboardbar'%>
+      </div>
+      <%= yield %>  
+    <% else %>
+      <%= yield %>
     <% end %>
-
-     <%= yield %>  
+     
 
 
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

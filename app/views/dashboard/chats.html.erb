@@ -1,0 +1,11 @@
+<div>
+  <h1>Your chats</h1>
+  <% if @chats.present? %>
+    <% @chats.each do |chat| %>
+      From : <%= chat.sender.name%>
+      <p><%= chat.body  %></p>
+    <% end %>
+  <% else %>
+    <div>Pas de chat disponible pour le moment.</div>
+  <% end %>
+</div>
