@@ -16,9 +16,12 @@
     <%= link_to "Page d'accueil", root_path, style: "text-decoration: none; color: white"%>
   </div>
   <div style="background-color: #184C72; padding: 15px; border-radius: 10px; text-decoration: none; color: white; width: max-content">
-    <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, style: "text-decoration: none; color: white;"%>
+    <%= link_to "Chats", dashboard_chats_path, style: "text-decoration: none; color: white;"%>
   </div>
   <div style="background-color: #184C72; padding: 15px; border-radius: 10px; text-decoration: none; color: white; width: max-content">
-    <%= link_to "Chats", dashboard_chats_path, style: "text-decoration: none; color: white;"%>
+    <%= link_to "Message", dashboard_index_path, style: "text-decoration: none; color: white;"%>
+  </div>
+  <div style="background-color: #184C72; padding: 15px; border-radius: 10px; text-decoration: none; color: white; width: max-content">
+    <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, style: "text-decoration: none; color: white;"%>
   </div>
 </div>

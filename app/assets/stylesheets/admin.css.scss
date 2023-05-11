@@ -716,3 +716,7 @@ tr:nth-child(even) {
   font-weight: bold;
   color: #333;
 }
+
+.input:checked ~ .notification {
+  display: block;
+}

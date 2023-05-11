@@ -32,7 +32,9 @@
       <div class="dashboardbard">
         <%= render 'shared/dashboardbar'%>
       </div>
-      <%= yield %>  
+      <div style="width: 70%; margin: 15px auto">
+        <%= yield %>  
+      </div>
     <% else %>
       <%= yield %>
     <% end %>
