@@ -1,7 +1,7 @@
 
 <div class="adminlogo-container">
      <%= link_to(root_path) do%> <%= image_tag"logos/CBGClogo.png", class: 'adminlogo' %> <% end %>
-     <h1>Bienvenu au tableau de bord administrateur!</h1>
+     <h4>Bienvenu au tableau de bord administrateur!</h4>
      <div style="background-color: #f2f2f2; padding: 10px; border-radius: 25px; margin-bottom: 10px; display: flex; align-items: center;">
         <div >
           <%= image_tag "logos/user-profile-icon.png", style: " width: 30px; height: 30px; background-color: #ccc; border-radius: 50%; margin-right: 10px;" %>
@@ -9,41 +9,44 @@
         <h4 style="margin: 0; font-size: 14px; font-weight: bold; color: #333;"><%= current_user.email %></h4>
      </div>
 </div>
-<ul class="adminlinks">
-  <li class="adminlink"> 
-    <%= link_to(admin_home_index_path) do %>
-       <%= image_tag("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAhFBMVEX///8AAADc3NygoKBhYWH09PR1dXUEBATh4eGGhob4+Pj8/PyKioo0NDQ9PT3t7e1tbW2qqqq7u7vDw8PPz89/f39PT0+xsbFbW1sNDQ0mJiZzc3ORkZFnZ2fn5+dDQ0NUVFQdHR2jo6PLy8uXl5cUFBRKSkpCQkIjIyM2NjYtLS22trYZGlmsAAAH0UlEQVR4nO2di2KiOhCGCYgoURHvaLVq1a36/u93chu0XBQwgHLm2113azHkd4Zk/hC7hoEgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCFIYSuvuQdnQ2D8aSOfLrrsLpUJHfXIe1d2LMvkixCFkX3c3dEP5ZccfNt9EKCTbpmUqH1fYMDq+CHmO45DzpO4+aYVKiSxDZQSZRkIOdfdKO+aCy+O/eBDZ43pTd5f08nMBfTKSTOPFrLtT2qCG25P56ZDAN6yjvBbZmNqYid/cimuPiRIjzHgJ8Vx7zahupCIetbZUZA8hpMufBii0u5CUwVw8QSl1LRHUoBFjqt1SUyD5nYiJg8q5cadmDdJ+xzHVzXIQFVZpRIBh5NtDNagS8lNCF1+B9dvtDv+yHq7Xi+hxXGD3CKHy3YhnolZAZKKSg60afheofP+jRI9iTmmrpj4ySJr7JheIYsurot85yKSQZegyvNbsaAR5K4bXhhquP3qjELLsy6aQ1aGB/I4lXpTU0IHARGJV0/uMCIXU9UKM2U3hvVNinQ/IqfOgKfOsEpXMPPXqd0AovLd47uxPDFk3r8Ip8Z4PN0ZCAMMjvZacTN7LUT1QKMW4X1CmHX2YAVPZi2zmmdortdd5eBxDqpwS/3MaG677bBFxMgNHtXiU0FXyJEu5U5IRnHq3JYzUxlimLpSnIv03ydSYQvt0y1K3Cx5wN8/cInNUMuhq9jdqHnNSYigixZ2SnOYTZ/k0xn2YNhZq9n87hQ4Rfbr+QqHdzeP96J2j2o3rnzQSY7jkf/dgBg+uj6++aIvMUfly/GUyv3K8shySFPJ5XYwYjhoxqHIXWdukqk7lgVzXXafGFHqDL/Y4Dwu4VcF2VwRyfKyjn8WJKxxxS3VURoLMMxnIpIb3oaMSN3Bqy9WYQj6GfoNT+p4U7Bu/+iYDopaNF5saL8aYQoP6v3+cUrFmuSJvCt5/mX061U5cYS+8BC3lLoo0K/5QCyTW6KjuFfLU6lxghNjqGAQ7Z1id+1fXmAoK1T0lNsurkqutZ4XXXslS3CGXmtZTwxgKpzSFET7Qc+HwRvcgsSZHdctS4ZQceb9lO1Ed1PG2T04yKwKyreMGjlLIlYyP4JS64YWp4QTMUa1hvLnUsJ4axtBtw03Bnf7tB34AU+Oh4pviNFRoniCAuZxSVn76sBayqHhMpax+/GWpM9/BJNizS6g/KFVjqkiRasdUd7byZPEhSkhp6LR3gVkTyjKVSeRn6VWaqa7PqqstTBJ9U/o7/edhA455gVUqLcVE1tPyOhTWKki7XAtAp+EOh6r2UgmFKwcKq8JOKTPCUYlz9apxVOwME+GU+O9vs+RTxhxVFdD5EZY3u65d8p7R0FE51TkqqnaOMNSKfalnk4/70FF9lXo2cEpyOa3SadgeECcQ7+x3WSv/KlLcKclLsF1tKSVnf/57OS4pa3gA7Skky/Fa+SqKD0vGpFuaxMkWxtBFHXdQzBncTS3LUY12rEoTg0yPwhBaTSDVWYSjEqXisgxH5bVllgRkeS2h+Wxcd2A3tNaprlgPHUCBeDJrXMicDEJHpW/2F/kob/CJ2yZetj1RpUAjpltbueFOoc7+LccpZYc5qiPco+ol7NIpxmYBGXquf18vc1R9mDZmmooO6ZSIdEp1Esbr5qherVMpLMpIpzRmae9y611XlsqTs7PzTJVT11Q4qlc6JAYvcEqsLB3MGGddXc6JdWInP1k8UweQWKfX7lFJpyQnIJe/W6Z0Fbq6nBO5zaPL/6nJUfGdI2r33VxeBp1aFUrj1pVf+LCr5QVHZQZw+2Ar73y9qrDYfdMbvVsM2aVnf6vxgfwrmKebPtwemYbroZXH8E/f7xRymNWRy6mLQiUcFRedqESvtzMlKsz0DlL1kPftTomhfF45qkJO57YPfd1RLaZkabYuU5CYO6HuasT7LOVzh9xoTVrFklRceUPhlOBLI0mht1q1M9BSiw+dVpaj71h1b+f6E0PZI2/42rTvLiIbW+IK3QvJhKr3zGxH33H3IYDIdSi5Rj8lkFNi5OsEhX09CtV91jitJwqNF21UJMV1KEySkqovg0K9JCs8dVz7AXxT9H0Mp/EjxK7i4zjajPE2Cp+4GIt1/05hQhdbogaLj/qZFGo1AskKB08UHiIxjB/REqlaUKFWUGEyqBAVAqhQB6gwGVSICoHPVug0SWHCrlhRlwaNUdgajyKM+YZZEhxiz3+ownw0RKGT6Is/WGGynGSZH6kwLkRt0mlIDNMCmMIHKiT9VpT1UsyHs9jzH6owYT5c8zw9NmY+/J9WbaiQgwp1gAqTQYWoEECFOkCFyaBCVAigQh2gwmRAodhJ5pD1OMrPSexUsGLPf5pC48EqRmPWaTop8lIEMuf/aQr17/rSzMsKN1++78/9FOLfYM/c2vkIhS+BCnWACpNBhVlBhTooptBqvMI9KsxIPQrpmZB/Tz6zwhXq+FEIFSr0LWDPf5bSbr+3HjDnH/s4PDwkCwe/VZ3CPzzYZx8ekn6LNz/VK3zWe/Wh3VdVhq+vWKEDP47rqciXwwivryGGEKUHXUvfapFDXyUxzG9g9ZOwkKUR26yfzf/hP/ss9eenldh2ZhofxLJ//BaCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCNJX/AOb+hqA8+h9ZAAAAAElFTkSuQmCC", class: "adminicon") %>
+<div class="adminlinks">
+  <%= link_to(admin_home_index_path, class: 'adminlink') do %>
+     <%= image_tag("logos/home.png", class: "adminicon") %>
+     <div style="align-self: center">
       <% concat "Home"%>
-    <%end%>
-  </li>
-  <li class="adminlink"> 
-    <%= link_to(admin_eleves_path) do %>
-       <%= image_tag("https://previews.123rf.com/images/tuktukdesign/tuktukdesign1606/tuktukdesign160600135/59070711-ic%C3%B4ne-de-l-%C3%A9l%C3%A8ve-homme-graduation-academic-education-licence-toque-ic%C3%B4ne-dans-glyphe-vecteur.jpg", class: "adminicon") %>
+     </div>
+  <%end%>
+  <%= link_to(admin_eleves_path, class: 'adminlink') do %>
+     <%= image_tag("logos/eleve-icon.png", class: "adminicon") %>
+     <div style="align-self: center"> 
       <% concat "Eleve"%>
-    <%end%>
-  </li>
-  <li class="adminlink">
-    <%= link_to(admin_communiques_path) do %>
-      <%= image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1e-Nk9zaGIk6zCCsi1c2mbbJlfNa0MDdb52x0dp9jxcq0ZFLQ_RhJNYtB0garC1aEBf8&usqp=CAU", class: "adminicon") %>
+     </div>
+  <%end%>
+  <%= link_to(admin_communiques_path, class: 'adminlink') do %>
+    <%= image_tag("logos/speaker-icon.png", class: "adminicon") %>
+    <div style="align-self: center">
       <% concat "Communiques" %>
-    <% end %>
-  </li>
-  <li class="adminlink">
-    <%= link_to(admin_teachers_path) do %>
-      <%= image_tag("https://thumbs.dreamstime.com/b/teacher-icon-vector-male-person-profile-avatar-book-teaching-school-college-university-education-glyph-113754458.jpg", class: "adminicon") %>
+    </div>
+  <% end %>
+
+  <%= link_to(admin_teachers_path, class: 'adminlink') do %>
+    <%= image_tag("logos/enseignant-icon", class: "adminicon") %>
+    <div style="align-self: center">
       <% concat "Enseignants" %>
-    <% end %>
-  </li>
-  <li class="adminlink">
-    <%= link_to(admin_parents_path) do%>
-      <%= image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1sPAC2_PjzO7A4mTAqgMA5Zhx_Y8HB92Kw4n9yalJ5A&s", class: "adminicon")%>
+    </div>
+  <% end %>
+
+  <%= link_to(admin_parents_path, class: 'adminlink') do%>
+    <%= image_tag("logos/parents-icon", class: "adminicon")%>
+    <div style="align-self: center">
       <% concat "Parents" %>
-    <% end %>
-  </li>
-  <li class="adminlink">
-    <%= link_to(logged_in_users_admin_home_index_path) do %>
-      <%= image_tag("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHoAAAB6CAMAAABHh7fWAAAAY1BMVEUAAAD////h4eH5+fl4eHj09PSxsbHGxsalpaWSkpLV1dX8/PxlZWXS0tJtbW0KCgrt7e1/f38sLCw4ODgiIiJUVFS+vr4RERFHR0ecnJyKiopgYGBNTU0WFhYnJydycnJAQEC8QAanAAAEBElEQVRogeWb6XKrMAyFzQ4JJBAgNGSB93/Km3Rup2BkawGndzn/2hn61diWpSOjPIGCIs4OdXM8NqdrlSal5G94nmI/UcYfRzVXfdm9Ab0b7gpSm+zdov0DyP0Nd4m+mMEvDbxJZ6DLDzv5qcIN+oyCn8pcoFMKWalwe3RGIyuVk1c6EU0c80uHbdGkef5StSXa55CVirdDBzUPrfzN0BWTrOqt0AWXrNRlI/SNj+4oIRVHJ3yyUv0maDxyA2oIw0bROwlZqXQDdC9DjxugZWTK+YmhmYHsW/gbx9CMc2Ou62p0KEUfV6NFW+tT6PZC0HsxGV9nCLqUo88r0eIFTji13aHR3eUOjR6c/+So1851JEevXeF7vZSmCy25sWjWitFroxk/G/3SHSOj6FiKHlajxZEUL0HQLOUhI3d4BYKihblCi5JxtDCoEEo+PA+3mEZm1dEWaFEiTkjDKTWXYNiUQVPQPj+YovGbiOYv8pxCphkazFd+p7xuIjrixRWiZ0hzkFibm7K66WhOfU/2KqluIdk5o7ukZI+UGFmInhkL7fmE8uvIseMZfniAGgw3lhfP6gIUVtuwSXntD17vI0hPJnBXcXtO3I5PFMPwjN/s4ve5PD/TFtyp4jZ7yOioDLTf7HfxpQ/zfKiyOFlG7OUDfHRUpPmjuXddy+jlnMeuuzf1EO/sy86GLsLJis5pJrdXTNzcsbc9ZEYXWs3TUY6FSN/7BzPchI6G5Spu0YEnwMbPTPNuQCcduIXsTkEAm2y14T+G0caU6GTZRubyDH4IRNv6abcEfIFl3FgeAtNECI1Ul49er9qDYrCBFVznA2hCm+XWJ375uWuD0j+HI/rAEcgUl+gIGcCXTu01z68tMWMEjOIlWuwF27WMCgu0oKtF0+Jo09GB3IVGtHA4dDSrZ8uTHlk09H50h9aHraEdDnoxbA3tbKZf6m3oFW4sQXcbmnwZQqazBe2WrIW0Gdrt+37KjBa38qgqjOjcNfpiRLsmz+3LKdr5VM8ne/qD2PumyzegxY4/XSmM3l/doysYTc2M1iiH0Su6tmTVAYgWXgPhqQTRb1jgsyU+QSNXNbdRAaLfsLdmlt4ELWpycHUB0c4Pj5d6CL2Xd04ZCiF0ILjSxtcBQkfjf4nmXtn829D5nzbq8cfQ79lcA4R+TyDNQPQPHh8/eF6/IQ1XTQSi3Tk435p+pTDNw9+QpiQG9IprVkSdPANaej+YrtiIdj3s+R3meaHveH/tLGgP6HhsJ82h1Y1KhyWffkl/Yc86i+SLdv7SD3fknS3b+UADIjE2iuW6AQ0nqO0SXYT320yqY6i7Cfe5oni7vOF4PcNtVWNPs0zSsH3AX0YSmffPD0iN/eRfmaYxZ0e/PZ0AAAAASUVORK5CYII=", class: "adminicon") %>
+    </div>
+  <% end %>
+
+  <%= link_to(logged_in_users_admin_home_index_path, class: 'adminlink') do %>
+    <%= image_tag("logos/logged-users-icon.png", class: "adminicon") %>
+    <div style="align-self: center">
       <% concat "Utilisateurs connectés" %>
-    <% end %>
-  </li>
-</ul>
+    </div>
+  <% end %>
+</div>

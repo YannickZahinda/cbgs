@@ -8,6 +8,7 @@
     
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag 'admin', "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'dashboard', "data-turbo-track": "reload" %>
 
     <%= javascript_importmap_tags %>
 
@@ -24,10 +25,14 @@
     <p class="alert"><%= alert %></p>  
 
     <% if current_page?(admin_home_index_path) || current_page?(admin_teachers_path) || current_page?(admin_parents_path) || current_page?(admin_communiques_path) || current_page?(admin_eleves_path) || current_page?(logged_in_users_admin_home_index_path) %>
-      <div class="admin-bar">
-        <%= render "admin/home/navbar"%>
+      <div style="display: flex; justify-content: center">
+        <div class="sidebar-admin">
+          <div class="admin-bar">
+            <%= render "admin/home/navbar"%>
+          </div>
+          <%= yield %>  
+        </div>
       </div>
-      <%= yield %>  
     <% elsif current_page?(dashboard_index_path) || current_page?(dashboard_chats_path)  %>
       <div class="dashboardbard">
         <%= render 'shared/dashboardbar'%>
