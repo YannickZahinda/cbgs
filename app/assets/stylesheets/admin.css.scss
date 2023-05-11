@@ -1,12 +1,12 @@
-.table-container {
+/* .table-container {
   overflow-x: auto;
   margin-bottom: 20px;
-}
+} */
 
 table {
   border-collapse: collapse;
   width: 100%;
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
   background-color: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
@@ -684,11 +684,16 @@ tr:nth-child(even) {
   }
 
   .dashboard {
-    width: 100vh;
+    width: 150vh;
   }
 
   table {
-    width: 120vh;
+    width: 100%;
+  }
+
+  .news-page {
+    width: 860px;
+    margin: auto;
   }
 }
 
@@ -715,4 +720,8 @@ tr:nth-child(even) {
   font-size: 18px;
   font-weight: bold;
   color: #333;
+}
+
+.notification {
+  color: red;
 }

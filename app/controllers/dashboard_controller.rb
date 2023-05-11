@@ -3,7 +3,11 @@ class DashboardController < ApplicationController
   before_action :check_logged_in
 
   def index
-    @letters = current_user.received_letters.order(created_at: :desc)  
+    @letters = current_user.received_letters.order(created_at: :desc) 
+  end
+
+  def chats
+    @chats = current_user.received_chats.order(created_at: :desc)
   end
 
   def new
