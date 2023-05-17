@@ -3,7 +3,7 @@
   <button class="dropbtn" id="dropbtn"> Menu ⇣⇣</button>
   <div class="navlinks dropdown-content" id="dropdown-content">
     <a href="#apropos" class="link" >A propos</a>
-    <a class="popup-btn communiquebtnpopup link">Communiques</a>       
+    <a class="popup-btn communiquebtnpopup link">Communiqués</a>       
     <%= render "shared/communiquepopup" do%>
       <div class="communique-popup-icon">
         <%= image_tag"logos/CBGClogo.png", class: 'my-logo-popup-icon' %>
@@ -27,7 +27,7 @@
           <p>Il n'y a pas de communique pour le moment</p>
         <% end %>
     <%end%>
-    <%= link_to "Ecrire un message", new_message_path, :class => "link" %>
+    <%= link_to "Contactez-nous", new_message_path, :class => "link" %>
     <% if user_signed_in?%>
        <% if current_user.is_admin? %>
         <%= link_to "Tableau de bord administrateur", admin_home_index_path, :class => "link" %>
@@ -36,7 +36,7 @@
        <% end %>
          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, :class => "link" %>
        <% else %>
-         <%= link_to "S'enregistrer", new_user_registration_path, :class => "link" %>
+         <%= link_to "Connexions", new_user_registration_path, :class => "link" %>
        <%end%>
   </div>
 </div>
