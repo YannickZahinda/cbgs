@@ -61,7 +61,6 @@ document.addEventListener("turbo:load", function() {
   initialize();
   
   document.getElementById("dropbtn").addEventListener('click', () => {
-
     var dropdownContent = document.getElementById("dropdown-content");
     if (dropdownContent.style.display === "block") {
       dropdownContent.style.display = "none";
@@ -69,6 +68,14 @@ document.addEventListener("turbo:load", function() {
       dropdownContent.style.display = "block";
     }
   })
+
+  function translate(locale) {
+    var locale = locale;   
+    // Set locale as cookie 
+    document.cookie = "locale=" + locale;  
+    location.reload();  // Refresh page 
+  }
+
   
 
 });
