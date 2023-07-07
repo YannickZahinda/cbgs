@@ -1,0 +1,61 @@
+/* .eleves {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.eleves {
+  background-color: #f4f4f4;
+  height: 120vh;
+  overflow-x: scroll;
+  padding: 20px;
+}
+
+.eleves div {
+  background-color: #fff;
+  width: 100%;
+  margin: 25px auto;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.sidebar-admin {
+  display: grid;
+  grid-template-columns: 285px 1fr;
+  width: 100%;
+}
+ 
+.adminlinks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  list-style-type: none;
+  padding: 30px;
+}
+
+.adminlink {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  color: rgb(3, 3, 3);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 992px) {
+    .sidebar-admin {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .adminlinks {
+      flex-direction: row;
+    }
+
+    .eleves {
+      width: max-content;
+    }
+}

@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .teacher {
@@ -45,6 +45,9 @@
 .link {
   text-decoration: none;
   color: #1d1c1c;
+  font-size: 16.5px;
+  font-weight: bolder;
+  width: max-content;
 }
 
 .link:hover {
@@ -131,6 +134,7 @@
 
 .slider {
   width: 100%;
+  height: 40%;
   margin-top: 30px;
 }
 
@@ -180,6 +184,8 @@
 .equipe-dir {
   color: #202020;
   padding: 10px;
+  font-family: Helvetica, sans-serif;
+  margin-left: 30px;
 }
 
 .equipe-dir-pics {
@@ -222,8 +228,9 @@
 }
 
 .card > p {
-  color: #555;
+  color: #040404;
   padding: 10px;
+  font-size: 12px;
 }
 
 .philosophie {
@@ -429,19 +436,28 @@
 }
 
 .partenaire-container{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
-  gap: 30px;
-  padding: 15px;
+ display: flex;
+ justify-content: center;
+ gap: 20px;
 }
 
 .partnerpic {
-  width: 100%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 
+.partner-pic-container {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
 
-// footer style _************************
+.bgs-icon{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
 
 .footer {
   background-color: #184C72;
@@ -511,9 +527,23 @@
   gap: 7px;
 }
 
-.uppernav li a {
+.uppernav a {
   text-decoration: none;
   color: #fff;
+  font-size: 10px;
+}
+
+.uppernav-link a{
+  align-self: center;
+}
+
+.uppernave-icon a{
+  display: flex;
+  gap: 10px;
+}
+
+.uppernave-icon div {
+  align-self: center;
 }
 
 .uppernav li a:hover {
@@ -599,11 +629,6 @@
     text-align: center;
   }
 
-
-  
-  // drop down menu =================
-
-  /* Style the button that opens the dropdown */
   .dropbtn {
     background-color: #184C72;
     color: white;
@@ -613,13 +638,11 @@
     cursor: pointer;
   }
   
-  /* The container <div> - needed to position the dropdown content */
   .dropdown {
     position: relative;
     display: inline-block;
   }
 
-  /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
     display: none;
     position: absolute;
@@ -631,9 +654,7 @@
     margin: auto;
   }
 
-  /* Links inside the dropdown */
   .dropdown-content a {
-    // color: black;
     padding: 12px 16px;
     margin: auto;
     color: #000;
@@ -641,12 +662,10 @@
     font-weight: 400;
   }
   
-  /* Change color of dropdown links on hover */
   .dropdown-content a:hover {
     border-bottom: 1px solid black;
   }
   
-  /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {
     display: block;
   }
@@ -700,9 +719,19 @@
     font-family: monospace;
   }
 
-}
+  .partnerpic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
 
-// admin logo ************
+  .bgs-icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
+}
 
 .adminlogo {
   width: 150px;
@@ -716,10 +745,13 @@
 }
 
 .adminicon{
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  padding: 4px;
+  object-fit: contain;
 }
+
 
 .adminlogo-container {
   display: flex;
@@ -738,27 +770,6 @@
 }
 
 
-.adminlinks {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  list-style-type: none;
-  padding: 30px;
-}
-
-.adminlink {
-  background-color: #184C72;
-  padding: 15px;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-}
-
-.adminlink a {
-  color: #fff;
-  text-decoration: none;
-}
-
 .news {
   text-align: left;
 }
@@ -771,10 +782,10 @@
 
 .admin-bar {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   width: 95%;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
   flex-direction: column;
   flex-wrap: wrap;
 }

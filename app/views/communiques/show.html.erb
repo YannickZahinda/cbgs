@@ -3,13 +3,18 @@
    <%= image_tag"logos/CBGClogo.png", class: 'my-logo-popup-icon' %> <br/>
    <p>
      <h1><%= @communique.titre %></h1> <br/>
-   </p>   
+   </p>
+   <% if @communique.image.attached? %>
+      <%= image_tag @communique.image, style: "width: 60%; height: 245px; margin: 10px auto; object-fit: contain" %>
+   <% else %> 
+      <div style="color: red">Pas d'image trouvée</div>
+   <% end %>  
 
    <p style="width: 65%; margin: auto"><%= @communique.description %></p>
    <div style="margin: 25px;">
-   <%= link_to "Retour aux communiques", communiques_path, style: "text-decoration: none; background-color: black; color: white; padding: 7px; border-radius: 7px; " %>
+     <div style="margin: 15px;"><%= link_to "Retour aux communiques", communiques_path, style: "text-decoration: none; background-color: black; color: white; padding: 7px; border-radius: 7px; " %></div>
      <% if current_user.is_admin?%>
-       <%= link_to "Retour aux communiques administrateur", admin_communiques_path, style: "text-decoration: none; background-color: black; color: white; padding: 7px; border-radius: 7px; " %>
+       <div style="margin: 15px;"><%= link_to "Retour aux communiques administrateur", admin_communiques_path, style: "text-decoration: none; background-color: black; color: white; padding: 7px; border-radius: 7px; " %><div style="margin: 15px;">
      <% end %> 
    </div>
 </div>

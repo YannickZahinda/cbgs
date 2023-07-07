@@ -1,21 +1,5 @@
 
-<div class="communique-popup-icon">
-  <%= image_tag"logos/CBGClogo.png", class: 'my-logo-popup-icon' %>
-  <h1>Tableau de bord utilisateur</h1>
-  <p>Bienvenue Monsieur/Madame : <%= current_user.first_name%></p>
-</div>
-<div style="margin: 30px auto; width: 60%">
-
-<div style="display:flex; justify-content: center; gap: 20px; margin: 30px">
-  <div style="background-color: #184C72; padding: 15px; border-radius: 10px; text-decoration: none; color: white; width: max-content">
-    <%= link_to "Page d'accueil", root_path, style: "text-decoration: none; color: white"%>
-  </div>
-  <div style="background-color: #184C72; padding: 15px; border-radius: 10px; text-decoration: none; color: white; width: max-content">
-    <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, style: "text-decoration: none; color: white;"%>
-  </div>
-</div>
-
-<strong> Enregistré(e) sous email: </strong><%= current_user.email %>
+<div>Tous les messages de l'école ou les devoirs seront affichés ci-dessous. Veuillez avoir les soins de vérifier tous les jours</div>
 <div class="admin-letter-container">
   <h2 class="admin-letter-heading">Vos Messages:</h2> 
   <% if @letters.present? %>
@@ -32,6 +16,11 @@
         </div>
         <div class="admin-letter-body">
           <div class="admin-letter-subject"><%= letter.subject %></div>
+          <div class="admin-document" style="padding: 15px 15px">
+            <% if letter.document.attached? %>
+              <%= link_to "Télécharger le fichier", url_for(letter.document)%>
+            <%end%>
+          </div>
           <div class="admin-letter-message"><%= letter.body %></div>
         </div>
       </div>
