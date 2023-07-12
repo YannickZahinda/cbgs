@@ -29,10 +29,17 @@
 
 .nav {
   display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  width: max-content;
 }
 
 .my-logo {
-  width: 30%;
+  width: 110px;
+  object-fit: contain;
+  margin-left: 15px;
 }
 
 .navlinks{
@@ -320,7 +327,7 @@
   }
 
   .logo {
-    width: 40%;
+    width: 30%;
   }
 
   .links > a {
@@ -592,10 +599,21 @@
   }
 
 
-  .uppernav, li {
+  /* .uppernav, li {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr;
+  } */
+
+  .uppernav {
+    padding: 6px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .icon-name {
+    display: none;
   }
 
   .nav {
