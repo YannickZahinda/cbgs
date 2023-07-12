@@ -1,38 +1,42 @@
-<div class="admin-eleve-header">
-  <h1>Eleves</h1>
-  <form style="display: flex" method="GET" action="search">
-    <input class="input" type="search" placeholder="Trouver un eleve" aria-label="Search" name="name">
-    <button type="submit" style="width: max-content; height: 100%; margin: 0;" class="button">chercher</button>
-  </form>
+<div class="eleves">
+  <div>
+   <div class="admin-eleve-header">
+     <h1>Eleves</h1>
+     <form style="display: flex" method="GET" action="search">
+       <input class="input" type="search" placeholder="Trouver un eleve" aria-label="Search" name="name">
+       <button type="submit" style="width: max-content; height: 100%; margin: 0;" class="button">chercher</button>
+     </form>
+   </div>
+   
+   <table id="eleves">
+     <thead>
+       <tr>
+         <th>ID</th>
+         <th>Nom Complet</th>
+         <th>Adresse</th>
+         <th>No du parent</th>
+         <th>Section</th>
+         <th>Classe</th>
+         <th>ID parent</th>
+         <th><%= link_to " + Ajouter un eleve", new_admin_elefe_path, style: "text-decoration: none; color: #fff; background-color: red; padding: 4px; border-radius: 5px" %></th>
+         <th>Appeler</th>
+       </tr>
+     </thead>
+     <tbody>
+       <% @eleves.each do |eleve| %>
+         <tr>
+           <td><%= eleve.id %></td>
+           <td><%= eleve.nom_complet %></td>
+           <td><%= eleve.addresse %></td>
+           <td><%= eleve.tel_du_parent %></td>
+           <td><%= eleve.niveau_etude %></td>
+           <td><%= eleve.classe %></td>
+           <td><%= eleve.parent_id %></td>
+           <td><%= link_to "Voir les détails", admin_elefe_path(eleve) %></td>
+           <td><a href="tel:<%= eleve.tel_du_parent %>"><i style='font-size:24px' class='fas'>&#xf1e4;</i></a></td>
+         </tr>
+       <% end %>
+     </tbody>
+   </table>
 </div>
-
-<table id="eleves">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nom Complet</th>
-      <th>Adresse</th>
-      <th>No du parent</th>
-      <th>Section</th>
-      <th>Classe</th>
-      <th>ID parent</th>
-      <th><%= link_to " + Ajouter un eleve", new_admin_elefe_path, style: "text-decoration: none; color: #fff; background-color: red; padding: 4px; border-radius: 5px" %></th>
-      <th>Appeler</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @eleves.each do |eleve| %>
-      <tr>
-        <td><%= eleve.id %></td>
-        <td><%= eleve.nom_complet %></td>
-        <td><%= eleve.addresse %></td>
-        <td><%= eleve.tel_du_parent %></td>
-        <td><%= eleve.niveau_etude %></td>
-        <td><%= eleve.classe %></td>
-        <td><%= eleve.parent_id %></td>
-        <td><%= link_to "Voir les détails", admin_elefe_path(eleve) %></td>
-        <td><a href="tel:<%= eleve.tel_du_parent %>"><i style='font-size:24px' class='fas'>&#xf1e4;</i></a></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+</div>

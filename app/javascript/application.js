@@ -61,7 +61,6 @@ document.addEventListener("turbo:load", function() {
   initialize();
   
   document.getElementById("dropbtn").addEventListener('click', () => {
-
     var dropdownContent = document.getElementById("dropdown-content");
     if (dropdownContent.style.display === "block") {
       dropdownContent.style.display = "none";
@@ -70,16 +69,13 @@ document.addEventListener("turbo:load", function() {
     }
   })
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-  
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-      events: '/events.json'
-    });
-  
-    calendar.render();
-  });
+  function translate(locale) {
+    var locale = locale;   
+    // Set locale as cookie 
+    document.cookie = "locale=" + locale;  
+    location.reload();  // Refresh page 
+  }
+
   
 
 });

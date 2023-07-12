@@ -5,4 +5,6 @@ class Letter < ApplicationRecord
   has_many :received_letters, class_name: "Letter", foreign_key: "recipient_id"
   has_many :sent_letters, class_name: "Letter", foreign_key: "sender_id"
 
+  has_one_attached :document
+
 end

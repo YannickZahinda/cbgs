@@ -25,7 +25,7 @@ class Admin::LettersController < ApplicationController
   private
 
   def letter_params
-    params.require(:letter).permit(:sender_id, :recipient_id, :nom_du_parent_destinataire, :subject, :body)
+    params.require(:letter).permit(:sender_id, :recipient_id, :nom_du_parent_destinataire, :document, :subject, :body)
   end
 
 end
