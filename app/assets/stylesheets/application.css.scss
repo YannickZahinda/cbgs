@@ -25,14 +25,22 @@
   gap: 30px;
   list-style-type: none;
   padding: 15px;
+  width: 100%;
 }
 
 .nav {
   display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  width: max-content;
 }
 
 .my-logo {
-  width: 30%;
+  width: 110px;
+  object-fit: contain;
+  margin-left: 15px;
 }
 
 .navlinks{
@@ -233,6 +241,10 @@
   font-size: 12px;
 }
 
+img {
+  object-fit: contain;
+}
+
 .philosophie {
   width: 100%;
   object-fit: cover;
@@ -320,7 +332,7 @@
   }
 
   .logo {
-    width: 40%;
+    width: 30%;
   }
 
   .links > a {
@@ -535,6 +547,7 @@
 
 .uppernav-link a{
   align-self: center;
+  width: 100%;
 }
 
 .uppernave-icon a{
@@ -592,18 +605,28 @@
   }
 
 
-  .uppernav, li {
+  /* .uppernav, li {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr;
+  } */
+
+  .uppernav {
+    padding: 6px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .icon-name {
+    display: none;
   }
 
   .nav {
     display: flex;
-    padding: 15px;
-    justify-content: center;
+    padding: 0px;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
     gap: 10px;
   }
 
@@ -622,7 +645,7 @@
   }
 
   .my-logo {
-    width: 100%;
+    width: 60%;
   }
 
   .communiquebtnpopup {

@@ -1,42 +1,67 @@
 
-<div class="dropdown">
-  <button class="dropbtn" id="dropbtn"> Menu ⇣⇣</button>
-  <div class="navlinks dropdown-content" id="dropdown-content">
-    <a href="#apropos" class="link" >A propos</a>
-    <a class="popup-btn communiquebtnpopup link">Communiqués</a>       
-    <%= render "shared/communiquepopup" do%>
-      <div class="communique-popup-icon">
-        <%= image_tag"logos/CBGClogo.png", class: 'my-logo-popup-icon' %>
-      </div>
-      <% if @communiques.any? %>
-        <p style="color: green"><%= notice %></p>
-        <h1>Communiques</h1>
-        <% @communiques.each do |communique| %>
-          <div class="news">
-              <h3 style="text-decoration: underline;"><%= communique.titre %></h3> <br/>
-              <div>
-                <% if communique.image.attached? %>
-                   <%= image_tag communique.image, style: "width: 80%; height: 100%; margin: 10px auto; object-fit: fit" %>
-                <% end %>
-               </div>
-               <p><%= communique.description %></p>
-              <%= link_to "Voir", communique %>
-          </div>
-        <% end %>
+<%################# Bootstrap menu ##############%>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid bg-white">
+    <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon icon-primary"></span>
+    </button>
+    <div class="collapse navbar-collapse p-2" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="">
+          <a href="#apropos" class="nav-link" >A propos</a>
+        </li>
+        <li class="">
+          <a class="popup-btn communiquebtnpopup nav-link">Communiqués</a>
+          <%= render "shared/communiquepopup" do%>
+             <div class="communique-popup-icon">
+               <%= image_tag"logos/CBGClogo.png", class: 'my-logo-popup-icon' %>
+             </div>
+             <% if @communiques.any? %>
+               <p style="color: green"><%= notice %></p>
+               <h1>Communiques</h1>
+               <% @communiques.each do |communique| %>
+                 <div class="news">
+                     <h3 style="text-decoration: underline;"><%= communique.titre %></h3> <br/>
+                     <div>
+                       <% if communique.image.attached? %>
+                          <%= image_tag communique.image, style: "width: 80%; height: 100%; margin: 10px auto; object-fit: fit" %>
+                       <% end %>
+                      </div>
+                      <p><%= communique.description %></p>
+                     <%= link_to "Voir", communique %>
+                 </div>
+               <% end %>
+               <% else %>
+                 <p>Il n'y a pas de communique pour le moment</p>
+             <% end %>
+          <%end%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Contactez-nous", new_message_path, :class => "nav-link" %>
+        </li>
+        <% if user_signed_in?%>
+          <% if current_user.is_admin? %>
+            <li class="nav-item">
+              <%= link_to "Tableau de bord administrateur", admin_home_index_path, :class => "nav-link" %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to 'Tableau de bord utilisateur', dashboard_index_path, :class => "nav-link" %>
+            </li>
+          <% end %>
+          <li class="nav-item">
+            <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, :class => "nav-link" %>
+          </li>
         <% else %>
-          <p>Il n'y a pas de communique pour le moment</p>
-        <% end %>
-    <%end%>
-    <%= link_to "Contactez-nous", new_message_path, :class => "link" %>
-    <% if user_signed_in?%>
-       <% if current_user.is_admin? %>
-        <%= link_to "Tableau de bord administrateur", admin_home_index_path, :class => "link" %>
-       <% else %>
-        <%= link_to 'Tableau de bord utilisateur', dashboard_index_path, :class => "link" %>
-       <% end %>
-         <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, :class => "link" %>
-       <% else %>
-         <%= link_to "Connexions", new_user_session_path, :class => "link" %>
-       <%end%>
+          <li class="nav-item">
+            <%= link_to "Connexions", new_user_session_path, :class => "nav-link" %>
+          </li>
+        <%end%>
+      </ul>
+      <%# <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> %>
+    </div>
   </div>
-</div>
+</nav>
