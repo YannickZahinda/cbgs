@@ -1,41 +1,49 @@
 <%= render "uppernav" %>
 <div>
-   <div class="slider">
-      <div>
-        <%= image_tag "logos/eleveimg1.jpeg", alt: "eleve photo" %>
+<%################### BOOTSTRAP SLIDER ###############%>
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <%= image_tag "logos/eleveimg1.jpeg", class: "d-block w-100" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "logos/eleveimg3.jpeg", class: "d-block w-100"%>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "logos/eleveimg6.jpeg", class: "d-block w-100" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "logos/eleveimg4.jpeg", class: "d-block w-100" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "logos/eleveimg2.jpeg", class: "d-block w-100" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "logos/eleveimg7.jpeg", class: "d-block w-100" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "logos/eleveimg8.jpeg", class: "d-block w-100" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "logos/eleveimg9.jpeg", class: "d-block w-100" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "logos/eleveimg10.jpeg", class: "d-block w-100" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "logos/eleveimg11.jpeg", class: "d-block w-100" %>
+        </div>
       </div>
-      <div>
-        <%= image_tag "logos/eleveimg2.jpeg", alt: "eleve photo" %>
-      </div>
-      <div>
-        <%= image_tag "logos/eleveimg3.jpeg", alt: "eleve photo" %>
-      </div>
-      <div>
-        <%= image_tag "logos/eleveimg4.jpeg", alt: "eleve photo" %>
-      </div>
-      <div>
-        <%= image_tag "logos/eleveimg5.jpeg", alt: "eleve photo" %>
-      </div>
-      <div>
-        <%= image_tag "logos/eleveimg6.jpeg", alt: "eleve photo" %>
-      </div>
-      <div>
-        <%= image_tag "logos/eleveimg7.jpeg", alt: "eleve photo" %>
-      </div>
-      <div>
-        <%= image_tag "logos/eleveimg8.jpeg", alt: "eleve photo" %>
-      </div>
-      <div>
-        <%= image_tag "logos/eleveimg9.jpeg", alt: "eleve photo" %>
-      </div>
-      <div>
-        <%= image_tag "logos/eleveimg10.jpeg", alt: "eleve photo" %>
-      </div>
-      <div>
-        <%= image_tag "logos/eleveimg11.jpeg", alt: "eleve photo" %>
-      </div>
-    </div><br/><br/>
-
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+  </div>
+  <%################### BOOTSTRAP SLIDER ###############%>
     <div style="white-space: nowrap; overflow: hidden; width: 100%; background-color: #c0c4c7; padding: 20px">
       <span class="sliding-text" style="display: inline-block; animation: slidein 20s linear infinite; font-size: 30px; font-weight: bold; font-family: Helvetica, sans-serif; color: #fff">
         NOTRE DEVISE : EXCELLENCE DISCIPLINE ET QUALITE
