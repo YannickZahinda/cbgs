@@ -60,9 +60,7 @@ Rails.application.routes.draw do
 
   root to: "home#index"
   resources :chatrooms do
-    resources :chatroom_users, only: [:create]
+    resource :chatroom_users
   end
-  
-  resources :chatroom_users, only: [:destroy]
 
 end

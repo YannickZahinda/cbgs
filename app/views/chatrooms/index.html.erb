@@ -32,12 +32,13 @@
         <td><%= link_to "Show", chatroom %></td>
         <td><%= link_to "Edit", edit_chatroom_path(chatroom) %></td>
         <td><%= button_to "Destroy", chatroom, method: :delete, data: {confirm: 'Are you sure ?'} %></td>
-        <td>
-          
+        <td class='d-flex'>
           <%= form_with(model: chatroom, url: chatroom_chatroom_users_path(chatroom), method: :post) do |form| %>
-             <%= form.submit "Join" %>
+             <%= form.submit "Join", class: 'mx-2' %>
           <% end %>
-
+          <%= form_with(model: chatroom, url: chatroom_chatroom_users_path(chatroom), method: :delete) do |form| %>
+             <%= form.submit "Live" %>
+          <% end %>
         </td>
       </tr>
     <% end %>
