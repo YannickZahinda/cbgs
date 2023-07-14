@@ -11,11 +11,18 @@
 </div>
 <div class="adminlinks">
   <%= link_to(admin_home_index_path, class: 'adminlink') do %>
-     <%= image_tag("logos/home.png", class: "adminicon") %>
+     
      <div style="align-self: center">
-      <% concat "Home"%>
+      <i class="bi bi-house-door-fill adminicon"></i>
+      <span>Home</span>
+      
      </div>
   <%end%>
+  <%= link_to(admin_chatrooms_path, class: 'adminlink') do%>
+    <div style="align-self: center">
+      <i class="bi bi-chat-text-fill adminicon"></i> <span>Group chat</span>
+    </div>
+  <% end %>
   <%= link_to(admin_eleves_path, class: 'adminlink') do %>
      <%= image_tag("logos/eleve-icon.png", class: "adminicon") %>
      <div style="align-self: center"> 

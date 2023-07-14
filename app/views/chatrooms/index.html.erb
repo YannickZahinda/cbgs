@@ -1,0 +1,45 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="fluid-container">
+  <div class="row">
+    <div class="col-sm-2">
+      <% if user_signed_in? %>
+        <h5>User Chatrooms</h5>
+        <ul>
+          <% current_user.chatrooms.each do |chatroom| %>
+            <li><%=link_to chatroom.name, '#'%></li>
+          <%end%>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<h1>ChatRooms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @chatrooms.each do |chatroom| %>
+      <tr>
+        <td><%= chatroom.name%></td>
+        <td><%= link_to "Show", chatroom %></td>
+        <td><%= link_to "Edit", edit_chatroom_path(chatroom) %></td>
+        <td><%= button_to "Destroy", chatroom, method: :delete, data: {confirm: 'Are you sure ?'} %></td>
+        <td>
+          
+          <%= form_with(model: chatroom, url: chatroom_chatroom_users_path(chatroom), method: :post) do |form| %>
+             <%= form.submit "Join" %>
+          <% end %>
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
