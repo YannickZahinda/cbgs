@@ -3,5 +3,17 @@
     <strong>Name:</strong>
     <%= chatroom.name %>
   </p>
+  <div data-behavior="messages">
+    <% @chatroom.instant_messages.order(created_at: :asc).limit(100).each do |mssge| %>
+      <div>
+        <strong><%= mssge.user.first_name%>:</strong>
+        <%= mssge.body %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= form_for [@chatroom, InstantMessage.new] do |f|%>
+    <%= f.text_area :body, id: "new_message", rows: 1, autofocus: true%>
+  <%end%>
 
 </div>

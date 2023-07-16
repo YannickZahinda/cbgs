@@ -61,6 +61,7 @@ Rails.application.routes.draw do
   root to: "home#index"
   resources :chatrooms do
     resource :chatroom_users
+    resources :instant_messages
   end
 
 end
