@@ -26,11 +26,11 @@ function initializeSlider() {
 }
 
 function initializePopup() {
-  $('body').on('click', '.popup-btn', function() {
+  $('body').on('click', '.popup-btn', function () {
     $(this).siblings('.popup').fadeIn();
   });
 
-  $('body').on('click', '.popup', function(e) {
+  $('body').on('click', '.popup', function (e) {
     if (e.target == this) {
       $(this).fadeOut();
     }
@@ -38,11 +38,11 @@ function initializePopup() {
 }
 
 function initializeCommuniquePopup() {
-  $('body').on('click', '.communiquepopup-btn', function() {
+  $('body').on('click', '.communiquepopup-btn', function () {
     $(this).siblings('.communiquepopup-btn').fadeIn();
   });
 
-  $('body').on('click', '.communiquepopup-btn', function(e) {
+  $('body').on('click', '.communiquepopup-btn', function (e) {
     if (e.target == this) {
       $(this).fadeOut();
     }
@@ -57,37 +57,48 @@ function initialize() {
 }
 
 
-document.addEventListener("turbo:load", function() {
+document.addEventListener("turbo:load", function () {
   initialize();
+
+
+  // const newMessageInput = document.getElementById("new_message");
+  // if (newMessageInput) {
+  //   newMessageInput.addEventListener("keypress", (e) => {
+  //     if (e && e.keyCode === 13) {
+  //       e.preventDefault();
+  //       var form = e.target.form; // Get the parent form
+  //       if (form) {
+  //         form.submit()
+  //       }    
+  //     }
+  //   });
+  // }
+
   
-  // document.getElementById("dropbtn").addEventListener('click', () => {
-  //   var dropdownContent = document.getElementById("dropdown-content");
-  //   if (dropdownContent.style.display === "block") {
-  //     dropdownContent.style.display = "none";
-  //   } else {
-  //     dropdownContent.style.display = "block";
-  //   }
-  // })
-  const newMessageInput = document.getElementById("new_message");
-  if (newMessageInput) {
-    newMessageInput.addEventListener("keypress", (e) => {
-      if (e && e.keyCode === 13) {
-        e.preventDefault();
-        var form = e.target.form; // Get the parent form
-        if (form) {
-          form.submit(); // Submit the form
-        }
-      
-      
-      
-      
-      
- //lklklklklkkkkkkkkkkkkkkkkkkk     
-      }
-    });
+  var newMessageFrame = document.getElementById("new_message_frame");
+  if (newMessageFrame) {
+    var newMessageForm = newMessageFrame.querySelector("form");
+    if (newMessageForm) {
+      newMessageForm.addEventListener("submit", function(e) {
+        e.preventDefault(); // Prevent the default form submission
+        var form = e.target;
+        var formData = new FormData(form);
+
+        Rails.ajax({
+          type: form.method,
+          url: form.action,
+          data: formData,
+          dataType: "script",
+          success: function() {
+            form.reset(); // Reset the form after successful submission
+          }
+        });
+      });
+    }
   }
+ 
+  
 });
 
 
 
-    

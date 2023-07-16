@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
+    <%= stylesheet_link_tag 'application', 'data-turbo-frame': 'no-chrome' %>
+    <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
+    <%= turbo_include_tags %>
+    <%= stimulus_include_tag %>
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag 'admin', "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag 'dashboard', "data-turbo-track": "reload" %>

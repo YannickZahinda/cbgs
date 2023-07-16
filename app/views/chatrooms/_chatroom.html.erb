@@ -12,8 +12,11 @@
     <% end %>
   </div>
 
-  <%= form_for [@chatroom, InstantMessage.new] do |f|%>
-    <%= f.text_area :body, id: "new_message", rows: 1, autofocus: true%>
-  <%end%>
+  <turbo-frame id="new_message_frame">
+    <%= form_for [@chatroom, InstantMessage.new], remote: true do |f| %>
+      <%= f.text_area :body, rows: 1, autofocus: true %>
+    <% end %>
+  </turbo-frame>
+
 
 </div>

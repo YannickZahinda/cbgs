@@ -25,6 +25,9 @@ gem "turbo-rails"
 
 gem 'globalize', '~> 6.2.1', require: 'globalize', github: 'globalize/globalize'
 
+gem 'hotwire-rails'
+
+
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
