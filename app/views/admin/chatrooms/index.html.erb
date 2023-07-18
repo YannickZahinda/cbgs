@@ -1,37 +1,79 @@
-<div class="fluid-container">
-  <div class="row">
-    <div class="col-sm-2">
-      <% if user_signed_in? %>
-        <h5>User Chatrooms</h5>
-        <ul>
-          <% current_user.chatrooms.each do |chatroom| %>
-            <li><%=link_to chatroom.name, '#'%></li>
-          <%end%>
-        </ul>
+<div class="container">
+  <div>
+   <% if current_user.is_admin? %>
+     <%= link_to admin_home_index_path, class: "text-decoration-none my-2" do %>
+      <i class="bi bi-speedometer2"></i>
+      <strong>Dashboard</strong>
+     <% end %>
+    <% else %>
+      <%= link_to dashboard_home_index_path, class: "text-decoration-none my-2" do %>
+        <i class="bi bi-speedometer2"></i>
+        <strong>Dashboard</strong>
       <% end %>
+   <% end %>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          Groupes rejoins
+        </div>
+        <div class="card-body">
+          <% if user_signed_in? %>
+            <ul class="list-group">
+              <% current_user.chatrooms.each do |chatroom| %>
+                <li class="list-group-item"><%= link_to chatroom.name, chatroom, class: "text-decoration-none text-bold cursor-progress" %></li>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card group">
+        <div class="card-header bg-primary text-white">
+          Groupes disponibles
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th colspan="3">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @chatrooms.each do |chatroom| %>
+                <tr>
+                  <td><%= chatroom.name %></td>
+                  <%# <td><%= link_to "Show", chatroom_path(chatroom), class: "btn btn-primary" %>
+                  <td>
+                    <% if current_user.is_admin?%>
+                      <%= link_to "Edit", edit_admin_chatroom_path(chatroom), class: "btn btn-secondary" %>
+                    <% end %>
+                  </td>
+                  <%# <td>
+                    <%= button_to "Destroy", chatroom, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"%>
+                  
+                  <td>
+                    <%= form_with(model: chatroom, url: chatroom_chatroom_users_path(chatroom), method: :post) do |form| %>
+                      <%= form.submit "Integrer", class: "btn btn-success" %>
+                    <% end %>
+                  </td>
+                  <td>
+                    <%= form_with(model: chatroom, url: chatroom_chatroom_users_path(chatroom), method: :delete) do |form| %>
+                      <%= form.submit "Quitter", class: "btn btn-warning" %>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <% if current_user.is_admin %>
+          <%= link_to "+ Créer un groupe", new_admin_chatroom_path(@chatroom), class: "text-decoration-none"%>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-
-
-<h1>ChatRooms</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @chatrooms.each do |chatroom| %>
-      <tr>
-        <td><%= chatroom.name%></td>
-        <td><%= link_to "Show", chatroom %></td>
-        <td><%= link_to "Edit", edit_chatroom_path(chatroom) %></td>
-        <td><%= button_to "Destroy", chatroom, method: :delete, data: {confirm: 'Are you sure ?'} %></td>
-        <td><%= link_to "Join", chatroom_chatroom_users_path(chatroom), method: :post %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>

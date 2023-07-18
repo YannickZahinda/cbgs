@@ -9,8 +9,8 @@ class Admin::ChatroomUsersController < ApplicationController
   end
 
   def destroy
-    @chatroom_user = @chatroom_users.where(user_id: current_user.id).destroy_all
-    redirect_to chatrooms_path
+    @chatroom_user = ChatroomUser.where(user_id: current_user.id).destroy_all
+    redirect_to admin_chatrooms_path
   end
 
   private

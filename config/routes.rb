@@ -35,7 +35,8 @@ Rails.application.routes.draw do
 
     get '/search', to: 'eleves#search'
     resources :chatrooms do
-      resources :chatroom_users
+      resource :chatroom_users
+      resources :instant_messages
     end
     
   end 
