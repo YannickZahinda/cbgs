@@ -60,25 +60,34 @@ function initialize() {
 document.addEventListener("turbo:load", function() {
   initialize();
   
-  document.getElementById("dropbtn").addEventListener('click', () => {
-    var dropdownContent = document.getElementById("dropdown-content");
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-    } else {
-      dropdownContent.style.display = "block";
-    }
-  })
-
-  function translate(locale) {
-    var locale = locale;   
-    // Set locale as cookie 
-    document.cookie = "locale=" + locale;  
-    location.reload();  // Refresh page 
+  // document.getElementById("dropbtn").addEventListener('click', () => {
+  //   var dropdownContent = document.getElementById("dropdown-content");
+  //   if (dropdownContent.style.display === "block") {
+  //     dropdownContent.style.display = "none";
+  //   } else {
+  //     dropdownContent.style.display = "block";
+  //   }
+  // })
+  const newMessageInput = document.getElementById("new_message");
+  if (newMessageInput) {
+    newMessageInput.addEventListener("keypress", (e) => {
+      if (e && e.keyCode === 13) {
+        e.preventDefault();
+        var form = e.target.form; // Get the parent form
+        if (form) {
+          form.submit(); // Submit the form
+        }
+      
+      
+      
+      
+      
+ //lklklklklkkkkkkkkkkkkkkkkkkk     
+      }
+    });
   }
-
-  
-
 });
+
 
 
     

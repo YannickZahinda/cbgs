@@ -1,7 +1,7 @@
 
 <div class="adminlogo-container">
      <%= link_to(root_path) do%> <%= image_tag"logos/CBGClogo.png", class: 'adminlogo' %> <% end %>
-     <h4>Bienvenu au tableau de bord administrateur!</h4> <br/>
+     <h5>Bienvenu au tableau de bord administrateur!</h5> <br/>
      <div style="background-color: #f2f2f2; padding: 10px; border-radius: 25px; margin-bottom: 10px; display: flex; align-items: center;">
         <div >
           <%= image_tag "logos/user-profile-icon.png", style: " width: 30px; height: 30px; background-color: #ccc; border-radius: 50%; margin-right: 10px;" %>
@@ -11,11 +11,17 @@
 </div>
 <div class="adminlinks">
   <%= link_to(admin_home_index_path, class: 'adminlink') do %>
-     <%= image_tag("logos/home.png", class: "adminicon") %>
      <div style="align-self: center">
-      <% concat "Home"%>
+      <i class="bi bi-house-door-fill adminicon"></i>
+      <span>Home</span>
+      
      </div>
   <%end%>
+  <%= link_to(admin_chatrooms_path, class: 'adminlink') do%>
+    <div style="align-self: center">
+      <i class="bi bi-chat-text-fill adminicon"></i> <span>Group chat</span>
+    </div>
+  <% end %>
   <%= link_to(admin_eleves_path, class: 'adminlink') do %>
      <%= image_tag("logos/eleve-icon.png", class: "adminicon") %>
      <div style="align-self: center"> 
@@ -48,5 +54,13 @@
     <div style="align-self: center">
       <% concat "Utilisateurs connectés" %>
     </div>
+  <% end %>
+  
+  <%= link_to destroy_user_session_path, method: :delete, class: 'adminlink' do %>
+     <div style="align-self: center">
+      <i class="bi bi-box-arrow-right adminicon"></i>
+      <span>Déconnexion</span>
+      
+     </div>
   <% end %>
 </div>
