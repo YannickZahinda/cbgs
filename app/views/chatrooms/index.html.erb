@@ -6,7 +6,7 @@
       <strong>Dashboard</strong>
      <% end %>
     <% else %>
-      <%= link_to dashboard_home_index_path, class: "text-decoration-none my-2" do %>
+      <%= link_to dashboard_index_path, class: "text-decoration-none my-2" do %>
         <i class="bi bi-speedometer2"></i>
         <strong>Dashboard</strong>
       <% end %>
@@ -22,7 +22,10 @@
           <% if user_signed_in? %>
             <ul class="list-group">
               <% current_user.chatrooms.each do |chatroom| %>
-                <li class="list-group-item"><%= link_to chatroom.name, chatroom, class: "text-decoration-none text-bold cursor-progress" %></li>
+                <li class="list-group-item">
+                  <i class="bi bi-people-fill"></i>
+                  <%= link_to chatroom.name, chatroom, class: "text-decoration-none text-bold cursor-progress"%>
+                </li>
               <% end %>
             </ul>
           <% end %>

@@ -1,5 +1,5 @@
 <div id="<%= dom_id chatroom %>" class="container">
-  <div class="p-2 bg-primary text-white rounded d-flex justify-content-between">
+  <div class="p-2 bg-primary text-white rounded d-flex justify-content-between my-2">
     <div class="d-flex">
       <%= link_to chatrooms_path do %>
         <i class="bi bi-arrow-left-circle text-white mx-2"></i>
@@ -11,6 +11,10 @@
       <% if current_user.is_admin? %>
         <%= link_to edit_chatroom_path(@chatroom), class: 'text-white text-decoration-none' do%> 
           <i class="bi bi-pencil-square"></i>
+        <% end %>
+      <% else %>
+        <%= form_with(model: chatroom, url: chatroom_chatroom_users_path(chatroom), method: :delete) do |form| %>
+          <%= form.submit "Quitter", class: "btn btn-light p-0 quit-btn" %>
         <% end %>
       <% end %>
     </div>
