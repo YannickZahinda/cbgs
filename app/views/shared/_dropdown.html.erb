@@ -37,6 +37,9 @@
           <%end%>
         </li>
         <li class="nav-item">
+          <%= link_to "Événements", events_path, :class => "nav-link"%>
+        </li>
+        <li class="nav-item">
           <%= link_to "Contactez-nous", new_message_path, :class => "nav-link" %>
         </li>
         <% if user_signed_in?%>

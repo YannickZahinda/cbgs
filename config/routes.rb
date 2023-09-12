@@ -47,6 +47,7 @@ Rails.application.routes.draw do
   resources :home, only: [:index]
   resources :messages, only: [:show, :update, :destroy, :new, :create, :edit]
   resources :chats, only: [:index]
+  resources :events, only: [:index]
 
   
   # resources :dashboard, only: [:index, :update, :create, :new, :edit, :destroy]
