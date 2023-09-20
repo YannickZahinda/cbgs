@@ -11,8 +11,14 @@
         <% if event.image.attached? %>
           <%= image_tag event.image, style: "width: 60%; margin: 0 auto; object-fit: fit" %>
         <% end %>
-      </div>
-      <p class="card-text">
+       
+      </p>
+      <% if event.document.attached? %>
+        <%= link_to(url_for(event.document), class: "btn btn-primary") do %>
+          <i class="fas fa-download"></i> Télécharger le fichier
+          <% end %>
+      <%end%>
+      <p class="card-text pt-2">
         <%= event.description %>
       </p>
       <%= link_to 'Show', admin_event_path(event), class: 'btn btn-primary' %>
