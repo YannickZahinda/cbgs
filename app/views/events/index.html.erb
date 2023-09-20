@@ -6,22 +6,26 @@
 <% else %>
  <%= link_to '<< Page d\'accueil ', root_path, class: 'btn btn-primary', style: "margin-bottom: 10px"%><br/>
 <%end%>
-<% @events.each do |event| %>
-  <div class="card" style="border: 1px solid #ccc; border-radius: 4px; margin-bottom: 20px;">
-    <div class="card-body">
-      <h3 class="card-title" style="text-align: center; padding: 15px"><%= event.title %></h3>
-      
-      <p style="margin: 10px; display: flex; justify-content: center">
-        <% if event.image.attached? %>
-          <%= image_tag event.image, style: "width: 60%; margin: 0 auto; object-fit: fit" %>
-        <% end %>
+<% if @events.any?%>
+  <% @events.each do |event| %>
+    <div class="card" style="border: 1px solid #ccc; border-radius: 4px; margin-bottom: 20px;">
+      <div class="card-body">
+        <h3 class="card-title" style="text-align: center; padding: 15px"><%= event.title %></h3>
+        
+        <p style="margin: 10px; display: flex; justify-content: center">
+          <% if event.image.attached? %>
+            <%= image_tag event.image, style: "width: 60%; margin: 0 auto; object-fit: fit" %>
+          <% end %>
+        </div>
+        <% if event.document.attached? %>
+          <%= link_to "Télécharger le fichier", url_for(event.document)%>
+        <%end%>
+        <p class="card-text">
+          <%= event.description %>
+        </p>
+        <%= link_to 'Show', events_path(event), class: 'btn btn-primary' %>
       </div>
-      <p class="card-text">
-        <%= event.description %>
-      </p>
-      <%= link_to 'Show', events_path(event), class: 'btn btn-primary' %>
     </div>
-  </div>
-<% end %>
-
+  <% end %>
+<%end%>
 </div>
