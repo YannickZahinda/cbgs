@@ -1,0 +1,23 @@
+<div class='signup'>
+  <%= form_with model: @chat, url: admin_chats_path do |form| %>
+    <h1>Nouveau chat</h1>
+    <%= form.hidden_field :sender_id, value: current_user.id %>
+    <div class="field">
+      <%= form.label :recipient_ids, 'À', class: 'label' %>
+      <%= form.collection_select :recipient_ids, User.all, :id, :first_name, {}, { multiple: true, class: 'input' } %>
+    </div>
+    <div class="field">
+      <%= form.label :send_to_all, 'Envoyer à tous les utilisateurs', class: 'label' %>
+      <%= form.check_box :send_to_all, class: 'input' %>
+      <div class="notification">Impossible de performer cet fonction pour le moment </div>
+    </div>
+    <div class="field">
+      <%= form.label :body, 'Message', class: 'label' %>
+      <%= form.text_area :body, class: 'input textarea' %>
+    </div>
+    
+    <div class="actions">
+      <%= form.submit 'Envoyer le chat', class: 'btn' %>
+    </div>
+  <% end %>
+</div>

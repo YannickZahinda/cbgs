@@ -60,29 +60,34 @@ function initialize() {
 document.addEventListener("turbo:load", function() {
   initialize();
   
-  document.getElementById("dropbtn").addEventListener('click', () => {
-
-    var dropdownContent = document.getElementById("dropdown-content");
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-    } else {
-      dropdownContent.style.display = "block";
-    }
-  })
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-  
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-      events: '/events.json'
+  // document.getElementById("dropbtn").addEventListener('click', () => {
+  //   var dropdownContent = document.getElementById("dropdown-content");
+  //   if (dropdownContent.style.display === "block") {
+  //     dropdownContent.style.display = "none";
+  //   } else {
+  //     dropdownContent.style.display = "block";
+  //   }
+  // })
+  const newMessageInput = document.getElementById("new_message");
+  if (newMessageInput) {
+    newMessageInput.addEventListener("keypress", (e) => {
+      if (e && e.keyCode === 13) {
+        e.preventDefault();
+        var form = e.target.form; // Get the parent form
+        if (form) {
+          form.submit(); // Submit the form
+        }
+      
+      
+      
+      
+      
+ //lklklklklkkkkkkkkkkkkkkkkkkk     
+      }
     });
-  
-    calendar.render();
-  });
-  
-
+  }
 });
+
 
 
     

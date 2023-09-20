@@ -22,10 +22,20 @@
     <%= form.label :title, style: "display: block" , class: 'label' %>
     <%= form.text_field :title , class: 'input'%>
   </div>
+  <div class="form-group">
+     <p>Ajouter une fichier</p>
+    <%= form.file_field :document, class: 'input'%>
+  </div>
 
   <div>
     <%= form.label :description, style: "display: block" , class: 'label' %>
     <%= form.text_area :description, class: 'input' %>
+  </div>
+
+  <div>
+   
+    <p>Ajouter une image</p>
+    <%= form.file_field :image, class: 'input'%>
   </div>
 
   <div>

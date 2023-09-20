@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
+  resources :chatrooms
   get 'dashboard/index', to: 'dashboard#index'
   get 'dashboard/new', to: 'dashboard#new'
   get 'dashboard/create', to: 'dashboard#create'
   get 'dashboard/edit', to: 'dashboard#edit'
   get 'dashboard/update', to: 'dashboard#index'
   get 'dashboard/destroy', to: 'dashboard#destroy'
+  get 'dashboard/chats', to: 'dashboard#chats'
 
   
   namespace :admin do
     resources :events, only: [:index, :show, :new, :create, :edit, :update, :destroy]
     resources :messages, only: [:index, :show, :destroy]
+    resources :chats, only: [:index, :show, :new, :create]
+    resources :chatrooms, only: [:index, :show, :new, :update, :edit, :destroy]
     resources :teachers do
       collection do
         get '/search', to: 'teachers#search'
@@ -30,6 +34,10 @@ Rails.application.routes.draw do
     resources :letters, only: [:index, :create, :new, :show]
 
     get '/search', to: 'eleves#search'
+    resources :chatrooms do
+      resource :chatroom_users
+      resources :instant_messages
+    end
     
   end 
   
@@ -38,6 +46,10 @@ Rails.application.routes.draw do
   resources :communiques, only: [:index, :show]
   resources :home, only: [:index]
   resources :messages, only: [:show, :update, :destroy, :new, :create, :edit]
+  resources :chats, only: [:index]
+  resources :events, only: [:index]
+
+  
   # resources :dashboard, only: [:index, :update, :create, :new, :edit, :destroy]
   
   # get 'home/dashboard', to: 'dashboard#index'
@@ -49,5 +61,9 @@ Rails.application.routes.draw do
   }
 
   root to: "home#index"
+  resources :chatrooms do
+    resource :chatroom_users
+    resources :instant_messages
+  end
 
 end

@@ -1,43 +1,47 @@
-<p style="color: green"><%= notice %></p>
-<div class="admin-eleve-header">
-  <h1>Enseignants</h1>
-  <form style="display: flex" method="GET" action="teachers/search">
-      <input class="input" type="search" placeholder="Trouver un enseignant" aria-label="Search" name="name">
-      <button type="submit" style="width: max-content; height: 100%; margin: 0;" class="button">chercher</button>
-  </form>
+<div class="eleves">
+  <div>
+    <p style="color: green"><%= notice %></p>
+    <div class="admin-eleve-header">
+      <h1>Enseignants</h1>
+      <form style="display: flex" method="GET" action="teachers/search">
+          <input class="input" type="search" placeholder="Trouver un enseignant" aria-label="Search" name="name">
+          <button type="submit" style="width: max-content; height: 100%; margin: 0;" class="button">chercher</button>
+      </form>
+    </div>
+    
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Educational Level</th>
+            <th>Classes Taught</th>
+            <th>Phone</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @teachers.each do |teacher| %>
+            <tr>
+              <td><%= teacher.id %></td>
+              <td><%= teacher.nom_complet %></td>
+              <td><%= teacher.addresse %></td>
+              <td><%= teacher.niveau_etude %></td>
+              <td><%= teacher.classe_enseignee %></td>
+              <td><%= teacher.phone %></td>
+              <td style="width: max-content; display: flex; gap: 7px">
+                <%= link_to "Voir", admin_teacher_path(teacher), class: "btn-show" %>
+                <%= link_to "Modifier", edit_admin_teacher_path(teacher), class: "btn-edit" %>
+                <%= button_to "Effacer", admin_teacher_path(teacher), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-destroy", style: "border: none" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    
+    <%= link_to "New Teacher", new_admin_teacher_path, class: "btn-new-teacher" %>
+  </div>
 </div>
-
-<div class="table-container">
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Educational Level</th>
-        <th>Classes Taught</th>
-        <th>Phone</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @teachers.each do |teacher| %>
-        <tr>
-          <td><%= teacher.id %></td>
-          <td><%= teacher.nom_complet %></td>
-          <td><%= teacher.addresse %></td>
-          <td><%= teacher.niveau_etude %></td>
-          <td><%= teacher.classe_enseignee %></td>
-          <td><%= teacher.phone %></td>
-          <td style="width: max-content; display: flex; gap: 7px">
-            <%= link_to "Voir", admin_teacher_path(teacher), class: "btn-show" %>
-            <%= link_to "Modifier", edit_admin_teacher_path(teacher), class: "btn-edit" %>
-            <%= button_to "Effacer", admin_teacher_path(teacher), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-destroy", style: "border: none" %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-
-<%= link_to "New Teacher", new_admin_teacher_path, class: "btn-new-teacher" %>
