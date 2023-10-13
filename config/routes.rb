@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   
   namespace :admin do
+    resources :links, only: [:new, :create, :index, :show]
     resources :events, only: [:index, :show, :new, :create, :edit, :update, :destroy]
     resources :messages, only: [:index, :show, :destroy]
     resources :chats, only: [:index, :show, :new, :create]
@@ -48,6 +49,8 @@ Rails.application.routes.draw do
   resources :messages, only: [:show, :update, :destroy, :new, :create, :edit]
   resources :chats, only: [:index]
   resources :events, only: [:index]
+  resources :links, only: [:index, :show]
+
 
   
   # resources :dashboard, only: [:index, :update, :create, :new, :edit, :destroy]

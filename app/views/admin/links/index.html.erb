@@ -1,0 +1,15 @@
+<div class="container">
+  <h4>Trouvez ci-bas les liens vers les videos de nos recentes activités</h4>
+  <% if user_signed_in?%>
+    <% if current_user.is_admin?%>
+      <%= link_to "Ajouter un lien", new_admin_link_path, class: 'btn btn-primary mb-2' %>
+    <% end %>
+  <% end %>
+  <ul class="list-group">
+    <% @links.each do |link| %>
+      <li class="list-group-item">
+        <%= link_to link.description, link %>
+      </li>
+    <% end %>
+  </ul>
+</div>

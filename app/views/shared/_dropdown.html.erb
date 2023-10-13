@@ -42,11 +42,15 @@
         <li class="nav-item">
           <%= link_to "Contactez-nous", new_message_path, :class => "nav-link" %>
         </li>
+        <li class="nav-item">
+          <%= link_to "Nos vidéos", links_path, :class => "nav-link" %>
+        </li>
         <% if user_signed_in?%>
           <% if current_user.is_admin? %>
             <li class="nav-item">
               <%= link_to "Tableau de bord administrateur", admin_home_index_path, :class => "nav-link" %>
             </li>
+            
           <% else %>
             <li class="nav-item">
               <%= link_to 'Tableau de bord utilisateur', dashboard_index_path, :class => "nav-link" %>
@@ -59,6 +63,7 @@
           <li class="nav-item">
             <%= link_to "Connexions", new_user_session_path, :class => "nav-link" %>
           </li>
+          
         <%end%>
       </ul>
       <%# <form class="d-flex" role="search">
