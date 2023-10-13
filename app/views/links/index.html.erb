@@ -6,11 +6,17 @@
       <%= link_to "Ajouter un lien", new_admin_link_path, class: 'btn btn-primary mb-2' %>
     <% end %>
    <% end %>
-  <ul class="list-group">
-    <% @links.each do |link| %>
-      <li class="list-group-item">
-        <%= link_to link.description, link %>
-      </li>
-    <% end %>
-  </ul>
+  <%if @links.present?%>
+    <ul class="list-group">
+      <% @links.each do |link| %>
+        <li class="list-group-item">
+          <%= link_to link.description, link %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <ul class="list-group">
+      <li>Pas de videos pour le moment</li>
+    </ul>
+  <% end %>
 </div>
