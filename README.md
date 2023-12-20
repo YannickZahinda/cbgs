@@ -1,24 +1,24 @@
-# README
+# Congolese British Grammar School
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+`Developed a school management application with an admin dashboard for managing students, teachers, parents, events, and user messages. Demonstrates proficiency in building efficient and user-friendly web applications tailored to specific business needs.`
 
-Things you may want to cover:
+# Language
 
-* Ruby version
+Ruby, JavaScript
 
-* System dependencies
+ ## Framework
+   Ruby on Rails, ReactJs
 
-* Configuration
+## Run
+> To run the above project :
+> Run the following commands on your terminal of choice
 
-* Database creation
+```
+git clone : https://github.com/YannickZahinda/cbgs.git
 
-* Database initialization
+cd cbgs
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ npm install
+ npm run start - to spin up local webpack server
+ 
+```
