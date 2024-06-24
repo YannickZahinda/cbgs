@@ -1,8 +1,11 @@
-<%= render "uppernav" %>
+
 <div>
 <%################### BOOTSTRAP SLIDER ###############%>
+  <%= render partial: 'uppernav' %>
+  <%= render partial: 'presentationpage' %>
+  
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
+      <div class="carousel-inner slideur">
         <div class="carousel-item active">
           <%= image_tag "logos/cbg1.jpeg", class: "d-block w-100" %>
         </div>
