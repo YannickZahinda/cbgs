@@ -161,6 +161,18 @@
 }
 
 
+/* Add this to your custom CSS file, e.g., app/assets/stylesheets/custom.css */
+
+.carousel-item-custom {
+  height: 900px; /* Adjust this value to your desired height */
+}
+
+.carousel-item-custom img {
+  height: 100%;
+  object-fit: cover; /* This ensures the image covers the entire container */
+}
+
+
 
 
 
