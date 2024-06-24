@@ -78,6 +78,16 @@
   }
 }
 
+.suscribe-btn {
+  background-color: #02979e;
+  color: #f4f4f4;
+  border-radius: 15px;
+  height: max-content;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
 
 @media only screen and (max-width: 992px) {
     .sidebar-admin {
@@ -92,6 +102,17 @@
 
     .eleves {
       width: max-content;
+    }
+
+    .presentation {
+      flex-direction: column;
+      gap: 10px;
+      padding: 15px;
+    }
+
+    .presentation-img {
+      width: 100%;
+      object-fit: contain;
     }
 }
 
