@@ -43,6 +43,52 @@
   width: max-content;
 }
 
+.presentation-img {
+  width: 700px;
+}.prezft {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #000;
+  position: relative;
+}
+
+.animated-text1 {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #000;
+  font-size: 2em;
+  animation: typing 5s steps(20, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 16ch; /* Adjust this value based on the length of your text */
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #000;
+  }
+}
+
+.suscribe-btn {
+  background-color: #02979e;
+  color: #f4f4f4;
+  border-radius: 15px;
+  height: max-content;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
 @media only screen and (max-width: 992px) {
     .sidebar-admin {
       display: flex;
@@ -57,4 +103,16 @@
     .eleves {
       width: max-content;
     }
+
+    .presentation {
+      flex-direction: column;
+      gap: 10px;
+      padding: 15px;
+    }
+
+    .presentation-img {
+      width: 100%;
+      object-fit: contain;
+    }
 }
+
