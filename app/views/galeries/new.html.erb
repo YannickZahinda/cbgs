@@ -1,0 +1,6 @@
+<%= form_with(model: @gallery, local: true) do |form| %>
+  <%= form.label :image %>
+  <%= form.file_field :image %>
+  <%= form.submit "Upload" %>
+<% end %>
+  

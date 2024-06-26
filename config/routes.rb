@@ -69,4 +69,6 @@ Rails.application.routes.draw do
     resources :instant_messages
   end
 
+  resources :galleries, only: [:new, :create, :index, :show]
+
 end

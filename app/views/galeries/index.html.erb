@@ -1,0 +1,7 @@
+<h1>Congolese British Grammar School Gallery</h1>
+
+<% @galleries.each do |gallery| %>
+  <div>
+    <%= image_tag gallery.image.url %>
+  </div>
+<% end %>
