@@ -1,7 +1,22 @@
-<h1>Congolese British Grammar School Gallery</h1>
-
-<% @galleries.each do |gallery| %>
-  <div>
-    <%= image_tag gallery.image.url %>
-  </div>
-<% end %>
+<div class="container">
+<h1 class="my-4">Congolese British Grammar School Gallery</h1>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @galleries.each do |gallery| %>
+      <tr>
+        <td>
+          <% if gallery.image.present? %>
+            <%= image_tag gallery.image.url, class: "img-fluid" %>
+          <% else %>
+            <p>No image available</p>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

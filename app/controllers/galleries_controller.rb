@@ -2,6 +2,7 @@ class GalleriesController < ApplicationController
     def index
       @galleries = Gallery.all
     end 
+    
     def new
       @gallery = Gallery.new
     end
@@ -9,7 +10,7 @@ class GalleriesController < ApplicationController
     def create
       @gallery = Gallery.new(gallery_params)
       if @gallery.save
-        redirect_to @gallery, notice: 'Image was successfully uploaded.'
+        redirect_to galleries_path, notice: 'Image was successfully uploaded.'
       else
         render :new
       end
