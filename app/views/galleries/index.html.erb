@@ -6,7 +6,12 @@
     <thead>
       <tr>
         <th>#</th>
-        <th>Image</th>
+        <th class='d-flex justify-content-between'>
+         <h5>Image</h5>
+         <h5>
+         <%= link_to 'Accueil', root_path %>
+         </h5>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -17,7 +22,7 @@
             <% if gallery.image.present? %>
               <%= image_tag(gallery.image.url, class: "img-fluid") %>
             <% else %>
-              <p>No image available</p>
+              <p>Images non disponible</p>
             <% end %>
           </td>
         </tr>
