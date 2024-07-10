@@ -5,16 +5,32 @@ class ImageUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  # storage :file
 
   # Optional: Resize the image to a maximum width of 800px
   process resize_to_fit: [800, 800]
   # storage :fog
 
+  # Use Cloudinary's secure delivery URL for images
+  # def public_id
+  #   return model.image.identifier.split('.').first if model.image.identifier
+  #   model.id.to_s
+  # end
+
+  def generate_public_id
+    return model.image.identifier.split('.').first if model.image.identifier
+    model.id.to_s
+  end
+  
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  end
+
+  def extension_allowlist
+    %w(jpg jpeg gif png)
   end
 
 
@@ -28,7 +44,6 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   # process scale: [200, 300]
-  #
   # def scale(width, height)
   #   # do something
   # end

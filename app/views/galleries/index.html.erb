@@ -1,22 +1,29 @@
+
 <div class="container">
-<h1 class="my-4">Congolese British Grammar School Gallery</h1>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Image</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @galleries.each do |gallery| %>
+<h1 class="my-4 text-center">Congolese British Grammar School Gallery</h1>
+<div class="table-responsive">
+  <table class="table table-bordered table-striped">
+    <thead>
       <tr>
-        <td>
-          <% if gallery.image.present? %>
-            <%= image_tag gallery.image.url, class: "img-fluid" %>
-          <% else %>
-            <p>No image available</p>
-          <% end %>
-        </td>
+        <th>#</th>
+        <th>Image</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @galleries.each_with_index do |gallery, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td>
+            <% if gallery.image.present? %>
+              <%= image_tag(gallery.image.url, class: "img-fluid") %>
+              <p><%= gallery.image.url %></p>
+            <% else %>
+              <p>No image available</p>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
