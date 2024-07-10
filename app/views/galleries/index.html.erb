@@ -16,7 +16,6 @@
           <td>
             <% if gallery.image.present? %>
               <%= image_tag(gallery.image.url, class: "img-fluid") %>
-              <p><%= gallery.image.url %></p>
             <% else %>
               <p>No image available</p>
             <% end %>
