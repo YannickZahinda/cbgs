@@ -3,9 +3,11 @@
     <p class='display-2 fw-bold prezft animated-text1'>CONGOLESE BRITISH</p>
     <p class='display-2 fw-bold prezft animated-text2'>GRAMMAR SCHOOL</p>
     <p class='font-weight-bold'><strong> Le but est de rendre une education de qualite accessible a tous ! </strong></p>
-    <div class='suscribe-btn'> 
-      <%= link_to 'NOTRE GALLERIE', galleries_path, :style => "text-decoration: none; color: #fff; margin: 10px;"  %>
+    <div class='suscribe-btn d-flex justy-content-between'> 
+      <%= link_to 'NOTRE GALLERIE', galleries_path, :class => "text-decoration-none text-white my-3 heat"  %>
+      <%= link_to 'En Apprendre Plus', root_path, :class => "text-decoration-none text-dark m-3 head"  %>
     </div>
+    
   </div>
   <div>
     <%= image_tag "logos/schoolcbgdesign.png", class: 'presentation-img' %>

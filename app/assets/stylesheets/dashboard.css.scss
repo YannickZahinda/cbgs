@@ -78,15 +78,23 @@
   }
 }
 
+.heat{
+  background-color:  #02979e;
+  padding: 16px;
+}
+.head {
+  border: 2px solid #02979e;
+  padding: 16px;
+}
 .suscribe-btn {
-  background-color: #02979e;
-  color: #f4f4f4;
-  border-radius: 15px;
-  height: max-content;
-  width: max-content;
-  display: flex;
-  justify-content: center;
-  padding: 15px;
+  // background-color: #02979e;
+  // color: #f4f4f4;
+  // border-radius: 15px;
+  // height: max-content;
+  // width: max-content;
+  // display: flex;
+  // justify-content: center;
+  // padding: 15px;
 }
 
 @media only screen and (max-width: 992px) {

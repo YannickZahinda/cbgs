@@ -55,12 +55,12 @@
         NOTRE DEVISE : EXCELLENCE DISCIPLINE ET QUALITE
       </span>
     </div>
-    <div class="section-equipe-dirigeante bg-dark p-3">
-      <h2 class="equipe-dir text-white">Equipe dirigeante</h2>
+    <div class="section-equipe-dirigeante bg-light p-3">
+      <h2 class="equipe-dir">Equipe dirigeante</h2>
       <div class="equipe-dir-pics">
         <div style="text-align: center">
           <%= image_tag "logos/prompic 1.png", width: "65%", margin: "auto" %>
-          <div style="text-align: center" class='text-white'><h3>Promotrice  <br/> Madame Sylvie Kafat </h3> </div>
+          <div style="text-align: center"><h3>Promotrice  <br/> Madame Sylvie Kafat </h3> </div>
         </div>
       </div>
     </div>
@@ -70,7 +70,7 @@
     <div class="section-organisees-container">
     <h2 style="font-family: Helvetica, sans-serif">Section organisées</h2>
     <div class="section-organisees">
-      <div class="section-card section-maternelle">
+      <div class="section-card section-maternelle pb-4">
          <h3>SECTION MATERNELLE</h3>
          
          <button class="popup-btn">Detail sur la section</button>
@@ -85,7 +85,7 @@
            </p>
          <% end %>
       </div>
-      <div class="section-card section-primaire">
+      <div class="section-card section-primaire pb-4">
          <h3>SECTION PRIMAIRE</h3>
          <button class="popup-btn">Detail sur la section</button>
          <%= render 'shared/popup' do %>
@@ -99,7 +99,7 @@
             </p>
          <% end %>
       </div>
-      <div class="section-card section-secondaire">
+      <div class="section-card section-secondaire pb-4">
          <h3>SECTION SECONDAIRE </h3>
          
          <button class="popup-btn">Detail sur la section</button>
