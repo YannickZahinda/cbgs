@@ -1,0 +1,26 @@
+%div
+  %ul.uppernav
+    %li.uppernav-link.uppernave-icon
+      %a{:href => "tel:0974469299"}
+        %i.bi.bi-telephone-forward-fill
+        .icon-name Tél: +243 974 469 299
+    %li.uppernav-link.uppernave-icon
+      %a{:href => "mailto: direction2cbgschool-cd.org"}
+        %i.bi.bi-envelope-fill
+        .icon-name email
+    %li.uppernav-link.uppernave-icon
+      %a{:href => "https://youtube.com/@CBG_School?si=F7Jg_wac383b87op"}
+        %i.bi.bi-youtube
+        .icon-name Youtube
+    %li.uppernav-link.uppernave-icon
+      %a{:href => "https://www.tiktok.com/@cbgschool243?is_from_webapp=1&sender_device=pc"}
+        %i.bi.bi-tiktok
+        .icon-name tiktok
+    %li.uppernav-link.uppernave-icon
+      %a{:href => "https://www.instagram.com/cbg_school/"}
+        %i.bi.bi-instagram
+        .icon-name instagram
+.navbar.navbar-expand-lg.d-flex.slideur.bg-light
+  .logo
+    = image_tag"logos/updatedlogo.png", class: 'my-logo'
+  = render 'shared/dropdown'

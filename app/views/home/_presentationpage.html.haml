@@ -1,0 +1,40 @@
+.presentation.p-3.d-flex.justify-content-around.bg-light
+  %div
+    %p.display-2.fw-bold.prezft.animated-text1 CONGOLESE BRITISH
+    %p.display-2.fw-bold.prezft.animated-text2 GRAMMAR SCHOOL
+    %p.font-weight-bold
+      %strong Le but est de rendre une education de qualite accessible a tous !
+    .suscribe-btn.d-flex.justy-content-between
+      = link_to 'NOTRE GALLERIE', galleries_path, :class => "text-decoration-none text-white my-3 heat"
+      = link_to 'En Apprendre Plus', root_path, :class => "text-decoration-none text-dark m-3 head"
+  %div
+    = image_tag "logos/schoolcbgdesign.png", class: 'presentation-img'
+.valeurs-cards.m-5
+  .card.card1-apprentis-comp.p-3.h-90
+    %header
+      = image_tag "logos/brain-line-icon.png", width: "15%"
+      %h2 Apprentissage des compétences
+    %br/
+    %p
+      Le cbg School offre aux élève un enseignement
+      de qualité dès les bas ages et au standard international pour les outiller afin d’affronter les défis et les opportunités
+      dans leur parcours académique et de leur future vie professionnelle"
+  .card.card2-enseign-qualif.p-3
+    %header
+      = image_tag "logos/training-icon.png", width: "15%"
+      %h2 Enseignants qualifiés
+      %br/
+    %p
+      Le staff professoral de notre école est constitué des meilleurs enseignants
+      qualifiés pour l'enseinement de l'école maternel, primaire et secondaire pour le programme
+      national congolais et le curriculum britannique.
+      Nous offrons l'enseignement des enfants avec l'habilité limitée, pour leurs besoins spécifiques
+      avec l'appuis de nos partenaire nationaux et internationaux."
+  .card.card3-accreditation.p-3
+    %header
+      = image_tag "logos/Diploma.png", width: "15%"
+      %h2 Accreditation
+      %br/
+    %p
+      Notre aspiration est d'avoir l'accréditation auprès
+      du Conseil Britannique pour l'Education En RD Cong."
