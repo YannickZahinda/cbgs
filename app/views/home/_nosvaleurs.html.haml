@@ -2,7 +2,21 @@
   .bg-light.p-4
     -# %h2{:style => "margin-left: 30px; font-family: Helvetica, sans-serif"} Nos Valeurs
     
-  .philosophy
-    = image_tag('logos/philosophievaleurs.svg', alt: 'philosophie', class: 'philosophie')
+  %div.philosp-container
+    %h2.mb-5
+      Phylosophie et Valeurs Éducative  
+
+    .philosophy
+      %div.philosophy-img-container
+        = image_tag "logos/phlzfy.png", class: 'philosophy-image'
+
+      %div 
+        %p.philosophy-speech 
+          CBGS est un établissement scholaire soucieux de la formation intégrale des enfants.
+          Visant l'excellence; les programmes et les cours dispensés visent aussi à doter les élèves des connaissances 
+          et les capacités nécessaires à faire face aux multiples défis du 21ème siècle. Pour atteindre notre vision, nous 
+          offrons les formations basées sur des valeurs humaines telles que la citoyenneté responsable, l'esprit du 
+          leadership, l'entraide et la résilience.
+        
   #apropos.apropos
-    = image_tag('logos/apropossection.svg', alt: 'philosophie', class: 'philosophie')
+    = image_tag('logos/apropossection.svg', alt: 'philosophie', class: 'w-100 img-fluid')

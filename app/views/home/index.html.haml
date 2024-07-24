@@ -35,16 +35,17 @@
   %div{:style => "white-space: nowrap; overflow: hidden; width: 100%; background-color: #c0c4c7; padding: 20px"}
     %span.sliding-text{:style => "display: inline-block; animation: slidein 20s linear infinite; font-size: 30px; font-weight: bold; font-family: Helvetica, sans-serif; color: #fff"}
       NOTRE DEVISE : EXCELLENCE DISCIPLINE ET QUALITE
-  .section-equipe-dirigeante.bg-light.p-3
-    %h2.equipe-dir Equipe dirigeante
-    .equipe-dir-pics
-      %div{:style => "text-align: center"}
-        = image_tag "logos/prompic 1.png", width: "65%", margin: "auto"
-        %div{:style => "text-align: center"}
-          %h3
-            Promotrice
-            %br/
-            Madame Sylvie Kafat
+  %div.p-3
+    %h2.equipe-dir Mot de la promotrice
+    %div.speech-container 
+      %div.img-speech-container 
+        =image_tag "logos/LICO.png", class: "img-speech"
+      %p.speech
+        CBGS est un établissement scolaire soucieux de la formation intégrale des enfants visant l'excellence; les programmes et les cours dispensés 
+        visent à doter les élèves des connaissances et des compétences nécessaires pour faire face aux multiples défis du 21 ième sciècle.
+        Pour atteindre notre vision, nous offrons des formations basées sur des valeurs humaines telles aue la citoyenneté responsable; l'esprit de 
+        leadership, l'entraide et la résilience.
+
   .section-nos-valeurs
     = render "nosvaleurs"
   .section-organisees-container
@@ -89,10 +90,10 @@
           Les classes de la 7ième et 8 ième ont la capacité de 30-35 élèves
           avec classe parallèle A &amp;B (4 salles).
           Les classes supérieures du secondaire sont en progression. (4 Salles)
-  .promot-speech
-    %h2{:style => "font-family: Helvetica, sans-serif"} Mot de La Promotrice
-    %br/
-    = image_tag("logos/mamansylvy.svg", width: "60%", margin: '0 auto')
+  -# .promot-speech
+  -#   %h2{:style => "font-family: Helvetica, sans-serif"} Mot de La Promotrice
+  -#   %br/
+  -#   = image_tag("logos/mamansylvy.svg", width: "60%", margin: '0 auto')
   %h2{:style => "text-align: center; font-family: Helvetica, sans-serif"} Nos formations
   %br/
   .youtube-container
