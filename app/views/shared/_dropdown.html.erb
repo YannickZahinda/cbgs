@@ -1,75 +1,68 @@
-
 <%################# Bootstrap menu ##############%>
-<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid bg-white">
-    <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon icon-primary"></span>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse p-2" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="">
-          <a href="#apropos" class="nav-link" >A propos</a>
-        </li>
-        <li class="">
-          <a class="popup-btn communiquebtnpopup nav-link">Communiqués</a>
-          <%= render "shared/communiquepopup" do%>
-             <div class="communique-popup-icon">
-               <%= image_tag"logos/CBGClogo.png", class: 'my-logo-popup-icon' %>
-             </div>
-             <% if @communiques.any? %>
-               <p style="color: green"><%= notice %></p>
-               <h1>Communiques</h1>
-               <% @communiques.each do |communique| %>
-                 <div class="news">
-                     <h3 style="text-decoration: underline;"><%= communique.titre %></h3> <br/>
-                     <div>
-                       <% if communique.image.attached? %>
-                          <%= image_tag communique.image, style: "width: 80%; height: 100%; margin: 10px auto; object-fit: fit" %>
-                       <% end %>
-                      </div>
-                      <p><%= communique.description %></p>
-                     <%= link_to "Voir", communique %>
-                 </div>
-               <% end %>
-               <% else %>
-                 <p>Il n'y a pas de communique pour le moment</p>
-             <% end %>
-          <%end%>
+        <li class="nav-item">
+          <a href="#apropos" class="nav-link">A propos</a>
         </li>
         <li class="nav-item">
-          <%= link_to "Événements", events_path, :class => "nav-link"%>
+          <a class="nav-link popup-btn communiquebtnpopup">Communiqués</a>
+          <%= render "shared/communiquepopup" do %>
+            <div class="communique-popup-icon">
+              <%= image_tag "logos/CBGClogo.png", class: 'my-logo-popup-icon' %>
+            </div>
+            <% if @communiques.any? %>
+              <p class="text-success"><%= notice %></p>
+              <h1>Communiques</h1>
+              <% @communiques.each do |communique| %>
+                <div class="news">
+                  <h3 class="text-decoration-underline"><%= communique.titre %></h3>
+                  <div>
+                    <% if communique.image.attached? %>
+                      <%= image_tag communique.image, style: "width: 80%; height: 100%; margin: 10px auto; object-fit: cover" %>
+                    <% end %>
+                  </div>
+                  <p><%= communique.description %></p>
+                  <%= link_to "Voir", communique %>
+                </div>
+              <% end %>
+            <% else %>
+              <p>Il n'y a pas de communique pour le moment</p>
+            <% end %>
+          <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "Contactez-nous", new_message_path, :class => "nav-link" %>
+          <%= link_to "Événements", events_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Nos vidéos", links_path, :class => "nav-link" %>
+          <%= link_to "Contactez-nous", new_message_path, class: "nav-link" %>
         </li>
-        <% if user_signed_in?%>
+        <li class="nav-item">
+          <%= link_to "Nos vidéos", links_path, class: "nav-link" %>
+        </li>
+        <% if user_signed_in? %>
           <% if current_user.is_admin? %>
             <li class="nav-item">
-              <%= link_to "Tableau de bord administrateur", admin_home_index_path, :class => "nav-link" %>
+              <%= link_to "Tableau de bord administrateur", admin_home_index_path, class: "nav-link" %>
             </li>
-            
           <% else %>
             <li class="nav-item">
-              <%= link_to 'Tableau de bord utilisateur', dashboard_index_path, :class => "nav-link" %>
+              <%= link_to 'Tableau de bord utilisateur', dashboard_index_path, class: "nav-link" %>
             </li>
           <% end %>
           <li class="nav-item">
-            <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, :class => "nav-link" %>
+            <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-link" %>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Connexions", new_user_session_path, :class => "nav-link" %>
+            <%= link_to "Connexions", new_user_session_path, class: "nav-link" %>
           </li>
-          
-        <%end%>
+        <% end %>
       </ul>
-      <%# <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form> %>
     </div>
   </div>
 </nav>
