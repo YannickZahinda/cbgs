@@ -10,7 +10,8 @@ class GalleriesController < ApplicationController
     def create
       @gallery = Gallery.new(gallery_params)
       if @gallery.save
-        redirect_to galleries_path, notice: 'Image was successfully uploaded.'
+        ImageUploaderJob.perform_async(@gallery.id)
+        redirect_to galleries_path, notice: 'Image upload is in progress'
       else
         render :new
       end
