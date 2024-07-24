@@ -1,0 +1,14 @@
+.container
+  %h1.my-4.text-center Congolese British Grammar School Gallery
+  .d-flex.justify-content-end.mb-3
+    = link_to 'Accueil', root_path, class: 'btn btn-primary'
+  .row
+    - @galleries.each_with_index do |gallery, index|
+      .col-lg-3.col-md-4.col-6.mb-4
+        - if gallery.image.present?
+          .card
+            = image_tag gallery.image.url, class: "card-img-top img-fluid"
+        - else
+          .card
+            .card-body
+              %p.card-text.text-center Image non disponible
