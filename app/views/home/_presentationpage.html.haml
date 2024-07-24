@@ -38,11 +38,11 @@
     %p
       Notre aspiration est d'avoir l'accréditation auprès
       du Conseil Britannique pour l'Education En RD Cong."
-
-.statistics.d-flex.justify-content-around.p-5.border.my-5
-  = image_tag "logos/statitics.png"
+      
+.statistics.d-flex.flex-column.flex-md-row.justify-content-around.p-5.border.my-5
+  = image_tag "logos/statitics.png", class: "img-fluid mb-3 mb-md-0"
   %div
-    %h3.fw-bold  Vision 
+    %h3.fw-bold Vision 
     %p.align-self-center
       CBG School se distingue par son engagement à fournir une éducation exceptionnelle dès les premiers âges, 
       en intégrant les normes internationales et en préparant les élèves à réussir tant académiquement que professionnellement.
@@ -51,4 +51,4 @@
       RD Congo souligne notre dévouement à 
       offrir un enseignement de calibre mondial, préparant ainsi nos élèves à devenir les leaders de demain
     %br/
-    = link_to 'Voir nos statistiques', root_path, :class => "text-decoration-none text-dark ml-3 head"
+    = link_to 'Voir nos statistiques', root_path, class: "text-decoration-none text-dark ml-3 head"
