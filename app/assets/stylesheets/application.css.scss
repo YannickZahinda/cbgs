@@ -267,9 +267,33 @@ img {
   object-fit: contain;
 }
 
-.philosophie {
-  width: 100%;
-  object-fit: cover;
+.philosophy {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+
+}
+
+.philosophy-img-container {
+  width: 50%;
+}
+
+.philosophy-image {
+  
+}
+
+.philosophy-speech {
+  width: 50%;
+  margin: auto;
+  font-weight: 800;
+}
+
+.philosp-container {
+  padding: 35px;
+}
+
+.philosp-container > h2 {
+  font-weight: bold;
 }
 
 
@@ -609,6 +633,19 @@ img {
 
 
 @media only screen and (max-width: 992px) {
+
+  .philosophy{
+    flex-direction: column;
+    align-content: center;
+  }
+  .philosophy-image {
+    width: 300px;
+    object-fit: cover;
+  }
+
+  .philosophy-speech {
+    width: 100%;
+  }
 
   .communiquebtnpopup {
     background-color: #fff;

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+
   resources :chatrooms
   get 'dashboard/index', to: 'dashboard#index'
   get 'dashboard/new', to: 'dashboard#new'

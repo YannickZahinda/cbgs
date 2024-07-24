@@ -87,6 +87,23 @@
   padding: 16px;
 }
 
+.speech-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px;
+}
+
+.img-speech{
+  width: 390px;
+  object-fit: contain; 
+}
+
+.speech {
+  width: 50%;
+  // margin: auto;
+  font-weight: 800;
+}
+
 
 @media only screen and (max-width: 992px) {
     .sidebar-admin {
@@ -112,6 +129,17 @@
     .presentation-img {
       width: 100%;
       object-fit: contain;
+    }
+
+    .speech-container {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .speech {
+      width: 70%;
+      margin: auto;
+      font-weight: 800;
     }
 }
 

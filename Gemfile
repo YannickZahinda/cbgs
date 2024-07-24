@@ -62,6 +62,8 @@ gem "sassc-rails"
 
 gem 'haml', '~> 6.3'
 gem 'html2haml', '~> 2.3'
+gem 'sidekiq'
+
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
