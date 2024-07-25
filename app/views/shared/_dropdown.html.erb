@@ -22,8 +22,8 @@
                 <div class="news">
                   <h3 class="text-decoration-underline"><%= communique.titre %></h3>
                   <div>
-                    <% if communique.image.attached? %>
-                      <%= image_tag communique.image, style: "width: 80%; height: 100%; margin: 10px auto; object-fit: cover" %>
+                    <% if communique.image.url.present? %>
+                      <%= image_tag communique.image.url, style: "width: 80%; height: 100%; margin: 10px auto; object-fit: cover" %>
                     <% end %>
                   </div>
                   <p><%= communique.description %></p>
