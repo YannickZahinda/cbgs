@@ -1,0 +1,18 @@
+%p{:style => "color: green"}= notice
+%div{:style => "text-align: center; margin-top: 4rem"}
+  = image_tag"logos/CBGClogo.png", class: 'my-logo-popup-icon'
+  %br/
+  %p
+  %h1= @communique.titre
+  %br/
+  - if @communique.image.url.present?
+    = image_tag @communique.image.url, style: "width: 60%; height: 245px; margin: 10px auto; object-fit: contain"
+  - else
+    %div{:style => "color: red"} Pas d'image trouvée
+  %p{:style => "width: 65%; margin: auto"}= @communique.description
+  %div{:style => "margin: 25px;"}
+    %div{:style => "margin: 15px;"}= link_to "Retour aux communiques", communiques_path, style: "text-decoration: none; background-color: black; color: white; padding: 7px; border-radius: 7px; "
+    - if current_user.is_admin?
+      %div{:style => "margin: 15px;"}
+        = link_to "Retour aux communiques administrateur", admin_communiques_path, style: "text-decoration: none; background-color: black; color: white; padding: 7px; border-radius: 7px; "
+        %div{:style => "margin: 15px;"}

@@ -1,0 +1,32 @@
+.container.mt-5
+  .row.justify-content-center
+    .col-lg-8
+      .card
+        .card-body
+          %h2.text-center.mb-4 New Communique
+          
+          - if @communique.errors.any?
+            .alert.alert-danger
+              %h4
+                = pluralize(@communique.errors.count, "error")
+                |  prohibited this communique from being saved:
+              %ul
+                - @communique.errors.each do |error|
+                  %li= error.full_message
+                  
+          = form_with(model: [:admin, Communique.new], local: true) do |form|
+            .mb-3
+              = form.label :titre, class: 'form-label'
+              = form.text_field :titre, class: 'form-control'
+            .mb-3
+              = form.label :description, class: 'form-label'
+              = form.text_area :description, class: 'form-control', rows: 5
+            .mb-3
+              = form.label :image, class: 'form-label'
+              = form.file_field :image, class: 'form-control'
+            .text-center
+              = form.submit 'Submit', class: 'btn btn-primary'
+            
+          .mt-3.text-center
+            = link_to "Back to communiques", admin_communiques_path, class: "btn btn-secondary"
+
