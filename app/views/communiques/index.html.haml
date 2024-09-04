@@ -1,19 +1,19 @@
-%div{:style => "display:flex; justify-content:center;"}
-  %p{:style => "color: green"}= notice
-  #communiques{:style => "margin-top: 3rem; text-align:center "}
+.container.mt-5
+  %p.text-success.text-center= notice
+  #communiques.text-center.mt-5
     = link_to(root_path) do
-      = image_tag"logos/CBGClogo.png", class: 'my-logo-popup-icon'
-    %h1 Communiques
-    %br/
+      = image_tag "logos/CBGClogo.png", class: 'my-logo-popup-icon'
+    %h1.mb-4 Communiques
     - @communiques.each do |communique|
-      %div{:style => "border-radius: 20px; border-bottom: 1px solid black; padding: 15px"}
-        %h3= communique.titre
-        %br/
-        - if communique.image.attached?
-          = image_tag communique.image, style: "width: 60%; height: 245px; margin: 10px auto; object-fit: contain"
-        - else
-          %div Pas d'image rattachée
-        %p= communique.description
-        %br/
-        %p{:style => "padding: 7px; border-radius: 8px; width: max-content; margin-bottom: 7px; background-color: black "}
-          = link_to "voir", communique, style: "text-decoration: none; color: white"
+      .card.mb-4
+        .card-body
+          %h3.card-title= communique.titre
+          - if communique.image.url.present?
+            .text-center
+              = image_tag communique.image.url, class: 'img-fluid', style: "height: 245px; object-fit: contain"
+          - else
+            .text-center
+              %p.text-muted Pas d'image rattachée
+          %p.card-text.mt-3= communique.description
+          .text-center.mt-3
+            = link_to "Voir", communique, class: "btn btn-dark"

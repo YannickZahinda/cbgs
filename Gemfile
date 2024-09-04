@@ -95,3 +95,7 @@ group :test do
 end
 
 gem "hotwire-rails", "~> 0.1.3"
+
+gem "dockerfile-rails", ">= 1.6", :group => :development
+
+gem "redis", "~> 5.3"
