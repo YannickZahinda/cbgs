@@ -1,37 +1,58 @@
-<p style="color: green"><%= notice %></p>
-<div style="margin: 40px">
-<h2>Événements</h2> <br/>
-<% if user_signed_in? && current_user.is_admin?%>
-  <%= link_to '<< Tableau de bord ', admin_home_index_path, class: 'btn btn-primary', style: "margin-bottom: 10px"%><br/>
-<% else %>
- <%= link_to '<< Page d\'accueil ', root_path, class: 'btn btn-primary', style: "margin-bottom: 10px"%><br/>
-<%end%>
-<%if user_signed_in?%>
-  <% if @events.any?%>
-    <% @events.each do |event| %>
-      <div class="card" style="border: 1px solid #ccc; border-radius: 4px; margin-bottom: 20px;">
-        <div class="card-body">
-          <h3 class="card-title" style="text-align: center; padding: 15px"><%= event.title %></h3>
-          
-          <p style="margin: 10px; display: flex; justify-content: center">
-            <% if event.image.attached? %>
-              <%= image_tag event.image, style: "width: 60%; margin: 0 auto; object-fit: fit" %>
-            <% end %>
+<% if notice.present? %>
+  <div class="alert alert-success"><%= notice %></div>
+<% end %>
+
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Événements</h2>
+    <% if user_signed_in? %>
+      <% if current_user.is_admin? %>
+        <%= link_to '<< Tableau de bord', admin_home_index_path, class: 'btn btn-primary' %>
+      <% else %>
+        <%= link_to '<< Page d\'accueil', root_path, class: 'btn btn-primary' %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <% if user_signed_in? %>
+    <% if @events.any? %>
+      <div class="row">
+        <% @events.each do |event| %>
+          <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h3 class="card-title text-center mb-4"><%= event.title %></h3>
+
+                <% if event.image.attached? %>
+                  <div class="text-center mb-4">
+                    <%= image_tag event.image, class: 'img-fluid', style: 'max-width: 50%; height: auto;' %>
+                  </div>
+                <% end %>
+
+                <% if event.document.attached? %>
+                  <div class="text-center mb-4">
+                    <%= link_to 'Télécharger le fichier', url_for(event.document), class: 'btn btn-outline-primary' %>
+                  </div>
+                <% end %>
+
+                <p class="card-text"><%= event.description %></p>
+
+                <div class="text-center">
+                  <%= link_to 'Voir détails', events_path(event), class: 'btn btn-primary' %>
+                </div>
+              </div>
+            </div>
           </div>
-          <% if event.document.attached? %>
-            <%= link_to "Télécharger le fichier", url_for(event.document)%>
-          <%end%>
-          <p class="card-text">
-            <%= event.description %>
-          </p>
-          <%= link_to 'Show', events_path(event), class: 'btn btn-primary' %>
-        </div>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="alert alert-info text-center">
+        Pas d'Événements à signaler pour le moment.
       </div>
     <% end %>
-  <%else%>
-    <p>Pas d'Événements à signaler pour le moment</p>
-  <%end%>
-<%else%>
-  <p> Prière de vous <%= link_to "connecter", new_user_session_path%> pour acceder aux événements </p>
-<%end%>
+  <% else %>
+    <div class="alert alert-warning text-center">
+      Prière de vous <%= link_to 'connecter', new_user_session_path, class: 'alert-link' %> pour accéder aux événements.
+    </div>
+  <% end %>
 </div>

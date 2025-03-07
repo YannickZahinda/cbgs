@@ -1,29 +1,38 @@
-<p style="color: green"><%= notice %></p>
-<div style="margin: 40px">
-<h2>Événements</h2> <br/>
-<%= link_to '<< Tableau de bord ', admin_home_index_path, class: 'btn btn-primary', style: "margin-bottom: 10px"%><br/>
-<% @events.each do |event| %>
-  <div class="card" style="border: 1px solid #ccc; border-radius: 4px; margin-bottom: 20px;">
-    <div class="card-body">
-      <h3 class="card-title" style="text-align: center; padding: 15px"><%= event.title %></h3>
-      
-      <p style="margin: 10px; display: flex; justify-content: center">
-        <% if event.image.attached? %>
-          <%= image_tag event.image, style: "width: 60%; margin: 0 auto; object-fit: fit" %>
-        <% end %>
-       
-      </p>
-      <% if event.document.attached? %>
-        <%= link_to(url_for(event.document), class: "btn btn-primary") do %>
-          <i class="fas fa-download"></i> Télécharger le fichier
-          <% end %>
-      <%end%>
-      <p class="card-text pt-2">
-        <%= event.description %>
-      </p>
-      <%= link_to 'Show', admin_event_path(event), class: 'btn btn-primary' %>
-    </div>
-  </div>
+<% if notice.present? %>
+  <div class="alert alert-success"><%= notice %></div>
 <% end %>
 
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Les Événements</h2>
+    <%= link_to '<< Tableau de bord', admin_home_index_path, class: 'btn btn-primary' %>
+  </div>
+
+  <% @events.each do |event| %>
+    <div class="card shadow-sm mb-4">
+      <div class="card-body">
+        <h3 class="card-title text-center mb-4"><%= event.title %></h3>
+
+        <% if event.image.attached? %>
+          <div class="text-center mb-4">
+            <%= image_tag event.image, class: 'img-fluid', style: 'max-width: 50%; height: auto;' %>
+          </div>
+        <% end %>
+
+        <% if event.document.attached? %>
+          <div class="text-center mb-4">
+            <%= link_to url_for(event.document), class: 'btn btn-outline-primary' do %>
+              <i class="fas fa-download"></i> Télécharger le fichier
+            <% end %>
+          </div>
+        <% end %>
+
+        <p class="card-text"><%= event.description %></p>
+
+        <div class="text-center mt-4">
+          <%= link_to 'Voir détails', admin_event_path(event), class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>

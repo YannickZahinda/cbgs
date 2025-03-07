@@ -1,39 +1,52 @@
-<div class="signup">
+<% if notice.present? %>
+  <div class="alert alert-success"><%= notice %></div>
+<% end %>
 
-<%= form_with(model: [:admin, event], local: true, data: { turbo: :false }) do |form| %>
-  <% if event.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Événements</h2>
+    <% if user_signed_in? %>
+      <% if current_user.is_admin? %>
+        <%= link_to '<< Tableau de bord', admin_home_index_path, class: 'btn btn-primary' %>
+      <% else %>
+        <%= link_to '<< Page d\'accueil', root_path, class: 'btn btn-primary' %>
+      <% end %>
+    <% end %>
+  </div>
 
-      <ul>
-        <% event.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+  <% if user_signed_in? %>
+    <% if @events.any? %>
+      <div class="row">
+        <% @events.each do |event| %>
+          <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+              <% if event.image.attached? %>
+                <%= image_tag event.image, class: 'card-img-top', style: 'height: 300px; object-fit: cover;' %>
+              <% end %>
+              <div class="card-body">
+                <h3 class="card-title text-center mb-3"><%= event.title %></h3>
+                <p class="card-text"><%= event.description %></p>
+                <% if event.document.attached? %>
+                  <div class="text-center mb-3">
+                    <%= link_to 'Télécharger le fichier', url_for(event.document), class: 'btn btn-outline-primary' %>
+                  </div>
+                <% end %>
+                <div class="text-center">
+                  <%= link_to 'Voir détails', events_path(event), class: 'btn btn-primary' %>
+                </div>
+              </div>
+            </div>
+          </div>
         <% end %>
-      </ul>
+      </div>
+    <% else %>
+      <div class="alert alert-info text-center">
+        Pas d'Événements à signaler pour le moment.
+      </div>
+    <% end %>
+  <% else %>
+    <div class="alert alert-warning text-center">
+      Prière de vous <%= link_to 'connecter', new_user_session_path, class: 'alert-link' %> pour accéder aux événements.
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :date, style: "display: block" , class: 'label' %>
-    <%= form.date_field :date, class: 'input' %>
-  </div>
-
-  <div>
-    <%= form.label :title, style: "display: block" , class: 'label' %>
-    <%= form.text_field :title , class: 'input'%>
-  </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" , class: 'label' %>
-    <%= form.text_area :description, class: 'input' %>
-  </div>
-
-  <div>
-    <%= form.file_field :image, class: 'input'%>
-  </div>
-
-  <div>
-    <%= form.submit class: 'button'  %>
-  </div>
-<% end %>
- </div>
+</div>

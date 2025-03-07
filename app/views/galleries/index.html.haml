@@ -1,14 +1,15 @@
 .container
   %h1.my-4.text-center Congolese British Grammar School Gallery
-  .d-flex.justify-content-end.mb-3
+  .d-flex.justify-content-end.mb-4
     = link_to 'Accueil', root_path, class: 'btn btn-primary'
   .row
-    - @galleries.each_with_index do |gallery, index|
+    - @galleries.each do |gallery|
       .col-lg-3.col-md-4.col-6.mb-4
-        - if gallery.image.present?
-          .card
-            = image_tag gallery.image.url, class: "card-img-top img-fluid"
-        - else
-          .card
-            .card-body
-              %p.card-text.text-center Image non disponible
+        .card.h-100.shadow-sm
+          - if gallery.image.present?
+            = image_tag gallery.image.url, class: 'card-img-top img-fluid', style: 'height: 200px; object-fit: cover;'
+          - else
+            .card-body.d-flex.align-items-center.justify-content-center{ style: 'height: 200px;' }
+              %p.card-text.text-center.text-muted Image non disponible
+          .card-footer.bg-white.text-center
+            %small.text-muted Uploaded on #{gallery.created_at.strftime('%d %b %Y')}
