@@ -1,10 +1,12 @@
 .container.mt-5
   .row.justify-content-center
     .col-lg-8
-      .card
+      .card.shadow-sm
         .card-body
-          %h2.text-center.mb-4 New Communique
-          
+          %h2.text-center.mb-4
+            %i.fas.fa-bullhorn
+            Nouveau Communiqué
+
           - if @communique.errors.any?
             .alert.alert-danger
               %h4
@@ -13,20 +15,22 @@
               %ul
                 - @communique.errors.each do |error|
                   %li= error.full_message
-                  
+
           = form_with(model: [:admin, Communique.new], local: true) do |form|
             .mb-3
               = form.label :titre, class: 'form-label'
-              = form.text_field :titre, class: 'form-control'
+              = form.text_field :titre, class: 'form-control', placeholder: 'Entrez le titre du communiqué'
             .mb-3
               = form.label :description, class: 'form-label'
-              = form.text_area :description, class: 'form-control', rows: 5
+              = form.text_area :description, class: 'form-control', rows: 5, placeholder: 'Entrez la description du communiqué'
             .mb-3
               = form.label :image, class: 'form-label'
               = form.file_field :image, class: 'form-control'
             .text-center
-              = form.submit 'Submit', class: 'btn btn-primary'
-            
-          .mt-3.text-center
-            = link_to "Back to communiques", admin_communiques_path, class: "btn btn-secondary"
+              = form.submit 'Créer le communiqué', class: 'btn btn-primary'
+              %i.fas.fa-paper-plane.ml-2
 
+          .mt-4.text-center
+            = link_to admin_communiques_path, class: 'btn btn-secondary' do
+              %i.fas.fa-arrow-left
+              Retour aux communiqués
