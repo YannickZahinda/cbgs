@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Cbgs</title>
+    <title>Congolese British Grammar School</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -29,7 +29,13 @@
     <p class="notice"><%= notice %></p>
     <%# <p class="alert"><%= alert %>
 
-    <% if current_page?(admin_home_index_path) || current_page?(admin_teachers_path) || current_page?(admin_parents_path) || current_page?(admin_communiques_path) || current_page?(admin_eleves_path) || current_page?(logged_in_users_admin_home_index_path) %>
+    <% if 
+      current_page?(admin_home_index_path) || 
+      current_page?(admin_teachers_path) || current_page?(admin_parents_path) ||
+      current_page?(admin_communiques_path) || current_page?(admin_eleves_path) || 
+      current_page?(logged_in_users_admin_home_index_path) || 
+      current_page?(edit_admin_parent_path(:id)) || current_page?(edit_admin_elefe_path(:id))
+    %>
       <div style="display: flex; justify-content: center">
         <div class="sidebar-admin">
           <div class="admin-bar">

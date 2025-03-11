@@ -1,4 +1,4 @@
-<div id="<%= dom_id eleve %>" class="card shadow-sm mb-4 w-50 m-auto">
+<div id="<%= dom_id eleve %>" class="card shadow-sm w-50 m-auto">
   <div class="card-header bg-primary text-white">
     <h2 class="card-title mb-0"><%= eleve.nom_complet %></h2>
   </div>
@@ -40,9 +40,15 @@
   </div>
   <div class="card-footer bg-light">
     <div class="d-flex justify-content-between">
-      <%= link_to "Modifier", edit_admin_elefe_path(eleve), class: "btn btn-primary" %>
-      <%= link_to "Retour aux eleves", admin_eleves_path, class: "btn btn-secondary" %>
-      <%= button_to "Effacer", admin_elefe_path(eleve), method: :delete, data: { confirm: "Êtes-vous sûr?" }, class: "btn btn-danger" %>
+      <%= link_to edit_admin_elefe_path(eleve), class: "btn" do %>
+        <i class="fas fa-edit"></i> Modifier
+      <% end %>
+      <%= link_to admin_eleves_path, class: "btn" do %>
+        <i class="fas fa-arrow-left"></i> Retour
+      <% end %>
+      <%= button_to admin_elefe_path(eleve), method: :delete, data: { confirm: "Êtes-vous sûr?" }, class: "btn" do %>
+        <i class="fas fa-trash"></i> Effacer
+      <% end %>
     </div>
   </div>
 </div>

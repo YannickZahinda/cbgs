@@ -1,37 +1,49 @@
-<div class="signup">
-   <%= form_with(model: [:admin, parent], local: true, data: { turbo: :false } ) do |form| %>
-     <% if parent.errors.any? %>
-       <div style="color: red">
-         <h2><%= pluralize(parent.errors.count, "error") %> prohibited this parent from being saved:</h2>
-   
-         <ul>
-           <% parent.errors.each do |error| %>
-             <li><%= error.full_message %></li>
-           <% end %>
-         </ul>
-       </div>
-     <% end %>
-     <div>
-       <%= form.label :nom_complet , class: 'label'%>
-       <%= form.text_field :nom_complet, class: 'input' %>
-     </div>
-     <div>
-       <%= form.label :addresse , class: 'label'%>
-       <%= form.text_field :addresse, class: 'input' %>
-     </div>
-     <div>
-       <%= form.label :phone %>
-       <%= form.text_field :phone, class: 'input' %>
-     </div>
-     <div>
-       <%= form.label :email, class: 'label' %>
-       <%= form.text_field :email , class: 'input'%>
-     </div>
-     
-     <div>
-       <%= form.submit class: "button" %>
-     </div>
-   <% end %>
+<div class=" container mt-5 w-50">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h2 class="card-title mb-0 text-center"><%= parent.persisted? ? "Modifier Parent" : "Créer un Nouveau Parent" %></h2>
+        </div>
+        <div class="card-body">
+          <%= form_with(model: [:admin, parent], local: true, data: { turbo: :false }) do |form| %>
+            <% if parent.errors.any? %>
+              <div class="alert alert-danger">
+                <h4><%= pluralize(parent.errors.count, "error") %> prohibited this parent from being saved:</h4>
+                <ul>
+                  <% parent.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
 
+            <div class="mb-3">
+              <%= form.label :nom_complet, class: 'form-label' %>
+              <%= form.text_field :nom_complet, class: 'form-control' %>
+            </div>
+
+            <div class="mb-3">
+              <%= form.label :addresse, class: 'form-label' %>
+              <%= form.text_field :addresse, class: 'form-control' %>
+            </div>
+
+            <div class="mb-3">
+              <%= form.label :phone, class: 'form-label' %>
+              <%= form.text_field :phone, class: 'form-control' %>
+            </div>
+
+            <div class="mb-3">
+              <%= form.label :email, class: 'form-label' %>
+              <%= form.text_field :email, class: 'form-control' %>
+            </div>
+
+            <div class="d-grid">
+              <%= form.submit parent.persisted? ? "Modifier" : "Créer", class: "btn btn-primary btn-lg" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-

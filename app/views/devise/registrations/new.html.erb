@@ -1,31 +1,38 @@
 <div class="authentication container-fluid min-vh-100 d-flex align-items-center py-5 bg-light">
   <div class="row w-100 justify-content-center mx-auto" style="max-width: 1200px;">
-    <!-- Signup Form Column -->
     <div class="col-md-6 signup mb-4 mb-md-0">
       <div class="card border-0 shadow-sm rounded-3 p-4 p-md-5">
         <h3 class="text-center mb-4 fw-bold">Bienvenue</h3>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
 
-          <!-- First Name Field -->
           <div class="form-group mb-3">
             <%= f.label :nom, class: "form-label fw-medium" %>
             <%= f.text_field :first_name, autofocus: true, autocomplete: "nom", class: "form-control form-control-lg", placeholder: "Entrez votre nom" %>
           </div>
 
-          <!-- Last Name Field -->
           <div class="form-group mb-3">
             <%= f.label :post_nom, class: "form-label fw-medium" %>
             <%= f.text_field :last_name, autocomplete: "post_nom", class: "form-control form-control-lg", placeholder: "Entrez votre post nom" %>
           </div>
+          <div class="form-group mb-3">
+            <%= f.label :nom_complet, class: "form-label fw-medium" %>
+            <%= f.text_field :nom_complet, autocomplete: "post_nom", class: "form-control form-control-lg", placeholder: "Entrez votre nom complet" %>
+          </div>
+          <div class="form-group mb-3">
+            <%= f.label :addresse, class: "form-label fw-medium" %>
+            <%= f.text_field :addresse, autocomplete: "post_nom", class: "form-control form-control-lg", placeholder: "Entrez votre addresse" %>
+          </div>
+          <div class="form-group mb-3">
+            <%= f.label :phone, class: "form-label fw-medium" %>
+            <%= f.text_field :phone, autocomplete: "post_nom", class: "form-control form-control-lg", placeholder: "Entrez votre numéro de téléphone" %>
+          </div>
 
-          <!-- Email Field -->
           <div class="form-group mb-3">
             <%= f.label :email, class: "form-label fw-medium" %>
             <%= f.email_field :email, autocomplete: "email", class: "form-control form-control-lg", placeholder: "exemple@email.com" %>
           </div>
 
-          <!-- Password Field -->
           <div class="form-group mb-3">
             <%= f.label :password, class: "form-label fw-medium" %>
             <% if @minimum_password_length %>
@@ -34,18 +41,15 @@
             <%= f.password_field :password, autocomplete: "new-password", class: "form-control form-control-lg" %>
           </div>
 
-          <!-- Password Confirmation Field -->
           <div class="form-group mb-4">
             <%= f.label :password_confirmation, class: "form-label fw-medium" %>
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-control-lg" %>
           </div>
 
-          <!-- Submit Button -->
           <div class="actions mb-4">
             <%= f.submit "S'inscrire", class: "btn btn-primary w-100 py-3 fw-medium rounded-3" %>
           </div>
 
-          <!-- Login Links -->
           <div class="loginline text-center">
             <div class="d-flex align-items-center justify-content-center mb-3">
               <div class="flex-grow-1 border-top"></div>

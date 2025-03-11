@@ -40,9 +40,15 @@
   </div>
   <div class="card-footer bg-light">
     <div class="d-flex justify-content-between">
-      <%= link_to "Modifier", edit_admin_parent_path(parent), class: "btn btn-primary" %>
-      <%= link_to "Retour aux parents", admin_parents_path, class: "btn btn-secondary" %>
-      <%= button_to "Effacer", admin_parent_path(parent), method: :delete, data: { confirm: "Êtes-vous sûr?" }, class: "btn btn-danger" %>
+      <%= link_to edit_admin_parent_path(parent), class: "btn" do %>
+        <i class="fas fa-edit"></i> Modifier
+      <%end%>
+      <%= link_to admin_parents_path, class: "btn" do %>
+        <i class="fas fa-arrow-left"></i> Retour
+      <%end%>
+      <%= button_to admin_parent_path(parent), method: :delete, data: { confirm: "Êtes-vous sûr?" }, class: "btn" do %>
+         <i class="fas fa-trash"></i> Effacer
+      <%end%>
     </div>
   </div>
 </div>
