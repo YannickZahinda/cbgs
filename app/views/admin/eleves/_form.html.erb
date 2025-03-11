@@ -44,6 +44,10 @@
               <%= form.label :parent_id %>
               <%= form.text_field :parent_id, class: 'form-control' %>
             </div>
+            <div class="mb-3">
+              <%= form.label :nom_du_parent %>
+              <%= form.collection_select :parent_id, Parent.all, :id, :nom_complet, {prompt: "Sélectionnez un parent"}, class: 'form-control'   %>
+            </div>
             <div class="d-grid">
               <%= form.submit eleve.persisted? ? "Modifier" : "Créer", class: "btn btn-primary btn-lg" %>
             </div>
