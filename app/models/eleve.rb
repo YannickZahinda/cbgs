@@ -1,3 +1,3 @@
 class Eleve < ApplicationRecord
-    # after_create_commit { broadcast_prepend_to "tweets" }
+    belongs_to :parent, class_name: "Parent"
 end
