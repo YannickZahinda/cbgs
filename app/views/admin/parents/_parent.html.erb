@@ -1,30 +1,48 @@
-<div id="<%= dom_id parent %>" class="teacher-card">
-  <div class="teacher-card__header">
-    <h2 class="teacher-card__title"><%= parent.nom_complet %></h2>
+<div id="<%= dom_id parent %>" class="card shadow-sm m-auto w-50">
+  <div class="card-header bg-primary text-white">
+    <h2 class="card-title mb-0"><%= parent.nom_complet %></h2>
   </div>
-  <div class="teacher-card__content">
-    <div class="teacher-card__details">
-      <div class="teacher-card__detail">
-        <strong>Addresse:</strong>
-        <%= parent.addresse %>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3">
+          <strong>Addresse:</strong>
+          <p class="mb-0"><%= parent.addresse %></p>
+        </div>
+        <div class="mb-3">
+          <strong>Téléphone:</strong>
+          <p class="mb-0"><%= parent.phone %></p>
+        </div>
+        <div class="mb-3">
+          <strong>Email:</strong>
+          <p class="mb-0"><%= parent.email %></p>
+        </div>
       </div>
-      <div class="teacher-card__detail">
-        <strong>Telephone:</strong>
-        <%= parent.phone %>
-      </div>
-      <div class="teacher-card__detail">
-        <strong>Email:</strong>
-        <%= parent.email %>
-      </div>
-      <div class="teacher-card__detail">
-        <strong>Date de création:</strong>
-        <%= parent.created_at %>
+      <div class="col-md-6">
+        <div class="mb-3">
+          <strong>Élèves:</strong>
+          <% if parent.eleves.any? %>
+            <ul class="list-group">
+              <% parent.eleves.each do |eleve| %>
+                <li class="list-group-item"><%= eleve.nom_complet %></li>
+              <% end %>
+            </ul>
+          <% else %>
+            <p class="text-muted mb-0">Aucun élève enregistré pour ce parent</p>
+          <% end %>
+        </div>
+        <div class="mb-3">
+          <strong>Date de création:</strong>
+          <p class="mb-0"><%= parent.created_at.strftime("%d/%m/%Y %H:%M") %></p>
+        </div>
       </div>
     </div>
-    <div class="teacher-card__actions">
-      <p><%= link_to "Modifier", edit_admin_parent_path(parent), class: "button button--primary" %></p>
-      <p><%= link_to "Retour aux parents", admin_parents_path, class: "button button--secondary" %></p>
-      <p><%= button_to "Effacer", admin_parent_path(parent), method: :delete, data: { confirm: "Êtes-vous sûr?" }, class: "button button--danger" %></p>
+  </div>
+  <div class="card-footer bg-light">
+    <div class="d-flex justify-content-between">
+      <%= link_to "Modifier", edit_admin_parent_path(parent), class: "btn btn-primary" %>
+      <%= link_to "Retour aux parents", admin_parents_path, class: "btn btn-secondary" %>
+      <%= button_to "Effacer", admin_parent_path(parent), method: :delete, data: { confirm: "Êtes-vous sûr?" }, class: "btn btn-danger" %>
     </div>
   </div>
 </div>
