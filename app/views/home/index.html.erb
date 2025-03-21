@@ -37,16 +37,16 @@
     </div><br/><br/>
 
     <div style="white-space: nowrap; overflow: hidden; width: 100%; background-color: #c0c4c7; padding: 20px">
-      <span class="sliding-text" style="display: inline-block; animation: slidein 20s linear infinite; font-size: 25px; font-weight: bold; color: #fff">
-        NOTRE DEVISE : EXCELLENTE DISCPLINE ET QUALITE
+      <span class="sliding-text" style="display: inline-block; animation: slidein 20s linear infinite; font-size: 30px; font-weight: bold; font-family: Helvetica, sans-serif; color: #fff">
+        NOTRE DEVISE : EXCELLENCE DISCIPLINE ET QUALITE
       </span>
     </div>
     <div class="section-equipe-dirigeante">
-      <h3 class="equipe-dir">Equipe dirigeante</h3>
+      <h2 class="equipe-dir">Equipe dirigeante</h2>
       <div class="equipe-dir-pics">
-        <div>
-          <%= image_tag "logos/promotrice.png", width: "100%", margin: "auto" %>
-          <div style="text-align: center"><strong>Promotrice Madame Sylvie Kafat </strong> </div>
+        <div style="text-align: center">
+          <%= image_tag "logos/prompic 1.png", width: "65%", margin: "auto" %>
+          <div style="text-align: center"><h3>Promotrice  <br/> Madame Sylvie Kafat </h3> </div>
         </div>
       </div>
     </div>
@@ -54,7 +54,7 @@
       <%= render "nosvaleurs"%>
     </div>
     <div class="section-organisees-container">
-    <h3>Section organisées</h3>
+    <h2 style="font-family: Helvetica, sans-serif">Section organisées</h2>
     <div class="section-organisees">
       <div class="section-card section-maternelle">
          <h3>SECTION MATERNELLE</h3>
@@ -107,11 +107,11 @@
     </div>
 
     <div class="promot-speech">
-      <h3>Mot de La Promotrice </h3> <br/>
+      <h2 style="font-family: Helvetica, sans-serif">Mot de La Promotrice </h2> <br/>
       <%= image_tag("logos/promots.svg", width: "60%", margin: '0 auto')%>
     </div>
+    <h2 style="text-align: center; font-family: Helvetica, sans-serif">Nos formations</h2> <br/>
     <div class="youtube-container">
-      <%# <div class="youtube"></div> %>
       <div class="formations">
         <div class="compte">
           <%= image_tag "logos/accountancy.png", class: "formapic"%>
@@ -126,11 +126,10 @@
       </div>
     </div>
     <div class="nos-partenaires">
-      <h3>Nos Partneraires</h3>
+      <h2 style="font-family: Helvetica, sans-serif">Nos Partneraires</h2>
       <div class="partenaire-container" >
-        <%= image_tag "logos/lualabaflagpic.png", class: "partnerpic"%>
-        <%= image_tag "logos/epsp.png", class: "partnerpic"%>
-        <%= image_tag "logos/gouv.png", class: "partnerpic"%>
+        <div class = "partner-pic-container"><%= image_tag "logos/lualabaflagpic.png", class: "partnerpic"%></div>
+        <div class = partner-pic-container><%= image_tag "logos/british-grammar-school.png", class: "bgs-icon"%></div>
       </div>
     </div>
     <div class="footer">

@@ -1,45 +1,42 @@
 
 <div class="dropdown">
   <button class="dropbtn" id="dropbtn"> Menu ⇣⇣</button>
-  <ul class="navlinks dropdown-content" id="dropdown-content">
-    <li class="link"><a href="#apropos" class="link">A propos</a></li>
-    <li class="link">
-     <button class="popup-btn communiquebtnpopup">Communiques</button>       
-     <%= render "shared/communiquepopup" do%>
-       <div class="communique-popup-icon">
-         <%= image_tag"logos/CBGClogo.png", class: 'my-logo-popup-icon' %>
-       </div>
-       <% if @communiques.any? %>
-         <p style="color: green"><%= notice %></p>
-         <h1>Communiques</h1>
-         <% @communiques.each do |communique| %>
-           <div class="news">
-               <h3 style="text-decoration: underline;"><%= communique.titre %></h3> <br/>
+  <div class="navlinks dropdown-content" id="dropdown-content">
+    <a href="#apropos" class="link" >A propos</a>
+    <a class="popup-btn communiquebtnpopup link">Communiqués</a>       
+    <%= render "shared/communiquepopup" do%>
+      <div class="communique-popup-icon">
+        <%= image_tag"logos/CBGClogo.png", class: 'my-logo-popup-icon' %>
+      </div>
+      <% if @communiques.any? %>
+        <p style="color: green"><%= notice %></p>
+        <h1>Communiques</h1>
+        <% @communiques.each do |communique| %>
+          <div class="news">
+              <h3 style="text-decoration: underline;"><%= communique.titre %></h3> <br/>
+              <div>
+                <% if communique.image.attached? %>
+                   <%= image_tag communique.image, style: "width: 80%; height: 100%; margin: 10px auto; object-fit: fit" %>
+                <% end %>
+               </div>
                <p><%= communique.description %></p>
-               <%= link_to "Voir", communique %>
-           </div>
-         <% end %>
-         <% else %>
-           <p>Il n'y a pas de communique pour le moment</p>
-         <% end %>
-      <%end%>
-    </li>
-    <li class="link"><%= link_to "Ecrire un message", new_message_path, :class => "link" %></li>
+              <%= link_to "Voir", communique %>
+          </div>
+        <% end %>
+        <% else %>
+          <p>Il n'y a pas de communique pour le moment</p>
+        <% end %>
+    <%end%>
+    <%= link_to "Contactez-nous", new_message_path, :class => "link" %>
     <% if user_signed_in?%>
        <% if current_user.is_admin? %>
-        <li class="link"><%= link_to "Tableau de bord administrateur", admin_home_index_path, :class => "link" %></li>
+        <%= link_to "Tableau de bord administrateur", admin_home_index_path, :class => "link" %>
        <% else %>
-         <li class="link">
-           <%= link_to 'Tableau de bord utilisateur', dashboard_index_path, :class => "link" %>
-         </li>
+        <%= link_to 'Tableau de bord utilisateur', dashboard_index_path, :class => "link" %>
        <% end %>
-       <li class="link">
          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, :class => "link" %>
-       </li>
-    <% else %>
-      <li class="link">
-        <%= link_to "S'enregistrer", new_user_registration_path, :class => "link" %>
-      </li>
-    <%end%>
-  </ul>
+       <% else %>
+         <%= link_to "Connexions", new_user_session_path, :class => "link" %>
+       <%end%>
+  </div>
 </div>

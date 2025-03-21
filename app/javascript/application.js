@@ -69,17 +69,6 @@ document.addEventListener("turbo:load", function() {
       dropdownContent.style.display = "block";
     }
   })
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-  
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-      events: '/events.json'
-    });
-  
-    calendar.render();
-  });
   
 
 });

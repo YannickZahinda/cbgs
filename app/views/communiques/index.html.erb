@@ -11,6 +11,11 @@
   <% @communiques.each do |communique| %>
    <div style="border-radius: 20px; border-bottom: 1px solid black; padding: 15px">
     <h3><%= communique.titre%></h3> <br/>
+    <% if communique.image.attached? %>
+      <%= image_tag communique.image, style: "width: 60%; height: 245px; margin: 10px auto; object-fit: contain" %>
+    <% else %>
+      <div>Pas d'image rattachée</div>
+    <% end %>
     <p><%= communique.description%></p> <br/>
     <p style="padding: 7px; border-radius: 8px; width: max-content; margin-bottom: 7px; background-color: black ">
       <%= link_to "voir", communique, style: "text-decoration: none; color: white" %>
