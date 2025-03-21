@@ -1,0 +1,21 @@
+<div id="<%= dom_id event %>">
+  <!-- Show page -->
+<div class="card" style="border: 1px solid #ccc; border-radius: 4px; margin-bottom: 20px;">
+  <div class="card-body">
+    <h3 class="card-title"><%= event.title %></h3><br/>
+    <h5 class="card-subtitle mb-2 text-muted"><%= event.date %></h5>
+    <div class="card-text">
+      <% if event.image.attached? %>
+        <%= image_tag event.image, style:"width: 40%; height: 190px; object-fit: contain" %>
+      <% end %>
+    </div>
+    <p class="card-text"><%= event.description %></p>
+    <% if user_signed_in? && current_user.is_admin? %>
+      <%= link_to 'Modifier', edit_admin_event_path(event), class: 'btn btn-primary' %>
+      <%= button_to 'Effacer', admin_event_path(event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger', style: 'border: none' %>
+    <% else %>
+      <%= link_to "Retour aux événements", admin_events_path, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
+</div>

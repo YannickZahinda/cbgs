@@ -4,6 +4,12 @@ class User < ApplicationRecord
 
   has_many :sent_letters, class_name: "Letter", foreign_key: "sender_id"
   has_many :received_letters, class_name: "Letter", foreign_key: "recipient_id"
+  has_many :user_chats
+  has_many :chats, through: :user_chats, source: :chats
+  has_many :received_chats, class_name: "Chat", foreign_key: "sender"
+  has_many :chatroom_users
+  has_many :chatrooms, through: :chatroom_users
+  has_many :intant_messages
 
   validates :first_name, presence: true
   validates :last_name, presence: true

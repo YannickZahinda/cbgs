@@ -7,7 +7,12 @@
     <div class="article">
       <h2><%= communique.titre %></h2>
       <p class="date">Date d'ajout: <%= communique.created_at.strftime("%B %d, %Y") %></p>
-      <p class="summary"><%= communique.description %></p>
+      <% if communique.image.attached? %>
+        <%= image_tag communique.image, style: "width: 80%; height: 100%; margin: 10px auto; object-fit: fit" %>
+      <% else %>
+      <p class="summary"><%= communique.description %></p><br/>
+        <div>Pas d'image</div>
+      <% end %>
       <p class="read-more">
         <%= link_to "Voir", communique %>
         <%= button_to "Effacer", admin_communique_path(communique), method: :delete, data: { confirm: "Êtes-vous sûr?" }, class: "button", style: "width: 30%, margin: auto"%>

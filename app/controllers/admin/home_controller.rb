@@ -9,6 +9,7 @@ class Admin::HomeController < ApplicationController
     @messages = Message.all
     @events = Event.all
     @letters = Letter.all
+    @chatrooms = Chatroom.all
   end
 
   def logged_in_users

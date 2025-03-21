@@ -19,6 +19,9 @@
     <%= f.text_area :body, class: "form-control", placeholder: "Enter message", required: true %>
   </div>
   <div class="form-group">
+    <%= f.file_field :document%>
+  </div>
+  <div class="form-group">
     <%= f.submit "Send", class: "btn btn-primary" %>
   </div>
 <% end %>
