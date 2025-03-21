@@ -71,7 +71,7 @@ class Admin::CommuniquesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def communique_params
-      params.require(:communique).permit(:titre, :description)
+      params.require(:communique).permit(:titre, :description, :image)
     end
 
 end
